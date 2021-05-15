@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="05 Pre-Class Assignment: Gauss-Jordan Elimination" href="103--Linear_Equations_pre-class-assignment.html" />
-    <link rel="prev" title="1. Text Books &amp; Syllabus" href="101-Welcome_and_Vectors.html" />
+    <link rel="next" title="102 - Matrices and Matrix Multiplication" href="102-Matrix_Mechanics_in-class-assignment.html" />
+    <link rel="prev" title="101 - Welcome and Introduction to Vectors" href="101-Welcome_and_Vectors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,7 +85,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="101-Welcome_and_Vectors.html">
-   1. Text Books &amp; Syllabus
+   101 - Welcome and Introduction to Vectors
   </a>
  </li>
 </ul>
@@ -96,13 +96,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
-   05 Pre-Class Assignment: Gauss-Jordan Elimination
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
-   05 In-Class Assignment: Gauss-Jordan
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
   </a>
  </li>
 </ul>
@@ -162,10 +157,13 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/colbrydi/MatrixAlgebra"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F102--Matrix_Mechanics_pre-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
@@ -184,7 +182,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/colbrydi/MatrixAlgebra/main?urlpath=tree/docs/_sources/102--Matrix_Mechanics_pre-class-assignment.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/102--Matrix_Mechanics_pre-class-assignment.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -206,6 +204,11 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
    Goals for today’s pre-class assignment
@@ -240,13 +243,6 @@
   <a class="reference internal nav-link" href="#jupyter-tips-and-tricks">
    7. Jupyter Tips and Tricks
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
-     Readings for this topic (Recommended in bold)
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dot-product-explanation">
@@ -275,6 +271,15 @@
 <p>This course uses Python to help students gain a practical understanding of how to use Linear Algebra to solve problems. Although students will likely become better programmers this course does not teach programming and assumes that that students have a basic understanding of Python.</p>
 <p>This notebook is designed to provide a review of the major Python Packages we will be using in this course and includes some common techniques you can use to avoid problems.</p>
 <p>I hope all students will learn something from the videos. However, feel free to run them at a faster speed and/or skip ahead if you feel you know what you are doing.</p>
+<hr class="docutils" />
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 3.IV pg 224-240</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter M pg 162-206 &amp;  EM 340-345</a></p></li>
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Section 6.2,-3, 10.1  pg 113-118, 177-183</em></strong></a></p></li>
+</ul>
+</div>
 <hr class="docutils" />
 <div class="section" id="goals-for-today-s-pre-class-assignment">
 <h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
@@ -470,7 +475,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1189a0c50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11369ec50&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_29_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_29_1.png" />
@@ -484,7 +489,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x118aa9790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1137ac590&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_30_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_30_1.png" />
@@ -498,7 +503,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x118b5f910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x113862750&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_31_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_31_1.png" />
@@ -513,7 +518,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x118d1cb10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x113a20a10&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_32_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_32_1.png" />
@@ -531,7 +536,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x118ef0d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1155eda10&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_33_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_33_1.png" />
@@ -547,7 +552,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11b84cd50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x116578750&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_34_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_34_1.png" />
@@ -563,7 +568,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1184044d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x112388550&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_35_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_35_1.png" />
@@ -581,7 +586,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x117339250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x112043c10&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_37_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_37_1.png" />
@@ -676,16 +681,8 @@ More about Jupyter Notebooks.</p>
 ></iframe>
 </div></div>
 </div>
-<div class="section" id="readings-for-this-topic-recommended-in-bold">
-<h3>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 3.IV pg 224-240</a></p></li>
-<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter M pg 162-206 &amp;  EM 340-345</a></p></li>
-<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Section 6.2,-3, 10.1  pg 113-118, 177-183</em></strong></a></p></li>
-</ul>
 <hr class="docutils" />
 <p><a name=Dot-Product-Review></a></p>
-</div>
 </div>
 <div class="section" id="dot-product-explanation">
 <h2>8. Dot Product Explanation<a class="headerlink" href="#dot-product-explanation" title="Permalink to this headline">¶</a></h2>
@@ -823,8 +820,8 @@ More about Jupyter Notebooks.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="101-Welcome_and_Vectors.html" title="previous page">1. Text Books &amp; Syllabus</a>
-    <a class='right-next' id="next-link" href="103--Linear_Equations_pre-class-assignment.html" title="next page">05 Pre-Class Assignment: Gauss-Jordan Elimination</a>
+    <a class='left-prev' id="prev-link" href="101-Welcome_and_Vectors.html" title="previous page">101 - Welcome and Introduction to Vectors</a>
+    <a class='right-next' id="next-link" href="102-Matrix_Mechanics_in-class-assignment.html" title="next page">102 - Matrices and Matrix Multiplication</a>
 
         </div>
         
@@ -834,7 +831,7 @@ More about Jupyter Notebooks.</p>
     <div class="container">
       <p>
         
-          By Dirk Colbry & adapted by Matthew Mills<br/>
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

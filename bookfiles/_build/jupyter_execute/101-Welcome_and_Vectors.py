@@ -5,6 +5,8 @@
 
 # In order to successfully complete this assignment you need to participate both individually and in groups during class.   If you attend class in-person then have one of the instructors check your notebook and sign you out before leaving class. If you are attending asynchronously, turn in your assignment using D2L no later than **_11:59pm on the day of class_**. See links at the end of this document for access to the class timeline for your section.
 
+# # 101 - Welcome and Introduction to Vectors
+# 
 # 1. [Textbooks & Syllabus](#books)
 # 1. [Making sure Jupyter works](#jupyter)
 # 1. [Scalars, Vectors, Matrices](#vectors)
@@ -16,7 +18,7 @@
 
 # ----
 # <a name="books"></a>
-# # 1. Text Books & Syllabus
+# ## 1. Text Books & Syllabus
 
 # The textbooks for this course are all online and available for download. 
 
@@ -54,13 +56,13 @@
 # urlretrieve('http://linear.ups.edu/download/fcla-3.50-tablet.pdf',  'Beezer.pdf');
 
 
-# ## Syllabus
+# ### Syllabus
 # 
 # Please review the course [syllabus](https://docs.google.com/document/u/1/d/e/2PACX-1vRXcy56SikBnJ9pWOpujibVtfC0VTyNCtXp1I11MZ4CVhJg9hpqCbFYv0T77VOEyM0dlyYxzrCHpUJf/pub). This link can be permantly found on D2L.
 
 # ---
 # <a name="jupyter"></a>
-# # 2. Making sure Jupyter works
+# ## 2. Making sure Jupyter works
 # 
 # If you are veiwing this file as an html, or pdf please follow the instructions in the notebook in order to be able to edit the cells. It is very important to get this working as our entire class will be using this software.
 # 
@@ -70,10 +72,10 @@
 
 # ----
 # <a name="vectors"></a>
-# # 2. Scalars, Vectors, and Matrices
+# ## 3. Scalars, Vectors, and Matrices
 # 
 # <a name="math_def"></a>
-# ## Mathematical Definitions
+# ### Mathematical Definitions
 # 
 # The three primary mathematical entities that are of interest in this class are scalars, vectors, and matrices. 
 # 
@@ -127,7 +129,7 @@
 
 # -----
 # <a name="basic_python"></a>
-# ## Basic Python Structures
+# ### Basic Python Structures
 # 
 # Defining a **_scalar_** in Python is easy. For example
 
@@ -275,7 +277,7 @@ checkanswer([x,y,z],'e80321644979a873b273aebbbcd0e450');
 
 # ---
 # <a name="examples"></a>
-# # 4. Examples
+# ## 4. Examples
 # 
 # 
 # Vectors are used to represent all types of data that has structures.  Here are some simple examples from the [Boyd and Vandenberghe textbook](http://vmls-book.stanford.edu/):
@@ -345,9 +347,9 @@ color = interact(showcolor, red=(0.0,1.0), green=(0.0,1.0), blue=(0.0,1.0));
 
 # ---
 # <a name="operations"></a>
-# # 5. Vector Addition and Scalar Multiplication
+# ## 5. Vector Addition and Scalar Multiplication
 # 
-# ## Vector Addition
+# ### Vector Addition
 # 
 # Another common operation to perform on vectors is addition. Two vectors of the same size can be added together by adding the corresponding elements, to form another vector of the same size, called the sum of the vectors. For example:
 # 
@@ -429,7 +431,7 @@ def vecadd(a,b):
 vecadd(a,b)
 
 
-# ## Scalar Multiplication
+# ### Scalar Multiplication
 # Earlier we defined **_scalar_** as a number. The reason why we call it a "scalar" is because when we multiply a vector by a number the geometric representation of the new vector is still pointing in the same direction, but it has a new length, i.e., it was rescaled.
 # 
 # If we have the vector $v = \begin{bmatrix} 1 \\ 2\end{bmatrix}$ and multiply it by the scalar 3 then we get a new vector $$3v = 3 \begin{bmatrix} 1 \\ 2\end{bmatrix} =  \begin{bmatrix} 3\cdot 1 \\ 3\cdot 2\end{bmatrix} = \begin{bmatrix} 3 \\ 6\end{bmatrix}$$
@@ -492,9 +494,11 @@ checkanswer.detailedwarnings = False
 checkanswer.vector(sv_multiply(3.14159,(1,2,3,4)),'f349ef7cafae77c7c23d6924ec1fd36e')
 
 
+# **Note that scalar multiplication and addition works exactly the same way for matrices.**
+
 # ---
 # <a name="linear_combs"></a>
-# # 6. Linear Combinations of vectors
+# ## 6. Linear Combinations of vectors
 # 
 # A linear combination of vectors uses both scalar multiplication and vector addition.
 # 
@@ -594,7 +598,6 @@ YouTubeVideo("fNk_zzaMoSs",width=640,height=360, cc_load_policy=True)
 # 
 # 
 # 102--Matrix_Mechanics_pre-class-assignment.ipynb
-# 103--Linear_Equations_pre-class-assignment.ipynb
-# 103-Linear_Equations_in-class-assignment.ipynb
+# 102-Matrix_Mechanics_in-class-assignment.ipynb
 # ```
 # 

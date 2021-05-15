@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Matrix Algebra with Computational Applications
-author: Dirk Colbry & adapted by Matthew Mills
+author: Dirk Colbry, adapted by Matthew Mills for the summer course
 # logo: Cover.jpg
 copyright: '2021'
 
@@ -14,16 +14,16 @@ execute:
   stderr_output : remove
   
 repository:
-  url: https://github.com/colbrydi/MatrixAlgebra
+  url: https://github.com/matthewrmills/mth314s
   path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
   branch      : main 
 html:
-  use_issues_button: false
+  use_issues_button: true
   use_repository_button: true
   #use_edit_page_button: true
   
 launch_buttons:
-  notebook_interface: "classic"  # or "jupyterlab"
+  notebook_interface: "jupyterlab" # or "classic"
 #   colab_url: "https://colab.research.google.com"
 #   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
   #Add to docker file RUN pip install jupytext nbgitpuller

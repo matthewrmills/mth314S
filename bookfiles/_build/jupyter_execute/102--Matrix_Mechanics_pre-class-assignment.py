@@ -15,6 +15,13 @@
 # 
 
 # ---
+# ### Readings for this topic (Recommended in bold)
+#  * [Heffron Chapter 3.IV pg 224-240](http://joshua.smcvt.edu/linearalgebra/book.pdf)
+#  * [Beezer Chapter M pg 162-206 &  EM 340-345](http://linear.ups.edu/download/fcla-3.50-tablet.pdf)
+#  * [**_Boyd Section 6.2,-3, 10.1  pg 113-118, 177-183_**](http://vmls-book.stanford.edu/vmls.pdf)
+# 
+# 
+# ---
 # ### Goals for today's pre-class assignment 
 # (Typically the assignments will be shorter than this one.)
 # 
@@ -314,23 +321,6 @@ YouTubeVideo("qgSa7n_zQ3A",width=640,height=320, cc_load_policy=True)
 from IPython.display import YouTubeVideo
 YouTubeVideo("zSDfRY8-3QE",width=640,height=320, cc_load_policy=True)
 
-
-# ### Readings for this topic (Recommended in bold)
-#  * [Heffron Chapter 3.IV pg 224-240](http://joshua.smcvt.edu/linearalgebra/book.pdf)
-#  * [Beezer Chapter M pg 162-206 &  EM 340-345](http://linear.ups.edu/download/fcla-3.50-tablet.pdf)
-#  * [**_Boyd Section 6.2,-3, 10.1  pg 113-118, 177-183_**](http://vmls-book.stanford.edu/vmls.pdf)
-# 
-
-# 
-# 
-# 
-
-# 
-# 
-# 
-# 
-# 
-# 
 
 # 
 # ---
