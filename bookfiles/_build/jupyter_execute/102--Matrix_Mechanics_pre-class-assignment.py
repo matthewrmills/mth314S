@@ -395,6 +395,8 @@ np.dot([1,7,9,11], [7,1,2])
 # Please fill out the form that appears when you run the code below.  **You must completely fill this out in order to receive credit for the assignment!** If you cannont load the form below please try logging in to [spartan365.msu.edu](http://spartan365.msu.edu/) and try running it again, or simply use the direct link provided below. 
 # 
 # [Direct Link to Microsoft Form](https://forms.office.com/r/n0PEF9xt59)
+# 
+# **There is no assignment specific question for this notebook.**
 
 # In[ ]:
 

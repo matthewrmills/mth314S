@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>101 - Welcome and Introduction to Vectors &#8212; Matrix Algebra with Computational Applications</title>
+    <title>101 - In-class Assignment: Welcome and Introduction to Vectors &#8212; Matrix Algebra with Computational Applications</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -22,8 +21,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,11 +36,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -49,8 +51,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics" href="102--Matrix_Mechanics_pre-class-assignment.html" />
@@ -84,7 +84,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   101 - Welcome and Introduction to Vectors
+   101 - In-class Assignment: Welcome and Introduction to Vectors
   </a>
  </li>
 </ul>
@@ -97,6 +97,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
    102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
   </a>
  </li>
 </ul>
@@ -140,7 +145,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/101-Welcome_and_Vectors.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/101-Welcome_and_Vectors_in-class-assignment.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -160,7 +165,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F101-Welcome_and_Vectors.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F101-Welcome_and_Vectors_in-class-assignment.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -181,7 +186,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/101-Welcome_and_Vectors.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/101-Welcome_and_Vectors_in-class-assignment.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -300,8 +305,8 @@
               <div>
                 
   <p>In order to successfully complete this assignment you need to participate both individually and in groups during class.   If you attend class in-person then have one of the instructors check your notebook and sign you out before leaving class. If you are attending asynchronously, turn in your assignment using D2L no later than <strong><em>11:59pm on the day of class</em></strong>. See links at the end of this document for access to the class timeline for your section.</p>
-<div class="section" id="welcome-and-introduction-to-vectors">
-<h1>101 - Welcome and Introduction to Vectors<a class="headerlink" href="#welcome-and-introduction-to-vectors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="in-class-assignment-welcome-and-introduction-to-vectors">
+<h1>101 - In-class Assignment: Welcome and Introduction to Vectors<a class="headerlink" href="#in-class-assignment-welcome-and-introduction-to-vectors" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p><a class="reference external" href="#books">Textbooks &amp; Syllabus</a></p></li>
 <li><p><a class="reference external" href="#jupyter">Making sure Jupyter works</a></p></li>
@@ -574,7 +579,7 @@ here \)</span>v_1, v_2, \dots, v_n$ are single numbers.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The matrix M has </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> rows and </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> columns.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The matrix M has </span><span class="si">{m}</span><span class="s1"> rows and </span><span class="si">{n}</span><span class="s1"> columns.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

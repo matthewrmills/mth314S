@@ -5,7 +5,7 @@
 
 # In order to successfully complete this assignment you need to participate both individually and in groups during class.   If you attend class in-person then have one of the instructors check your notebook and sign you out before leaving class. If you are attending asynchronously, turn in your assignment using D2L no later than **_11:59pm on the day of class_**. See links at the end of this document for access to the class timeline for your section.
 
-# # 101 - Welcome and Introduction to Vectors
+# # 101 - In-class Assignment: Welcome and Introduction to Vectors
 # 
 # 1. [Textbooks & Syllabus](#books)
 # 1. [Making sure Jupyter works](#jupyter)
@@ -599,5 +599,6 @@ YouTubeVideo("fNk_zzaMoSs",width=640,height=360, cc_load_policy=True)
 # 
 # 102--Matrix_Mechanics_pre-class-assignment.ipynb
 # 102-Matrix_Mechanics_in-class-assignment.ipynb
+# 103--Linear_Equations_pre-class-assignment.ipynb
 # ```
 # 
