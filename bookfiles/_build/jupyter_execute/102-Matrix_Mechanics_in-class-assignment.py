@@ -21,7 +21,7 @@
 #     1. [Elementary Matrices](#Elementary-Matrices)
 #     1. [Inverse Matrix](#Inverse)
 # 1. [Application: Color Transformations](#applications)
-# 
+# 1. [Numpy mulitiplication syntax](#numpy-multiplication)
 # 
 # 
 
@@ -813,7 +813,7 @@ sepia_mat = sepia * im_mat
 plt.imshow(matrix2image(sepia_mat,h,w))
 
 
-# &#9989;  **<font color=red>Do This:</font>** (5pts) Apply the following grayscale transformation below to the image matrix ``im_mat``.
+# &#9989;  **<font color=red>Do This:</font>** Apply the following grayscale transformation below to the image matrix ``im_mat``.
 
 # In[ ]:
 
@@ -831,7 +831,7 @@ grayscale = np.matrix(np.ones([3,3]))/3
 plt.imshow(matrix2image(new_image_matrix,h,w))
 
 
-# &#9989;  **<font color=red>QUESTION 4:</font>** (5pts) Create a $3 \times 3$ elementary matrix ```E``` that swaps the red and blue values in a color vector.
+# &#9989;  **<font color=red>QUESTION:</font>** Create a $3 \times 3$ elementary matrix ```E``` that swaps the red and blue values in a color vector.
 # That is we want ``E`` to be a matrix such that $Ex = x'$ where $x = [R,G,B]^T$ and $x' = [B,G,R]^T$. 
 
 # In[ ]:
@@ -844,6 +844,53 @@ plt.imshow(matrix2image(new_image_matrix,h,w))
 
 
 plt.imshow(matrix2image(A*im_mat,h,w))
+
+
+# ---
+# <a name='numpy-multiplication'></a>
+# ## 6. Numpy @ vs *. 
+# 
+# We have mostly been working with ``numpy.matrix`` to describe our matrices. It is also possible (and sometimes more convenient) to use ``numpy.array`` to describe our matrices. When doing matrix addition and scalar multiplication there is no difference in which type of object you use. However, when it comes to matrix multiplication there is a difference in python when using the ``*`` operator. 
+# 
+# Consider the matrices $$A = \begin{bmatrix}1 & 1 \\ 1 & 1\end{bmatrix}, \quad B = \begin{bmatrix}4 & -2 \\ 1 & 3\end{bmatrix}$$
+
+# In[ ]:
+
+
+import numpy as np
+A_list = [[1,1],[1,1]]
+A_arr = np.array(A_list)
+A_mat = np.matrix(A_list)
+
+B_list = [[4,-2],[1,3]]
+B_arr = np.array(A_list)
+B_mat = np.matrix(A_list)
+
+
+# &#9989;  **<font color=red>Do This:</font>** Verify that ``A_arr + B_arr`` gives the same answer as ``A_mat + B_mat``.
+
+# In[ ]:
+
+
+
+
+
+# &#9989;  **<font color=red>Do This:</font>** Verify that ``A_arr * B_arr`` gives a different answer than ``A_mat * B_mat``.
+
+# In[ ]:
+
+
+
+
+
+# When we use the ``*`` operator to  multiply two numpy arrays, the machine will do point-wise multiplication and not matrix multiplication. If you want to do matrix multiliplication with numpy arrays you need to use the ``@`` operator. You can also use ``@`` to multiply numpy matrices if you don't want to worry about the type of your object. 
+# 
+# &#9989;  **<font color=red>Do This:</font>** Verify that ``A_arr @ B_arr`` gives the same answer as ``A_mat * B_mat``.
+
+# In[ ]:
+
+
+
 
 
 # 

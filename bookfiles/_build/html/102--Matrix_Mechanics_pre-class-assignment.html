@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics &#8212; Matrix Algebra with Computational Applications</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -21,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -36,14 +37,11 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="102 - Matrices and Matrix Multiplication" href="102-Matrix_Mechanics_in-class-assignment.html" />
@@ -103,6 +103,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
    103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
   </a>
  </li>
 </ul>
@@ -480,7 +485,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff489458950&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11a01fc10&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_29_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_29_1.png" />
@@ -494,7 +499,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff48b944310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11a12d650&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_30_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_30_1.png" />
@@ -508,7 +513,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff48c26fb10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11a1e1790&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_31_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_31_1.png" />
@@ -523,7 +528,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff48c548850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11a4d2210&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_32_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_32_1.png" />
@@ -541,7 +546,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff48b642110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11bf43f10&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_33_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_33_1.png" />
@@ -557,7 +562,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff48c52be10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11cece990&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_34_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_34_1.png" />
@@ -573,7 +578,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff48f229990&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x119f2cf50&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_35_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_35_1.png" />
@@ -591,7 +596,7 @@ b=[[ 30]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff4888ab590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x118a46210&gt;
 </pre></div>
 </div>
 <img alt="_images/102--Matrix_Mechanics_pre-class-assignment_37_1.png" src="_images/102--Matrix_Mechanics_pre-class-assignment_37_1.png" />

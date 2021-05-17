@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>102 - Matrices and Matrix Multiplication &#8212; Matrix Algebra with Computational Applications</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -21,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -36,14 +37,11 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="103 Pre-Class Assignment: Linear Equations" href="103--Linear_Equations_pre-class-assignment.html" />
@@ -103,6 +103,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
    103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
   </a>
  </li>
 </ul>
@@ -280,6 +285,11 @@
    Application: Changing Color Vectors
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-vs">
+   6. Numpy @ vs *.
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -309,6 +319,7 @@
 </ol>
 </li>
 <li><p><a class="reference external" href="#applications">Application: Color Transformations</a></p></li>
+<li><p><a class="reference external" href="#numpy-multiplication">Numpy mulitiplication syntax</a></p></li>
 </ol>
 <hr class="docutils" />
 <p><a name='Indexing'></a></p>
@@ -1133,7 +1144,7 @@ The idea is that if we have a matrix <span class="math notranslate nohighlight">
 </div>
 </div>
 </div>
-<p>✅  <strong><font color=red>Do This:</font></strong> (5pts) Apply the following grayscale transformation below to the image matrix <code class="docutils literal notranslate"><span class="pre">im_mat</span></code>.</p>
+<p>✅  <strong><font color=red>Do This:</font></strong> Apply the following grayscale transformation below to the image matrix <code class="docutils literal notranslate"><span class="pre">im_mat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Edit this cell for your work. </span>
@@ -1152,7 +1163,7 @@ The idea is that if we have a matrix <span class="math notranslate nohighlight">
 </div>
 </div>
 </div>
-<p>✅  <strong><font color=red>QUESTION 4:</font></strong> (5pts) Create a <span class="math notranslate nohighlight">\(3 \times 3\)</span> elementary matrix <code class="docutils literal notranslate"><span class="pre">E</span></code> that swaps the red and blue values in a color vector.
+<p>✅  <strong><font color=red>QUESTION:</font></strong> Create a <span class="math notranslate nohighlight">\(3 \times 3\)</span> elementary matrix <code class="docutils literal notranslate"><span class="pre">E</span></code> that swaps the red and blue values in a color vector.
 That is we want <code class="docutils literal notranslate"><span class="pre">E</span></code> to be a matrix such that <span class="math notranslate nohighlight">\(Ex = x'\)</span> where <span class="math notranslate nohighlight">\(x = [R,G,B]^T\)</span> and <span class="math notranslate nohighlight">\(x' = [B,G,R]^T\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1168,6 +1179,31 @@ That is we want <code class="docutils literal notranslate"><span class="pre">E</
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<p><a name='numpy-multiplication'></a></p>
+</div>
+<div class="section" id="numpy-vs">
+<h2>6. Numpy &#64; vs *.<a class="headerlink" href="#numpy-vs" title="Permalink to this headline">¶</a></h2>
+<p>We have mostly been working with <code class="docutils literal notranslate"><span class="pre">numpy.matrix</span></code> to describe our matrices. It is also possible (and sometimes more convenient) to use <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> to describe our matrices. When doing matrix addition and scalar multiplication there is no difference in which type of object you use. However, when it comes to matrix multiplication there is a difference in python when using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator.</p>
+<p>Consider the matrices $<span class="math notranslate nohighlight">\(A = \begin{bmatrix}1 &amp; 1 \\ 1 &amp; 1\end{bmatrix}, \quad B = \begin{bmatrix}4 &amp; -2 \\ 1 &amp; 3\end{bmatrix}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">A_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A_list</span><span class="p">)</span>
+<span class="n">A_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">A_list</span><span class="p">)</span>
+
+<span class="n">B_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">B_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A_list</span><span class="p">)</span>
+<span class="n">B_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">A_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do This:</font></strong> Verify that <code class="docutils literal notranslate"><span class="pre">A_arr</span> <span class="pre">+</span> <span class="pre">B_arr</span></code> gives the same answer as <code class="docutils literal notranslate"><span class="pre">A_mat</span> <span class="pre">+</span> <span class="pre">B_mat</span></code>.</p>
+<p>✅  <strong><font color=red>Do This:</font></strong> Verify that <code class="docutils literal notranslate"><span class="pre">A_arr</span> <span class="pre">*</span> <span class="pre">B_arr</span></code> gives a different answer than <code class="docutils literal notranslate"><span class="pre">A_mat</span> <span class="pre">*</span> <span class="pre">B_mat</span></code>.</p>
+<p>When we use the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator to  multiply two numpy arrays, the machine will do point-wise multiplication and not matrix multiplication. If you want to do matrix multiliplication with numpy arrays you need to use the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator. You can also use <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> to multiply numpy matrices if you don’t want to worry about the type of your object.</p>
+<p>✅  <strong><font color=red>Do This:</font></strong> Verify that <code class="docutils literal notranslate"><span class="pre">A_arr</span> <span class="pre">&#64;</span> <span class="pre">B_arr</span></code> gives the same answer as <code class="docutils literal notranslate"><span class="pre">A_mat</span> <span class="pre">*</span> <span class="pre">B_mat</span></code>.</p>
 </div>
 </div>
 
