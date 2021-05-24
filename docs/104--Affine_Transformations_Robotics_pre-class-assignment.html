@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>104 Pre-Class Assignment: Transformations &amp; Robotics &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="104 In-Class Assignment: Transformations &amp; Robotics" href="104-Affine_Transformations_Robotics_in-class-assignment.html" />
+    <link rel="prev" title="103 In-Class Assignment: Solving Linear Systems of equations" href="103-Linear_Equations_in-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-Affine_Transformations_Robotics_in-class-assignment.html">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/104--Affine_Transformations_Robotics_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F104--Affine_Transformations_Robotics_pre-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/104--Affine_Transformations_Robotics_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   1. Review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine-transforms">
+   2. Affine Transforms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-scaling-matrix">
+     Example Scaling Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-translation-matrix">
+     Example Translation Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-reflection-matrix">
+     Example Reflection Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-rotation-matrix">
+     Example Rotation Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-shear-matrix">
+     Example Shear Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#robotics-and-reference-frames">
+   Robotics and Reference Frames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-forward-kinematics">
+     3. 2D Forward Kinematics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-axis-robot">
+     Single axis Robot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-axis-robot">
+     Multi axis robot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   4. Assignment wrap up
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-we-re-done">
+     Congratulations, we’re done!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-transformations-robotics">
+<h1>104 Pre-Class Assignment: Transformations &amp; Robotics<a class="headerlink" href="#pre-class-assignment-transformations-robotics" title="Permalink to this headline">¶</a></h1>
+<img src="https://people.gnome.org/~mathieu/libart/art-affines.png">
+<p>Image from: <a class="reference external" href="https://people.gnome.org/~mathieu/libart/libart-affine-transformation-matrices.html">https://people.gnome.org/~mathieu/libart/libart-affine-transformation-matrices.html</a></p>
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 3.IV pg 241-243</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Subsection EM pg 340-345</a></p></li>
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf">Boyd A little on page 7</a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Review">Review</a></p></li>
+<li><p><a class="reference external" href="#Affine_Transforms">Affine Transforms Examples</a></p></li>
+<li><p><a class="reference external" href="#2D_Forward_Kinematics">2D Forward Kinematics</a></p></li>
+<li><p><a class="reference external" href="#T3">Assignment Wrap-up</a></p></li>
+</ol>
+<p>Reference: <a class="reference external" href="https://studywolf.wordpress.com/2013/08/21/robot-control-forward-transformation-matrices/">https://studywolf.wordpress.com/2013/08/21/robot-control-forward-transformation-matrices/</a></p>
+<hr class="docutils" />
+<p><a name="Review"></a></p>
+</div>
+<div class="section" id="review">
+<h2>1. Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Compute <span class="math notranslate nohighlight">\(2u+3v\)</span> for vectors <span class="math notranslate nohighlight">\(u = (1,2, 6)\)</span> and <span class="math notranslate nohighlight">\(v = (4, -1, 3)\)</span>.</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Matrix <span class="math notranslate nohighlight">\(A\)</span> is of size (<span class="math notranslate nohighlight">\(m_1 \times n_1\)</span>) and matrix <span class="math notranslate nohighlight">\(B\)</span> is of size (<span class="math notranslate nohighlight">\(m_2 \times n_2\)</span>).  What must be true about the dimensions in order to multiply <span class="math notranslate nohighlight">\(A \times B\)</span>?</p>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong>   Is an invertible matrix is always square? Why or why not?</p>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong>  Is a square matrix always invertible? Why or why not?</p>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> Describe the Reduced Row Echelon form of a square, invertible matrix.</p>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> Is the following matrix in the Reduced Row Echelon form?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    1 &amp; 2 &amp; 0 &amp; 3 &amp; 1 &amp; 4 \\ 
+    0 &amp; 0 &amp; 1 &amp; 3 &amp; 1 &amp; 7 \\ 
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 6 \\ 
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  
+\end{matrix}
+\right]
+\end{split}\]</div>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> If the matrix shown above is not in Reduced Row Echelon form. Name a rule that is violated?</p>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> What is the size of the matrix described in the previous QUESTION?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(4 \times 6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6 \times 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \times 6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \times 3\)</span></p></li>
+</ul>
+<p>Put your answer here</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong>  Describe the elementary row operation that is implemented by the following matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    0 &amp; 1 &amp; 0 \\ 
+    1 &amp; 0 &amp; 0 \\ 
+    0 &amp; 0 &amp; 1 
+\end{matrix}
+\right]
+\end{split}\]</div>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name="Affine_Transforms"></a></p>
+</div>
+<div class="section" id="affine-transforms">
+<h2>2. Affine Transforms<a class="headerlink" href="#affine-transforms" title="Permalink to this headline">¶</a></h2>
+<p>Previously in class we talked about how matrix multiplication can change the color-vector of a pixel in a digital image. In this section we will show some examples of how matrix multiplication can be used to produce basic geometric transformations of vectors representing points in the <span class="math notranslate nohighlight">\(xy\)</span>-plane.</p>
+<p>The following code is designed to demonstrate the properties of some different transformation matrices. Pay attention to the format of the matrices in relation to the geometric change they produce.</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Review the following code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Some python packages we will be using</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span> <span class="c1">#Lets us make 3D plots</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Trick to make matrixes look nice in jupyter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some points</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span>  <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> 
+     <span class="mf">10.0</span><span class="p">,</span>  <span class="mf">8.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span>  <span class="mf">7.0</span><span class="p">,</span>  <span class="mf">6.0</span><span class="p">,</span>  <span class="mf">4.0</span><span class="p">,</span>  <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span>  <span class="mf">6.0</span><span class="p">,</span>
+     <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">con</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">1.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">con</span><span class="p">])</span>
+
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Plot Points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Start Location&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_24_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_24_0.png" />
+</div>
+</div>
+<div class="section" id="example-scaling-matrix">
+<h3>Example Scaling Matrix<a class="headerlink" href="#example-scaling-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Scaling Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1">#The amount that coordinates are scaled.</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">S</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;After Scaling&#39;</span><span class="p">)</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_26_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_26_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_26_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_26_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-translation-matrix">
+<h3>Example Translation Matrix<a class="headerlink" href="#example-translation-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Translation Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#The amount shifted in the x-direction</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#The amount shifted in the y-direction</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">dx</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;After Translation&#39;</span><span class="p">)</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_28_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_28_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_28_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_28_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-reflection-matrix">
+<h3>Example Reflection Matrix<a class="headerlink" href="#example-reflection-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Reflection Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> <span class="c1">## Makes all y-values opposite so it reflects over the x-axis.</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">Re</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">Re</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_30_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_30_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_30_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_30_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-rotation-matrix">
+<h3>Example Rotation Matrix<a class="headerlink" href="#example-rotation-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Rotation Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">degrees</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">degrees</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1">##Make sure to always convert from degrees to radians. </span>
+
+<span class="c1"># Rotates the points 30 degrees counterclockwise.</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+
+<span class="c1">#Apply matrix</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_32_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_32_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_32_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-shear-matrix">
+<h3>Example Shear Matrix<a class="headerlink" href="#example-shear-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Shear Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">shx</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">shy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="n">SH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="n">shx</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">shy</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">SH</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">SH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_34_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_34_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_34_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_34_1.png" />
+</div>
+</div>
+<p>✅ <strong><font color=red>Question:</font></strong>  Why are we using <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrices to change points in 2D-space?</p>
+<p><strong>Hint.</strong> Go back and look at the third column of the transformation matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="robotics-and-reference-frames">
+<h2>Robotics and Reference Frames<a class="headerlink" href="#robotics-and-reference-frames" title="Permalink to this headline">¶</a></h2>
+<img alt="Image of a 6-axis FANUC robot used in industry" src="http://www.fanuc.com/product/image/m2000ia.jpg" width="15%">
+<p>Image from: <a class="reference external" href="http://www.fanuc.com/">www.fanuc.com</a></p>
+<p>In the robotics sections we are essentially using compositions of affine transformations to move the “origin” of a coordinate system to describe the position of the tip of the robot arm in relation to the base of the macine.</p>
+<hr class="docutils" />
+<p><a name="2D_Forward_Kinematics"></a></p>
+<div class="section" id="d-forward-kinematics">
+<h3>3. 2D Forward Kinematics<a class="headerlink" href="#d-forward-kinematics" title="Permalink to this headline">¶</a></h3>
+<img src="https://lh5.googleusercontent.com/S70gMT_jN3x0hSoCAapLydJNeYZYmcetjf09XiF0YsO2QbBZHiIq9VpY4Mc6ocuBphgJeUxDC5JZ10UkpQDhe2XW6NJQPDzVp3ool_fiHXHU-MRMChMcY93vZXoE=w263" width="25%">
+<p>This robot can move in the <span class="math notranslate nohighlight">\(x-y\)</span> plane.  We can represent the configuration of the robot in its “<em>Joint Space</em>” by knowing the two joint angles or <span class="math notranslate nohighlight">\([a_1,a_2]\)</span>.  However what we would like is to represent the location of the end of the robot (often called the “end effector” or “hand”) in “world” coordinates (i.e. <span class="math notranslate nohighlight">\(x-y\)</span> coordinate system).</p>
+<p>Today, we will use Linear Algebra and simple transformation matrices to try and calculate how to go from “joint” coordinates to “world” coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aCohcLYrYcY&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/aCohcLYrYcY?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="single-axis-robot">
+<h3>Single axis Robot<a class="headerlink" href="#single-axis-robot" title="Permalink to this headline">¶</a></h3>
+<p>The following code draws a simple single axis (single joint) robot with its joint centered at the origin and its initial angle of zero with an robot arm length of 4 “units” long.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1">#plot end effector</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># plot origin</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#plot blue line for arm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_42_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_42_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_42_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_42_1.png" />
+</div>
+</div>
+<p>A 2D rotation matrix around the origin is defined as the following:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x_{end} \\
+    y_{end} 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    \cos(a) &amp; -\sin(a) \\
+    \sin(a) &amp; \cos(qa 
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_{start} \\
+    y_{start} 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p>The following rotation matrix will rotate the point <span class="math notranslate nohighlight">\(45^o\)</span> around the origin:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)]])</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">p</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1">#plot end effector</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># plot origin</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">x1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">y1</span><span class="p">])</span> <span class="c1">#plot blue line for arm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_44_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_44_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_44_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_44_1.png" />
+</div>
+</div>
+<p>The following code uses the Jupyter <code class="docutils literal notranslate"><span class="pre">interact</span></code> function and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to make an interactive view of the above.  This lets us change the value of the rotation motor and see how it changes the robot. The input to the function is the axis angle and the output is the <span class="math notranslate nohighlight">\(x-y\)</span> coordinates.</p>
+<p><strong>Note:</strong> it can take some time for the interaction to catch up.  Try moving the slider slowly…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Robot_Simulator</span><span class="p">(</span><span class="n">q1</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">q1</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p0</span>
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span><span class="p">([</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="p">])</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">Robot_Simulator</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "0f65d578644046158f3e5004f5d56c23"}
+</script></div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Inspect the above code.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Which line of the code defines the transformation matrix for the robot joint?</p>
+<p><strong>Hint.</strong> If you click on a cell and press <code class="docutils literal notranslate"><span class="pre">esc</span> <span class="pre">+</span> <span class="pre">L</span></code> you can toggle the line numbers.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Which line of code defines the length of the robot arm?</p>
+<p>(Note you can turn line numbers on and off in jupyterhub.  Use the menu at the top to figure out how.)</p>
+</div>
+<div class="section" id="multi-axis-robot">
+<h3>Multi axis robot<a class="headerlink" href="#multi-axis-robot" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s consider the robot from the video:</p>
+<img src="https://lh3.googleusercontent.com/zCoCDGfsr8z3vqaGEfRYLH_YcDOrb2GRXOjkSEH0ASjxVH2FrRiXpa8c7NaQw0FYjXyX1rQXbpRmxXk7pg5KEnAE8lWb2m3Sorp5Kj7OIduFiMnMuI3oV2Vy0Mn0=w720" width="75%"><p>Notice it has two joints <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> and offset lengths of <span class="math notranslate nohighlight">\(d_1\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span> and <span class="math notranslate nohighlight">\(d_e\)</span>. The joint space for this robot is just its angles <span class="math notranslate nohighlight">\([a_1, a_2]\)</span>. However, what we want is to know the location of end effector point <span class="math notranslate nohighlight">\(p_e\)</span> at the gripper in the “world” reference frame, which the bottom most axies “on the ground”.</p>
+<p>At each joint, we can define a reference frame that rotates and then transforms the origin to the ealier joint. The forward transformation matrices capture the relationship between the reference frames of different links of the robot.</p>
+<p>For example, We can move from the base motor, or <span class="math notranslate nohighlight">\(p_1\)</span>, reference frame to the world, or <span class="math notranslate nohighlight">\(p_w\)</span>, reference frame using the following equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+p_w
+=
+\left[ \begin{matrix}
+    \cos(a_1) &amp; -\sin(a_1) \\
+    \sin(a_1) &amp; \cos(a_1) 
+ \end{matrix}
+\right] 
+p_1
++ 
+\left[ \begin{matrix}
+    0 \\
+    d_1 
+ \end{matrix}
+\right].
+\end{split}\]</div>
+<p>The equation shown  above are a little tricky to work with because the<span class="math notranslate nohighlight">\( \left[ \begin{matrix}
+    0 \\
+    d_1 
+ \end{matrix}
+\right] \)</span> part makes the equation non-linear
+(if you don’t believe me?
+Remember the rules for making a function linear and apply them and see for yourself).
+However, there is an easy trick in Linear Algebra to convert the above to one big linear matrix.
+This trick  requires us to keep an extra 1 (one) for each point but makes the math work out nicely.
+Basically the trick works as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x_w \\
+    y_w \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    cos(a_1) &amp; -sin(a_1) &amp; 0 \\
+    sin(a_1) &amp; cos(a_1) &amp; d_1 \\
+    0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_1 \\
+    y_1 \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Let’s call the transformation matrix for Joint 1, <span class="math notranslate nohighlight">\(J_1\)</span>, and we can rewrite the equations as follows:</p>
+<div class="math notranslate nohighlight">
+\[p_1 = J_1p_2\]</div>
+<p>✅ <strong><font color=red>DO THIS</font></strong> On your own, write out the above matrix multiplication and convince yourself that it is the same as the one above.</p>
+<p>Now, we can move from the <span class="math notranslate nohighlight">\(p_2\)</span> reference frame to the <span class="math notranslate nohighlight">\(p_1\)</span>  reference frame basically the same equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x_1 \\
+    y_1 \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    cos(a_2) &amp; -sin(a_2) &amp; d_2 \\
+    sin(a_2) &amp; cos(a_2) &amp; 0 \\
+    0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_2 \\
+    y_2 \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p>For the last step we can do a simple linear transpose from the end effector <span class="math notranslate nohighlight">\(p_e\)</span> reference frame to the <span class="math notranslate nohighlight">\(p_2\)</span> reference frame:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x_2 \\
+    y_2 \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    1 &amp; 0 &amp; d_2 \\
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_e \\
+    y_e \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p>If we call each transformation matrix <span class="math notranslate nohighlight">\(J_1, J_2, J_e\)</span> then hopefully you can see that we can string these transformation matrices together such that we get a single transform from the end effector all the way back to the world coordinates as follows:</p>
+<div class="math notranslate nohighlight">
+\[p_w = J_1J_2J_ep_e\]</div>
+<p>Let’s see what this looks like in Python.  I am going to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. The plotting gets a little awkward but hopefully it makes sense.</p>
+<p>First, lets initialize the variables to some discreet numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1">#Initial state</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#Lenths of the offsets</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">de</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, I am going to define a set of points in the end effector coordinate system.  These points are picked to form a sort of “C” shaped designed to look sort of like an end effector.  I will plot them to help show you what I mean:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Points needed to define a square</span>
+<span class="n">pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pe</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_59_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_59_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_59_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_59_1.png" />
+</div>
+</div>
+<p>The next step is to apply the <span class="math notranslate nohighlight">\(J_e\)</span> transformation matrix to the gripper points which will put them in the <span class="math notranslate nohighlight">\(p_2\)</span> coordinate system.  Once the points are transposed the code concatenates the origin (0,0) onto the list of points so we can part of the robot arm in the plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Je</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">de</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">Je</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_61_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_61_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_61_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_61_1.png" />
+</div>
+</div>
+<p>We do this again.  Apply the <span class="math notranslate nohighlight">\(J_2\)</span> transformation matrix to put the points into the <span class="math notranslate nohighlight">\(p_1\)</span> coordinate system,  concatenate the origin and plot the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">d2</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_63_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_63_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_63_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_63_1.png" />
+</div>
+</div>
+<p>We do it yet again.   Apply the <span class="math notranslate nohighlight">\(J_1\)</span> transformation matrix which will put the points in the <span class="math notranslate nohighlight">\(p_w\)</span> coordinate system,  concatenate the origin and plot the results. The result is a skeletal frame representing our robot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">d1</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_65_0.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_65_0.png" />
+<img alt="_images/104--Affine_Transformations_Robotics_pre-class-assignment_65_1.png" src="_images/104--Affine_Transformations_Robotics_pre-class-assignment_65_1.png" />
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Modify the rotation variables <code class="docutils literal notranslate"><span class="pre">a1</span></code> and <code class="docutils literal notranslate"><span class="pre">a2</span></code> in the above code and see if the new robot configuration looks right. <strong><em>HINT</em></strong> make sure your angles are in radians.</p>
+<p>The following is the same code as above but put into an interactive function to make the code easier to play with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+
+<span class="k">def</span> <span class="nf">Robot_Simulator</span><span class="p">(</span><span class="n">q1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">q2</span><span class="o">=-</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">q1</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">a2</span> <span class="o">=</span> <span class="n">q2</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="n">d1</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="mi">3</span>
+    
+    <span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+    <span class="n">pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">Je</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">de</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">Je</span><span class="o">*</span><span class="n">pe</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>    
+
+    <span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">d2</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">d1</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="n">target</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">Robot_Simulator</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">),</span> <span class="n">q2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "11a1e462fa374353ac847b68479e9cf5"}
+</script></div>
+</div>
+<p><strong>Note.</strong> If the <code class="docutils literal notranslate"><span class="pre">interact</span></code> plot is really choppy on your machine this is because the function is coninuously updating as you move the sliders. Consider replacing the <code class="docutils literal notranslate"><span class="pre">interact</span></code> function with <code class="docutils literal notranslate"><span class="pre">interact_manual</span></code> to eliminate the continuous updates. You will have to change the import code in line 1.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Move the above robot so that the end effector is “gripping” the target (yellow/orangeish star).
+Notice that there is more than one point in the “joint space” that gives the same answer.
+This is the reverse Kinematic problem (which is harder).
+We know the point we want but we need to find the joints that put the robot at that point.</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> The code in the following cell is cut and pasted from above. Modify the code to add a third Joint to the robot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+
+<span class="k">def</span> <span class="nf">Robot_Simulator</span><span class="p">(</span><span class="n">q1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">q2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">q1</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">a2</span> <span class="o">=</span> <span class="n">q2</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="c1">#####Start your code here #####    </span>
+
+    <span class="c1">#####End of your code here#####     </span>
+
+    <span class="n">d1</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1">#####Start your code here #####    </span>
+
+    <span class="c1">#####End of your code here#####     </span>
+    
+    
+    <span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+    <span class="n">pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">Je</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">de</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">Je</span><span class="o">*</span><span class="n">pe</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>    
+
+    <span class="c1">#####Start your code here #####    </span>
+
+    <span class="c1">#####End of your code here#####     </span>
+    
+    <span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="n">d2</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">d1</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+    
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span> <span class="p">(</span> <span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="n">target</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">Robot_Simulator</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">),</span> <span class="n">q2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "283372ef78634d6fa935fe9242ecfac0"}
+</script></div>
+</div>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> What three angles did you find that place the robot on the star.</p>
+<p>Enter answer here.</p>
+<hr class="docutils" />
+<p><a name="T3"></a></p>
+</div>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>4. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong> If you cannont load the form below please try logging in to <a class="reference external" href="http://spartan365.msu.edu/">spartan365.msu.edu</a> and try running it again, or simply use the direct link provided below.</p>
+<p><a class="reference external" href="https://forms.office.com/r/n0PEF9xt59">Direct Link to Microsoft Form</a></p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> What three angles did you find that place the robot on the star.</p>
+<p>Enter answer here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe width=&quot;640px&quot; height= &quot;480px&quot; src= &quot;https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofSS1ePbivlBPgYEBiz_zsf1UOTk3QU5VVEo1SVpKWlpaWlU4WTlDUlQwWi4u&amp;embed=true&quot; frameborder= &quot;0&quot; marginwidth= &quot;0&quot; marginheight= &quot;0&quot; style= &quot;border: none; max-width:100%; max-height:100vh&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen&gt; &lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofSS1ePbivlBPgYEBiz_zsf1UOTk3QU5VVEo1SVpKWlpaWlU4WTlDUlQwWi4u&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="congratulations-we-re-done">
+<h3>Congratulations, we’re done!<a class="headerlink" href="#congratulations-we-re-done" title="Permalink to this headline">¶</a></h3>
+<p>###EndPreClass###</p>
+<p>Written by Dr. Dirk Colbry, and Dr. Matthew Mills, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"7df71bc7774d4213a20286c3746dc9ce": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0f65d578644046158f3e5004f5d56c23": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_4e93cbde9ccb44d08cdc2bc5e21c1352", "IPY_MODEL_7ab8441bc2284900a245e9dc28eecafe"], "layout": "IPY_MODEL_7df71bc7774d4213a20286c3746dc9ce"}}, "228863a4314e41ac935198fba4d3ddf2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cbc470515cde417498821c83140b9191": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "4e93cbde9ccb44d08cdc2bc5e21c1352": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "q1", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_228863a4314e41ac935198fba4d3ddf2", "max": 180, "min": -180, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 2, "style": "IPY_MODEL_cbc470515cde417498821c83140b9191", "value": 0}}, "4b66fc895166485495e728535b5c3d93": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7ab8441bc2284900a245e9dc28eecafe": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_4b66fc895166485495e728535b5c3d93", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAP0AAAD4CAYAAAAn+OBPAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjQuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8rg+JYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAMZElEQVR4nO3dfYxdBZmA8efttNBAUUJaPpaWLZvdGIpKDGOzsYkYWgxiKxoJUURjTLYqa4TISij9AzeriR+JClGRLgRdxTR+VVZUkK7QBBF0WsCVVgzyITQaR8GAgkKHd/8402WA6Uzbe+49F97nl0zSe8+957xp5plz7rnn5kZmIqmOOV0PIGmwjF4qxuilYoxeKsbopWLmdrHRhQsX5tKlS7vYtFTC1q1b/5CZi6Zb1kn0S5cuZWxsrItNSyVExAN7WubhvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVRMa9FHxEhE3B4R17a1Tknta3NPfy6wo8X1SeqDVqKPiMXAG4Er2lifpP5pa0//WeAC4Ok9PSAi1kbEWESMjY+Pt7RZSfuq5+gjYjXw+8zcOtPjMnNDZo5m5uiiRdN+g66kAWhjT78CeFNE3A9sBE6OiK+2sF5JfdBz9Jm5LjMXZ+ZS4G3AjzLz7J4nk9QXvk8vFTO3zZVl5k3ATW2uU1K73NNLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UjNFLxRi9VIzRS8UYvVSM0UvFGL1UTM/RR8SSiLgxIrZHxF0RcW4bg0nqjza+n34XcH5mbouIQ4CtEXFDZm5vYd2SWtbznj4zf5uZ2yb//RiwAzi61/VK6o9WX9NHxFLgVcBtba5XUntaiz4iFgDfAs7LzEenWb42IsYiYmx8fLytzUraR61EHxHzaIK/OjO/Pd1jMnNDZo5m5uiiRYva2Kyk/dDG2fsArgR2ZOanex9JUj+1sadfAbwTODki7pj8Oa2F9Urqg57fssvMm4FoYRZJA+AVeVIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8V0/PXWulF7N574brr4I9/hJERWL4cVq6E8FvMZvXQQ/C978HDD8OBB8Lxx8OqVc3/Y8eMXs93443wiU/Aj38Mc+fCn/4Ec+bA00/DAQfAmWfCZZfBggVdTzp8br0VPvlJuOkmWLMGjjoK/vY3+NrX4P3vh/e9Dz74QZg/v7sZM3PgPyeeeGJqSF1ySebChZkHH5y5YEEmPP9nZCRz3rzMLVu6nna4fOlLmUcckXnZZZmPPfb85T/9aebq1ZkrVmQ+8khfRwHGcg/9+Zpez/jKV+DjH4e//KX5+fOfp3/cxAQ89RScfDLcdttgZxxW3/0urFsHW7Y0e/PpjoJe/Wq45ho44QR485vhyScHPiZ4Ik+7/fWv8KEPweOPwxNP7N1zJibglFOaw9fKJiaaQ/aNG+FlL5v5sXPmwKWXNs/55jcHM99zR2hjJRFxakTcHRH3RMSFbaxTA/aNb8CRRza/jPvi8cc7++UdGtddB4sWwWtfu3ePHxlp/sB+4Qv9nWsPeo4+IkaAzwNvAJYBb4+IZb2uVwN21VXw6KN7PqTfk4kJ+OhH+zPTC8VVV8F737tvz1mzBu67D+6+uz8zzaCNs/fLgXsy816AiNgInA5sb2HdGpT77oMHH5x20b+v/Be2H/4PMz//8luAom/lHfY6eGQJXP6TaRcv+7uXcPGa459959y5cNxx8MADs78kaFkbh/dHA1N/Wx6avO9ZImJtRIxFxNj4+HgLm1WrJiaaX8T9EbHvLwtebPbn2oWRkeZt0AEb2Pv0mbkB2AAwOjqag9qu9tJRRzUXlEzj4v/5z5mfGwH/9dRQXHjSidP+A1YdDmeesvfPyYRf/7o5jzJgbezpdwJLptxePHmfXkje8Q445JD9e+7xx9cNHuCss+DKK/ftOVu2NFfqnXBCf2aaQRvR/wz4p4g4NiIOAN4G/HcL69UgvetdsGsXHHzwvj1v/ny4sPgbNmecAbffDjt27P1zLr0Uzjmnk0uae44+M3cBHwCuB3YAX8/Mu3pdrwbs0EPhwx9u3q/fFwcd1PzSVzZ/PnzkI/DWtzafU5jNJZfA9u3NH9oOtPKaPjO/D3y/jXWpQxdfDL/4BWzatHcnmA46qHmP+sAD+z/bsDvnHNi5E17zGrj8cjjppOfvxcfHm880bNoEmzfv/8upHvmBGz0jorlI56KLmg+NwPTxz5vXXGZ6/fXNpaVqfOxjzdtwuw/bzz77mQ/c3HwzXHstvOUtcMstcMQRnY0ZzbX5gzU6OppjY2MD3672wRNPNIesV1zRfDx0zpzmjPNxxzV/FM44wz38nmQ2J+q+853m/27+fFi2rDmcP+ywgYwQEVszc3TaZUavWU1MNFfqLVhQ+yz9C8hM0Xt4r9mNjMBLX9r1FGqJn7KTijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qZieoo+IT0XELyPi5xGxKSIObWkuSX3S657+BuDlmflK4FfAut5HktRPPUWfmT/MzF2TN28FFvc+kqR+avM1/XuAH7S4Pkl9MOtXVUfEZuDIaRatz8xrJh+zHtgFXD3DetYCawGOOeaY/RpWUu9mjT4zV820PCLeDawGVmZmzrCeDcAGgNHR0T0+TlJ/zRr9TCLiVOAC4KTMfLydkST1U6+v6T8HHALcEBF3RMQXW5hJUh/1tKfPzH9saxBJg+EVeVIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxRi8VY/RSMUYvFWP0UjFGLxVj9FIxrUQfEedHREbEwjbWJ6l/eo4+IpYArwd+0/s4kvqtjT39Z4ALgGxhXZL6rKfoI+J0YGdm3rkXj10bEWMRMTY+Pt7LZiX1YO5sD4iIzcCR0yxaD1xEc2g/q8zcAGwAGB0d9ahA6sis0Wfmqunuj4hXAMcCd0YEwGJgW0Qsz8zftTqlpNbMGv2eZOb/Aofvvh0R9wOjmfmHFuaS1Ce+Ty8Vs997+ufKzKVtrUtS/7inl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qRijl4oxeqkYo5eKMXqpGKOXijF6qZjIHPx3SUbEOPDAwDcMC4Fh/dqtYZ4Nhnu+YZ4Nupnv7zNz0XQLOom+KxExlpmjXc8xnWGeDYZ7vmGeDYZvPg/vpWKMXiqmWvQbuh5gBsM8Gwz3fMM8GwzZfKVe00uqt6eXyjN6qZiS0UfE+RGREbGw61mmiohPRcQvI+LnEbEpIg4dgplOjYi7I+KeiLiw63mmioglEXFjRGyPiLsi4tyuZ3quiBiJiNsj4tquZ9mtXPQRsQR4PfCbrmeZxg3AyzPzlcCvgHVdDhMRI8DngTcAy4C3R8SyLmd6jl3A+Zm5DPhn4F+HbD6Ac4EdXQ8xVbnogc8AFwBDdwYzM3+Ymbsmb94KLO5yHmA5cE9m3puZTwIbgdM7nun/ZeZvM3Pb5L8fo4nr6G6nekZELAbeCFzR9SxTlYo+Ik4HdmbmnV3PshfeA/yg4xmOBh6ccvshhiiqqSJiKfAq4LaOR5nqszQ7mKc7nuNZ5nY9QNsiYjNw5DSL1gMX0Rzad2am+TLzmsnHrKc5dL16kLO9UEXEAuBbwHmZ+WjX8wBExGrg95m5NSJe1/E4z/Kiiz4zV013f0S8AjgWuDMioDl03hYRyzPzd13Pt1tEvBtYDazM7i+i2AksmXJ78eR9QyMi5tEEf3VmfrvreaZYAbwpIk4D5gMviYivZubZHc9V9+KciLgfGM3Mofl0VkScCnwaOCkzx4dgnrk0JxRX0sT+M+CszLyr08EmRfPX+8vAw5l5Xsfj7NHknv7fMnN1x6MAxV7TvwB8DjgEuCEi7oiIL3Y5zORJxQ8A19OcJPv6sAQ/aQXwTuDkyf+vOyb3rJpB2T29VJV7eqkYo5eKMXqpGKOXijF6qRijl4oxeqmY/wPGK3anTkXROgAAAABJRU5ErkJggg==\n"}}, {"output_type": "display_data", "metadata": {}, "data": {"text/plain": "[4.0, 0.0]", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAEwAAAAUCAYAAAAnStuxAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACjElEQVRYCe2Y31EbMRDGDyYFMKEDpwNnqCCUgN0BcQdh8mS/MdABdOAxHZBUQOIOoIMYd5D8Pvvk0fj+SCtpwA/ZGXl1kj7t6tOuTr6j6XT6raqqCWVNuZzNZkv0f6kZgI+vVMXPifQRhN1QeaTjB7pT6B/SOUELHBTGyYDm1kY8Uz5R5rQX3ZBcO7F4xm14OmYRsbJg4CB2MON+UrQRV5R76teUBXXLHECCkmvHhI8ijEUqbT8GXa8HMF5hPEA/OAx1RZqeRXwRybWTgg8SxqSKCC32xbDKEWPbUvyJ9iFzKl1LSK4dMz5IGKvSuaWUssh5x2ARL+nq3/bG/3bNE2vHjO8lrA7Zu3j/q8qLnlUPTlGbJbl2UvGdhNUTnqAtqSgS3FnndtknxpF46jcm1nPtJOE7CWMR3yHrNnExgpU6p0Iu5Nox4VsJg6gLvJyHPO3od1HU1u129U9bp7Et104SvkFYnYpn6KVxAZvh4FwqOnL8adxuWtPcn6OInVQ/PzQ82b7BdIfavy8NGbuu25/QfemqK4UjxzfhSGy7cvjjYuu5dsz4BmEQocvl7sLpPKf9lfovtO4uIRHZ+iuxL59pWDKHi8L9futzrh0zvpGSPR43IoaF6y36l/Lbx/Gse9sKrbNwI9SFH1Muty3bKwjtDbzrD+lcO7F4349GhPmdqjOpIkXpKDnnWbui/4j3FKWozqO2M0nRpDftAC05o3zheXc2engRr5ISeRY7SX5uvK9/or9W+KDSdYhSJCpV2xZU2lzSfPhm/lqRZCgSpLfywZLlr8Fyhvm4YnWI0tlW4l5WzKe+id6dMJwbQ1rfFaXP/zfv0xnmPlHL+Ajnd4fym3tzgAbhw+dn8g+UyjNgsqnqLQAAAABJRU5ErkJggg==\n", "text/latex": "$\\displaystyle \\left[ 4.0, \\  0.0\\right]$"}}]}}, "6e38cee535e6422592e2982986bc8ee7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "11a1e462fa374353ac847b68479e9cf5": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_72e902870f7f410a958c2cf0b1d6684c", "IPY_MODEL_cfb139b3badf43979a3c25720644093e", "IPY_MODEL_3122b0d3269942f59ce4d41ecd2878e6"], "layout": "IPY_MODEL_6e38cee535e6422592e2982986bc8ee7"}}, "cff2c3fe6adb44b3ac4c549d0b788c58": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ed546c1f03254358a17ef726d171d9b4": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "72e902870f7f410a958c2cf0b1d6684c": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "q1", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_cff2c3fe6adb44b3ac4c549d0b788c58", "max": 180, "min": -180, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_ed546c1f03254358a17ef726d171d9b4", "value": 0}}, "3c9f6c6aaac24b4dafe9df331e330ede": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e52cb5499ce342f4b974dff98e5f64b6": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "cfb139b3badf43979a3c25720644093e": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "q2", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_3c9f6c6aaac24b4dafe9df331e330ede", "max": 180, "min": -180, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_e52cb5499ce342f4b974dff98e5f64b6", "value": 0}}, "b8504420b18547faa5e74b9a437ee6cd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3122b0d3269942f59ce4d41ecd2878e6": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_b8504420b18547faa5e74b9a437ee6cd", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "[[-3  2  1]]\n"}, {"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}, "716eab46201848299716b29377482d02": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "283372ef78634d6fa935fe9242ecfac0": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_5b7d0ff9b90340cfbff68beadc9faaac", "IPY_MODEL_40c0ee6e964a4ce6960433ad2ac2e942", "IPY_MODEL_fec7a665e3394fc2b93f7dfbbca92843"], "layout": "IPY_MODEL_716eab46201848299716b29377482d02"}}, "a8edccc61bda4727a3a6b2dd6a99a1f4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "993c2439861d48f2be586c9978b15434": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "5b7d0ff9b90340cfbff68beadc9faaac": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "q1", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_a8edccc61bda4727a3a6b2dd6a99a1f4", "max": 180, "min": -180, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_993c2439861d48f2be586c9978b15434", "value": 0}}, "e6cc18a122314143ab29a75677299713": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dcc6a4ac108f4bdd95bbd989af866697": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "40c0ee6e964a4ce6960433ad2ac2e942": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "q2", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e6cc18a122314143ab29a75677299713", "max": 180, "min": -180, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_dcc6a4ac108f4bdd95bbd989af866697", "value": 0}}, "0f163e5f7c7c4be4abfaa34453a6c8c5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fec7a665e3394fc2b93f7dfbbca92843": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_0f163e5f7c7c4be4abfaa34453a6c8c5", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "[[-3  2  1]]\n"}, {"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="103-Linear_Equations_in-class-assignment.html" title="previous page">103 In-Class Assignment: Solving Linear Systems of equations</a>
+    <a class='right-next' id="next-link" href="104-Affine_Transformations_Robotics_in-class-assignment.html" title="next page">104 In-Class Assignment: Transformations &amp; Robotics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

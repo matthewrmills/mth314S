@@ -1,0 +1,1320 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>104 In-Class Assignment: Transformations &amp; Robotics &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="104 Pre-Class Assignment: Transformations &amp; Robotics" href="104--Affine_Transformations_Robotics_pre-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104--Affine_Transformations_Robotics_pre-class-assignment.html">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/104-Affine_Transformations_Robotics_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F104-Affine_Transformations_Robotics_in-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/104-Affine_Transformations_Robotics_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agenda-for-today-s-class">
+   Agenda for today’s class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine-transforms">
+   3. Affine Transforms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-scaling-matrix">
+     Example Scaling Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-translation-matrix">
+     Example Translation Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-reflection-matrix">
+     Example Reflection Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-rotation-matrix">
+     Example Rotation Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-shear-matrix">
+     Example Shear Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combine-transforms">
+     Combine Transforms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-example">
+     Interactive Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fractals">
+   3. Fractals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-kinematics-of-robotics">
+   The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#robot-1-pick-and-place">
+   2. Robot 1: Pick and Place
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#x-axis-rotation">
+   X-Axis rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#y-axis-rotation">
+   Y-Axis rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#z-axis-rotation">
+   Z-Axis rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#robot-2-odd-clock">
+   6. Robot 2: Odd Clock
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="in-class-assignment-transformations-robotics">
+<h1>104 In-Class Assignment: Transformations &amp; Robotics<a class="headerlink" href="#in-class-assignment-transformations-robotics" title="Permalink to this headline">¶</a></h1>
+<img src="https://people.gnome.org/~mathieu/libart/art-affines.png">
+<p>Image from: <a class="reference external" href="https://people.gnome.org/~mathieu/libart/libart-affine-transformation-matrices.html">https://people.gnome.org/~mathieu/libart/libart-affine-transformation-matrices.html</a></p>
+<div class="section" id="agenda-for-today-s-class">
+<h2>Agenda for today’s class<a class="headerlink" href="#agenda-for-today-s-class" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Review of Pre-Class Assignment</p></li>
+<li><p>Homework 1 Review</p></li>
+<li><p><a class="reference external" href="#Affine_Transforms">Affine Transform Review</a></p></li>
+<li><p><a class="reference external" href="#Fractals">Fractals</a></p></li>
+<li><p><a class="reference external" href="#Pick_and_Place">Robot 1: Pick and Place</a></p></li>
+<li><p><a class="reference external" href="#Odd_Clock">Robot 2: Odd Clock</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Affine_Transforms"></a></p>
+</div>
+<div class="section" id="affine-transforms">
+<h2>3. Affine Transforms<a class="headerlink" href="#affine-transforms" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we are going to explore different types of transformation matrices.
+The following code is designed to demonstrate the properties of some different transformation matrices.</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Review the following code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Some python packages we will be using</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span> <span class="c1">#Lets us make 3D plots</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Trick to make matrixes look nice in jupyter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some points</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span>  <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> 
+     <span class="mf">10.0</span><span class="p">,</span>  <span class="mf">8.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span>  <span class="mf">7.0</span><span class="p">,</span>  <span class="mf">6.0</span><span class="p">,</span>  <span class="mf">4.0</span><span class="p">,</span>  <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span>  <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span>  <span class="mf">6.0</span><span class="p">,</span>
+     <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">con</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">1.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">con</span><span class="p">])</span>
+
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Plot Points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Start Location&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_5_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_5_0.png" />
+</div>
+</div>
+<div class="section" id="example-scaling-matrix">
+<h3>Example Scaling Matrix<a class="headerlink" href="#example-scaling-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Scaling Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1">#The amount that coordinates are scaled.</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">S</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;After Scaling&#39;</span><span class="p">)</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_7_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_7_0.png" />
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_7_1.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-translation-matrix">
+<h3>Example Translation Matrix<a class="headerlink" href="#example-translation-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Translation Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#The amount shifted in the x-direction</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#The amount shifted in the y-direction</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">dx</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;After Translation&#39;</span><span class="p">)</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_9_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_9_0.png" />
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_9_1.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_9_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-reflection-matrix">
+<h3>Example Reflection Matrix<a class="headerlink" href="#example-reflection-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Reflection Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> <span class="c1">## Makes all y-values opposite so it reflects over the x-axis.</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">Re</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">Re</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_11_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_11_0.png" />
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_11_1.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_11_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-rotation-matrix">
+<h3>Example Rotation Matrix<a class="headerlink" href="#example-rotation-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Rotation Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">degrees</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">degrees</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1">##Make sure to always convert from degrees to radians. </span>
+
+<span class="c1"># Rotates the points 30 degrees counterclockwise.</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> 
+
+<span class="c1">#Apply matrix</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="c1">#Uncomment the next line if you want to see the original.</span>
+<span class="c1"># plt.plot(p[0,:].tolist()[0],p[1,:].tolist()[0], color=&#39;blue&#39;,alpha=0.3);</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_13_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_13_0.png" />
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_13_1.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_13_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-shear-matrix">
+<h3>Example Shear Matrix<a class="headerlink" href="#example-shear-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Shear Matrix</span>
+
+<span class="c1">#Define Matrix</span>
+<span class="n">shx</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">shy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="n">SH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="n">shx</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">shy</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Apply matrix</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mp</span> <span class="o">=</span> <span class="n">SH</span><span class="o">*</span><span class="n">mp</span>
+
+<span class="c1">#Plot points after transform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">SH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_15_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_15_0.png" />
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_15_1.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_15_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="combine-transforms">
+<h3>Combine Transforms<a class="headerlink" href="#combine-transforms" title="Permalink to this headline">¶</a></h3>
+<p>We have five transforms <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(Re\)</span>, and <span class="math notranslate nohighlight">\(SH\)</span></p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Construct a (<span class="math notranslate nohighlight">\(3 \times 3\)</span>) transformation Matrix (called <span class="math notranslate nohighlight">\(M\)</span>) which combines these five transforms into a single matrix. You can choose different orders for these five matrix, then compare your result with other students.</p>
+<p>Put your answer here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#put your code for your answer here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interactive-example">
+<h3>Interactive Example<a class="headerlink" href="#interactive-example" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span><span class="n">interact_manual</span>
+
+<span class="k">def</span> <span class="nf">affine_image</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="o">-</span><span class="n">angle</span><span class="o">/</span><span class="mi">180</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">SH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="n">shx</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">shy</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">dx</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+    
+    <span class="c1">#Full Transform</span>
+    <span class="n">FT</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">SH</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">S</span><span class="p">;</span>
+    <span class="c1">#Apply Transforms</span>
+    <span class="n">p2</span> <span class="o">=</span>  <span class="n">FT</span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    
+    <span class="c1">#Plot Output</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">FT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact_manual</span><span class="p">(</span><span class="n">affine_image</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">),</span> <span class="n">scale_manual</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">dy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">shx</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">shy</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">));</span> <span class="c1">##TODO: Modify this line of code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "bc50d51166de49068ff02557a0c97345"}
+</script></div>
+</div>
+<p>The following command can also be used but it may be slow on some peoples computers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#interact(affine_image, angle=(-180,180), scale=(0.01,2), dx=(-5,15,0.5), dy=(-15,15,0.5), shx = (-1,1,0.1), shy = (-1,1,0.1)); ##TODO: Modify this line of code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Using the above interactive enviornment to see if you can figure out the transformation matrix to make the following image:</p>
+<img src="https://lh6.googleusercontent.com/_0-jr5Z0DQzqVM3TD3Xa3QWC43PBT6ru5M-B-_7dfbib2SSvkNkxtioBFaU__jTvEJMMG9SAVg=w380"><p>✅ <strong><font color=red>Questions:</font></strong> What where the input values?</p>
+<p>Put your answer here:</p>
+<p>r =</p>
+<p>scale =</p>
+<p>dx =</p>
+<p>dy =</p>
+<p>shx =</p>
+<p>shy =</p>
+<hr class="docutils" />
+<p><a name="Fractals"></a></p>
+</div>
+</div>
+<div class="section" id="fractals">
+<h2>3. Fractals<a class="headerlink" href="#fractals" title="Permalink to this headline">¶</a></h2>
+<p>In this section we are going to explore using transformations to generate fractals.  Consider the following set of linear equations.  Each one takes a 2D point as input, applies a <span class="math notranslate nohighlight">\(2 \times 2\)</span> transform, and then also translates by a <span class="math notranslate nohighlight">\(2 \times 1\)</span> translation matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+T_1:\left[ \begin{matrix}
+    x_1 \\
+    y_1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    0.86 &amp; 0.03  \\
+    -0.03 &amp; 0.86 
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_0 \\
+    y_0 
+ \end{matrix}
+\right] +
+\left[\begin{matrix}
+0\\
+1.5
+\end{matrix}
+\right]
+: probability =  0.83 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+T_2: \left[ \begin{matrix}
+    x_1 \\
+    y_1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    0.2 &amp; -0.25  \\
+    0.21 &amp; 0.23 
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_0 \\
+    y_0 
+ \end{matrix}
+\right] +
+\left[\begin{matrix}
+0\\
+1.5
+\end{matrix}
+\right]
+: probability =  0.08 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+T_3 : \left[ \begin{matrix}
+    x_1 \\
+    y_1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    0.15 &amp; 0.27  \\
+    0.25 &amp; 0.26 
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_0 \\
+    y_0 
+ \end{matrix}
+\right] +
+\left[\begin{matrix}
+0\\
+0.45
+\end{matrix}
+\right]
+: probability =  0.08 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+T_4: \left[ \begin{matrix}
+    x_1 \\
+    y_1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    0 &amp; 0  \\
+    0 &amp; 0.17 
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_0 \\
+    y_0 
+ \end{matrix}
+\right] +
+\left[\begin{matrix}
+0\\
+0
+\end{matrix}
+\right] : probability =  0.01 \end{split}\]</div>
+<p>We want to write a program that use the above transformations to “randomly” generate an image.  We start with a point at the origin (0,0) and then randomly pick one of the above transformation based on their probability, update the point position and then randomly pick another point.  Each matrix adds a bit of rotation and translation with <span class="math notranslate nohighlight">\(T_4\)</span> as a kind of restart.</p>
+<p>To try to make our program a little easier, lets rewrite the above equations to make a system of  “equivelent” equations of the form <span class="math notranslate nohighlight">\(Ax=b\)</span> with only one matrix.   We do this by adding an additional variable variable <span class="math notranslate nohighlight">\(z=1\)</span>.  For example, verify that the following equation is the same as equation for <span class="math notranslate nohighlight">\(T1\)</span> above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+T_1: \left[ \begin{matrix}
+    x_1 \\
+    y_1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    0.86 &amp; 0.03 &amp; 0 \\
+    -0.03 &amp; 0.86 &amp; 1.5
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x_0 \\
+    y_0 \\
+    1
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Please NOTE that we do not change the value for <span class="math notranslate nohighlight">\(z\)</span>, and it is always be <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Verify the <span class="math notranslate nohighlight">\(Ax=b\)</span> format will generate the same answer as the <span class="math notranslate nohighlight">\(T1\)</span> equation above.</p>
+<p>The following is some pseudocode that we will be using to generate the Fractals:</p>
+<ol class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(x = 0\)</span>, <span class="math notranslate nohighlight">\(y = 0\)</span>, <span class="math notranslate nohighlight">\(z=1\)</span></p></li>
+<li><p>Use a random generator to select one of the affine transformations <span class="math notranslate nohighlight">\(T_i\)</span> according to the given probabilities.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\((x',y') = T_i(x,y,z)\)</span>.</p></li>
+<li><p>Plot <span class="math notranslate nohighlight">\((x', y')\)</span></p></li>
+<li><p>Let <span class="math notranslate nohighlight">\((x,y) = (x',y')\)</span></p></li>
+<li><p>Repeat Steps 2, 3, 4, and 5 one thousand times.</p></li>
+</ol>
+<p>The following python code implements the above pseudocode with only the <span class="math notranslate nohighlight">\(T1\)</span> matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Trick to make matrixes look nice in jupyter</span>
+
+<span class="n">T1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">0.86</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.86</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]])</span>
+<span class="c1">#####Start your code here #####</span>
+<span class="n">T2</span> <span class="o">=</span> <span class="n">T1</span> 
+<span class="n">T3</span> <span class="o">=</span> <span class="n">T1</span>
+<span class="n">T4</span> <span class="o">=</span> <span class="n">T1</span>
+<span class="c1">#####End of your code here#####       </span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.83</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mf">0.01</span><span class="p">]</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;go&#39;</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">ticket</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ticket</span> <span class="o">&lt;</span> <span class="n">prob</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">T1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">ticket</span> <span class="o">&lt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prob</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])):</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">T2</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">ticket</span> <span class="o">&lt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prob</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])):</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">T3</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">T4</span>
+    <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">p</span>    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;go&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_38_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_38_0.png" />
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Modify the above code to add in the <span class="math notranslate nohighlight">\(T2\)</span>, <span class="math notranslate nohighlight">\(T3\)</span> and <span class="math notranslate nohighlight">\(T4\)</span> transforms.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Describe in words for the actions performed by <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(T_2\)</span>, <span class="math notranslate nohighlight">\(T_3\)</span>, and <span class="math notranslate nohighlight">\(T_4\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(T_1\)</span>: Put your answer here</p>
+<p><span class="math notranslate nohighlight">\(T_2\)</span>: Put your answer here</p>
+<p><span class="math notranslate nohighlight">\(T_3\)</span>: Put your answer here</p>
+<p><span class="math notranslate nohighlight">\(T_4\)</span>: Put your answer here</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Using the same ideas to design and build your own fractal.  You are welcome to get inspiration from the internet. Make sure you document where your inspiration comes from.  Try to build something fun, unique and different.  Show what you come up with with your instructors.</p>
+<p>✅ <strong><font color=red>Questions:</font></strong> Did you get the same result with others? You can compare the matrix <span class="math notranslate nohighlight">\(M\)</span> to see the difference. If not, can you explain why it happens?</p>
+</div>
+<div class="section" id="the-kinematics-of-robotics">
+<h2>The Kinematics of Robotics<a class="headerlink" href="#the-kinematics-of-robotics" title="Permalink to this headline">¶</a></h2>
+<img src="https://cdn.pixabay.com/photo/2013/07/13/12/04/android-159109__340.png" alt="Cartoon Robot" width=20%>
+<p>Image from: <a class="reference external" href="https://pixabay.com/images/search/toy%20robot/">https://pixabay.com/images/search/toy robot/</a></p>
+<p>Today, we will calculate the forward kinematics of some 3D robots. This means we would like to come up with a set of transformations such that we can know the <span class="math notranslate nohighlight">\(x,~y,~z\)</span> coordinates of the end effector with respect to the world coordinate system which is at the base of the robot.</p>
+<hr class="docutils" />
+<p><a name="Pick_and_Place"></a></p>
+</div>
+<div class="section" id="robot-1-pick-and-place">
+<h2>2. Robot 1: Pick and Place<a class="headerlink" href="#robot-1-pick-and-place" title="Permalink to this headline">¶</a></h2>
+<p>Consider the robot depicted in the following image.</p>
+<img alt="Picture of a pick-and-place robot (see text)" src="http://cfnewsads.thomasnet.com/images/large/489/489457.jpg" width="50%">
+<p>This style of robot is often called a “pick-and-place” robot.
+It has two motors that rotate around the z-axis to move the end effector in the <span class="math notranslate nohighlight">\(x-y\)</span>-plane; one “linear actuator” which moves up-and-down in the <span class="math notranslate nohighlight">\(z\)</span>-direction; and then finally a third rotating “wrist” joint that turns the “hand” of the robot.
+Let’s model our robot using the following system diagram:</p>
+<img alt="System diagram of pick-and-place robot" src="https://lh4.googleusercontent.com/z5P5JHOmmn3GzXulvHwtqKeLSeUILEHe_9yndHp33gZ1m2mqblR8nmHgNDDzHq3W38jJBdh-Tg=w740" width="35%">
+<p><strong>NOTE:</strong> The origin for this robot is located at the base of the first “tower” and is in-line with the first joint.  The <span class="math notranslate nohighlight">\(x\)</span>-direction goes from the origin to the right and the <span class="math notranslate nohighlight">\(z\)</span>-axis goes from the origin upwards.</p>
+<p>This is a little more tricky than the 2D case where everything was rotating around the axes that projects out of the <span class="math notranslate nohighlight">\(x-y\)</span> plane.<br />
+In 2D we only really worry about one axis of rotation.
+However in 3D we can rotate around the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> axis.
+The following are the 3D transformation matrices that combine rotation and translations:</p>
+</div>
+<div class="section" id="x-axis-rotation">
+<h2>X-Axis rotation<a class="headerlink" href="#x-axis-rotation" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x' \\
+    y' \\
+    z' \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    1 &amp; 0 &amp; 0 &amp; dx \\
+    0 &amp; cos(q) &amp; -sin(q)  &amp; dy \\
+    0 &amp; sin(q) &amp; cos(q)  &amp; dz \\
+    0 &amp; 0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x \\
+    y \\
+    z \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+</div>
+<div class="section" id="y-axis-rotation">
+<h2>Y-Axis rotation<a class="headerlink" href="#y-axis-rotation" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x' \\
+    y' \\
+    z' \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    cos(q) &amp; 0 &amp; sin(q) &amp; dx \\
+    0 &amp; 1 &amp; 0 &amp; dy \\
+    -sin(q) &amp; 0 &amp; cos(q) &amp; dz \\
+    0 &amp; 0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x \\
+    y \\
+    z \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+</div>
+<div class="section" id="z-axis-rotation">
+<h2>Z-Axis rotation<a class="headerlink" href="#z-axis-rotation" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[ \begin{matrix}
+    x' \\
+    y' \\
+    z' \\
+    1 
+ \end{matrix}
+\right] 
+=
+\left[ \begin{matrix}
+    cos(q) &amp; -sin(q) &amp; 0 &amp; dx \\
+    sin(q) &amp; cos(q) &amp; 0 &amp; dy \\
+    0 &amp; 0 &amp; 1 &amp; dz \\
+    0 &amp; 0 &amp; 0 &amp; 1
+ \end{matrix}
+\right] 
+\left[ \begin{matrix}
+    x \\
+    y \\
+    z \\
+    1 
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<p><strong><font color=red>Question:</font></strong> Construct a joint transformation matrix called <span class="math notranslate nohighlight">\(J_1\)</span>, which represents a coordinate system that is located at the top of the first “tower” (robot’s sholder) and moves by rotating around the <span class="math notranslate nohighlight">\(z\)</span>-axis by <span class="math notranslate nohighlight">\(\theta_1\)</span> degrees. Represent your matrix using <code class="docutils literal notranslate"><span class="pre">sympy</span></code> and the provided symbols:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here are some libraries you may need to use</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use the following symbols</span>
+
+<span class="n">q1</span><span class="p">,</span><span class="n">q2</span><span class="p">,</span><span class="n">d4</span><span class="p">,</span><span class="n">q4</span><span class="p">,</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\Theta_1, \Theta_2, d_4, \Theta_4, V_1, V_2,A_1,A_2&#39;</span><span class="p">,</span> <span class="n">negative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#put your answer here</span>
+<span class="n">q1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/104-Affine_Transformations_Robotics_in-class-assignment_53_0.png" src="_images/104-Affine_Transformations_Robotics_in-class-assignment_53_0.png" />
+</div>
+</div>
+<p><strong><font color=red>Question:</font></strong> Construct a joint transformation matrix called <span class="math notranslate nohighlight">\(J_2\)</span>, which represents a coordinate system that is located at the “elbow” joint between the two rotating arms and rotates with the second arm around the <span class="math notranslate nohighlight">\(z\)</span>-axis by <span class="math notranslate nohighlight">\(\theta_2\)</span> degrees. Represent your matrix using <code class="docutils literal notranslate"><span class="pre">sympy</span></code> and the symbols provided in question a:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>Question:</font></strong> Construct a joint transformation matrix called <span class="math notranslate nohighlight">\(J_3\)</span>, which represents a coordinate translation from the “elbow” joint all the way to the horizontal end of the robot arm above the wrist joint.  Note: there is no rotation in this transformation.  Represent your matrix using <code class="docutils literal notranslate"><span class="pre">sympy</span></code> and the symbols provided in question a:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>Question:</font></strong> Construct a joint transformation matrix called <span class="math notranslate nohighlight">\(J_4\)</span>, which represents a coordinate system that is located at the tip of the robot’s “hand” and rotates around the <span class="math notranslate nohighlight">\(z\)</span>-axis by <span class="math notranslate nohighlight">\(\theta_4\)</span>. This one is a little different, the configuration is such that the hand touches the table when <span class="math notranslate nohighlight">\(d_4=0\)</span> so the translation component for the matrix in the z axis is <span class="math notranslate nohighlight">\(d_4-V_1-V_2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot combined transformed points</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">M</span><span class="o">*</span><span class="n">mp</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Start Location&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">2</span><span class="n">bada8ec7696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Plot combined transformed points</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">M</span><span class="o">*</span><span class="n">mp</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;M&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>Question:</font></strong> Rewrite the joint transformation matrices from questions a - d as numpy matrices with discrete (instead of symbolic) values.  Plug in your transformations in the code below and use this to simulate the robot:</p>
+<p><strong>Hint.</strong> If you copy an paste from above you need to convert all of the <code class="docutils literal notranslate"><span class="pre">sympy</span></code> syntax into <code class="docutils literal notranslate"><span class="pre">numpy</span></code> syntax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="k">def</span> <span class="nf">Robot_Simulator</span><span class="p">(</span><span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">theta2</span><span class="o">=-</span><span class="mi">0</span><span class="p">,</span><span class="n">d4</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">theta4</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+    <span class="c1">#Convert from degrees to radians</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">theta1</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">theta2</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">q4</span> <span class="o">=</span> <span class="n">theta4</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="c1">#Define robot geomitry</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="mi">4</span> 
+    <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="mi">2</span> 
+    <span class="n">a2</span> <span class="o">=</span> <span class="mi">2</span> 
+
+    <span class="c1">#Define your transfomraiton matrices here. </span>
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+    <span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+    <span class="n">J3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+    <span class="n">J4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+    
+    <span class="c1">#Make the rigid end effector</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">V1</span><span class="o">+</span><span class="n">V2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="c1">#Propogate and add joint points though the simulation</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J4</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J3</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+        
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x-axis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y-axis&#39;</span><span class="p">)</span>    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z-axis&#39;</span><span class="p">)</span> 
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="n">target</span> <span class="o">=</span> <span class="n">interact_manual</span><span class="p">(</span><span class="n">Robot_Simulator</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">),</span> <span class="n">theta2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">),</span> <span class="n">d4</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">theta4</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">));</span> <span class="c1">##TODO: Modify this line of code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>Question:</font></strong> Can we change the order of the transformation matrices? Why? You can try and see what happens.</p>
+<p>Put your answer to the above question here.</p>
+<hr class="docutils" />
+<p><a name="Odd_Clock"></a></p>
+</div>
+<div class="section" id="robot-2-odd-clock">
+<h2>6. Robot 2: Odd Clock<a class="headerlink" href="#robot-2-odd-clock" title="Permalink to this headline">¶</a></h2>
+<p>Consider the clock depicted in the following image.</p>
+<img alt="Picture of an 'odd clock' with the minute hand attached to the end of the hour hand" src="https://hackaday.com/wp-content/uploads/2015/05/hihclock.jpg" width=80%>
+<p>from: <a class="reference external" href="https://hackaday.com/2015/05/26/odd-clock-moves-minute-hand-to-hour-hand/">Hackaday</a></p>
+<p>Instead of a standard clock–which has independent hour and minute hands–this clock connects the minute hand at the end of the hour hand. Here is a video showing the sped-up clock motion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;bowLiSlm_gA&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">mute</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following code is an animated traditional clock which uses the function as a trick to animate things in jupyter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">show_animation</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">();</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>       <span class="c1"># Sleep for half a second to slow down the animation</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>             <span class="c1"># Prevent overlapping and layered plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets see a standard analog clock run at high speed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Analog clock plotter with time input as seconds</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">analog_clock</span><span class="p">(</span><span class="n">tm</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+    <span class="c1">#Convert from time to radians</span>
+    <span class="n">a_minutes</span> <span class="o">=</span> <span class="o">-</span><span class="n">tm</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">a_hours</span> <span class="o">=</span> <span class="o">-</span><span class="n">tm</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="c1">#Define clock hand sizees</span>
+    <span class="n">d_minutes</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">d_hours</span> <span class="o">=</span> <span class="mi">3</span> 
+    <span class="n">arrow_width</span><span class="o">=</span><span class="mf">0.5</span>
+    <span class="n">arrow_length</span><span class="o">=</span><span class="mi">1</span>
+
+    <span class="c1"># Set up figure</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">();</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">15000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">);</span> <span class="c1">#Background Circle</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+        
+    <span class="c1"># Calculation Minute hand transformation matrix</span>
+    <span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">)],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">)]]</span> <span class="p">)</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">arrow_length</span><span class="o">+</span><span class="n">d_minutes</span><span class="p">],</span> <span class="p">[</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">]]</span> <span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">;</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J2</span><span class="o">*</span><span class="n">pm</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pm</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],(</span><span class="n">pm</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1"># Calculation Hour hand transformation matrix    </span>
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">)],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">)]]</span> <span class="p">)</span>
+    <span class="n">ph</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_hours</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_hours</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_hours</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">arrow_length</span><span class="o">+</span><span class="n">d_hours</span><span class="p">],</span> <span class="p">[</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_hours</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_hours</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span><span class="p">;</span>
+    <span class="n">ph</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J1</span><span class="o">*</span><span class="n">ph</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ph</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],(</span><span class="n">ph</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the clock for about 5 hours at 100 times speed so we can see the hands move</span>
+<span class="k">for</span> <span class="n">tm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">analog_clock</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">show_animation</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the following few questions, consider the transformation matrix <span class="math notranslate nohighlight">\(J_1\)</span> redefined below with an angle of 5 hours out of 12.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a_hours</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">)],</span> 
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">)]]</span> <span class="p">)</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">J1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>Question:</font></strong>  Using code, show that the transpose of <span class="math notranslate nohighlight">\(J_1\)</span> is also the inverse of <span class="math notranslate nohighlight">\(J_1\)</span>, then explain how the code demonstrates the answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your code here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>Explain your answer here.</font></strong></p>
+<p>✅ <strong><font color=red>Question:</font></strong>  Given the trigonometric identity <span class="math notranslate nohighlight">\(cos^2(\theta) + sin^2(\theta) = 1\)</span>, prove by construction–using either Python or <span class="math notranslate nohighlight">\(\LaTeX\)</span>/<code class="docutils literal notranslate"><span class="pre">Markdown</span></code> or <code class="docutils literal notranslate"><span class="pre">sympy</span></code> (if you are feeling adventurous)–that the transpose of the <span class="math notranslate nohighlight">\(J_1\)</span> matrix is also the inverse for ANY angle <code class="docutils literal notranslate"><span class="pre">a_hours</span></code> <span class="math notranslate nohighlight">\(\in [0, 2\pi]\)</span>.</p>
+<p><strong><font color=red>Put your prof here.</font></strong></p>
+<p>Now consider the following code which attempts to connect the hands on the clock together to make the Odd Clock shown in the video above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">show_animation</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">();</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>       <span class="c1"># Sleep for half a second to slow down the animation</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>             <span class="c1"># Prevent overlapping and layered plots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">odd_clock</span><span class="p">(</span><span class="n">tm</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+    <span class="c1">#Convert from time to radians</span>
+    <span class="c1">#a_seconds = -tm/60 * np.pi * 2</span>
+    <span class="n">a_minutes</span> <span class="o">=</span> <span class="o">-</span><span class="n">tm</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">a_hours</span> <span class="o">=</span> <span class="o">-</span><span class="n">tm</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="c1">#Define robot geomitry</span>
+    <span class="c1">#d_seconds = 2.5  </span>
+    <span class="n">d_minutes</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">d_hours</span> <span class="o">=</span> <span class="mf">1.5</span> 
+    <span class="n">arrow_width</span><span class="o">=</span><span class="mf">0.5</span>
+    <span class="n">arrow_length</span><span class="o">=</span><span class="mi">1</span>
+
+    <span class="c1"># Set up figure</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">();</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+    
+    <span class="c1">#Define the arrow at the end of the last hand </span>
+    <span class="c1">#p = np.matrix([[0,d_minutes,1], [0,0,1]]).T</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">arrow_length</span><span class="o">+</span><span class="n">d_minutes</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">arrow_width</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">,</span><span class="mi">1</span> <span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">d_minutes</span><span class="p">,</span><span class="mi">1</span> <span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">;</span>
+    
+    <span class="c1"># Calculation Second hand transformation matrix     </span>
+    <span class="n">J2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_minutes</span><span class="p">),</span> <span class="n">d_hours</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+    
+    <span class="n">J1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a_hours</span><span class="p">),</span> <span class="mi">0</span> <span class="p">],</span> 
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">J1</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the clock for about 5 hours at 100 times speed so we can see the hands move</span>
+<span class="k">for</span> <span class="n">tm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">odd_clock</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">show_animation</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>Question:</font></strong> Using the given point (<span class="math notranslate nohighlight">\(p\)</span>) written in “minutes” coordinates (<strong>on line 26 of the above code</strong>) and the above transformation matrices (<span class="math notranslate nohighlight">\(J_1,J_2\)</span>), write down the equation to transform <span class="math notranslate nohighlight">\(p\)</span> into world coordinates <span class="math notranslate nohighlight">\(p_w\)</span>.</p>
+<p><strong><font color=red>Put the answer to the above question here</font></strong></p>
+<p>✅ <strong><font color=red>Question:</font></strong> Notice the above <code class="docutils literal notranslate"><span class="pre">odd_clock</span></code> function has variables <code class="docutils literal notranslate"><span class="pre">d_seconds</span></code> and <code class="docutils literal notranslate"><span class="pre">a_seconds</span></code> commented out.  Use these variables and modify the above code to add a “seconds” hand on the tip of the minute hand such that the seconds hand moves around the minute hand just like the minute hand moves around the hour hand. If you have trouble, use the following cell to explain your thought process and where you are getting stuck.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="104--Affine_Transformations_Robotics_pre-class-assignment.html" title="previous page">104 Pre-Class Assignment: Transformations &amp; Robotics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
