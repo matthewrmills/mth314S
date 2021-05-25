@@ -603,5 +603,6 @@ YouTubeVideo("fNk_zzaMoSs",width=640,height=360, cc_load_policy=True)
 # 103-Linear_Equations_in-class-assignment.ipynb
 # 104--Affine_Transformations_Robotics_pre-class-assignment.ipynb
 # 104-Affine_Transformations_Robotics_in-class-assignment.ipynb
+# 105--Determinants_Eigenvectors_pre-class-assignment.ipynb
 # ```
 # 

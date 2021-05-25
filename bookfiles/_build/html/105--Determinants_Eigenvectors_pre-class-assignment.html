@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>105 Pre-Class Assignment: Determinants and Eigenvectors &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="104 In-Class Assignment: Transformations &amp; Robotics" href="104-Affine_Transformations_Robotics_in-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104--Affine_Transformations_Robotics_pre-class-assignment.html">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-Affine_Transformations_Robotics_in-class-assignment.html">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   105 Pre-Class Assignment: Determinants and Eigenvectors
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/105--Determinants_Eigenvectors_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F105--Determinants_Eigenvectors_pre-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/105--Determinants_Eigenvectors_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-determinants-recommended-in-bold">
+   Readings for Determinants (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-eigen-stuff-recommended-in-bold">
+   Readings for this Eigen-stuff (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-determinants">
+   1. Introduction to Determinants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-determinants">
+   2. Properties of Determinants
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-operations">
+     Row Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#singular-matrices">
+     Singular Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determinants-and-matrix-operations">
+     Determinants and Matrix Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#triangular-matrices">
+     Triangular matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-properties-of-determinants">
+     Using Properties of determinants:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-interpretation-of-determinants">
+   3. One interpretation of determinants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cramer-s-rule">
+   4. Cramer’s Rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">
+   5. Eigenvectors and Eigenvalues
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition">
+     Definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-eigenproblems-a-2x2-example">
+   6. Solving Eigenproblems - A 2x2 Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   7. Assignment wrap up
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-we-re-done">
+     Congratulations, we’re done!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-determinants-and-eigenvectors">
+<h1>105 Pre-Class Assignment: Determinants and Eigenvectors<a class="headerlink" href="#pre-class-assignment-determinants-and-eigenvectors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-determinants-recommended-in-bold">
+<h2>Readings for Determinants (Recommended in bold)<a class="headerlink" href="#readings-for-determinants-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 4.I-II pg 317-337</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf"><strong><em>Beezer Chapter D pg 340-366</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="readings-for-this-eigen-stuff-recommended-in-bold">
+<h2>Readings for this Eigen-stuff (Recommended in bold)<a class="headerlink" href="#readings-for-this-eigen-stuff-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter  5 II.3 pg 397-407</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter E pg 367-369</a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Introduction_to_Determinants">Introduction to Determinants</a></p></li>
+<li><p><a class="reference external" href="#Properties_of_Determinants">Properties of Determinants</a></p></li>
+<li><p><a class="reference external" href="#One_Interpretation_of_determinants">One interpretation of determinants</a></p></li>
+<li><p><a class="reference external" href="#CramersRule">Cramer’s Rule</a></p></li>
+<li><p><a class="reference external" href="#Eigenvectors_and_Eigenvalues">Eigenvectors and Eigenvalues</a></p></li>
+<li><p><a class="reference external" href="#Solving_Eigenproblems">Solving Eigenproblems - A 2x2 Example</a></p></li>
+<li><p><a class="reference external" href="#Markov_Models">Introduction to Markov Models</a></p></li>
+<li><p><a class="reference external" href="#T3">Assignment wrap-up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Introduction_to_Determinants"></a></p>
+</div>
+<div class="section" id="introduction-to-determinants">
+<h2>1. Introduction to Determinants<a class="headerlink" href="#introduction-to-determinants" title="Permalink to this headline">¶</a></h2>
+<p>For a detailed overview of determinants I would recommend reviewing <strong><em>Chapter D pg 340-366</em></strong> of the Beezer text.</p>
+<p>The determinant is a function that takes a (<span class="math notranslate nohighlight">\(n \times n\)</span>) square matrix as an input and produces a scalar as an output. Determinants have been studied quite extensively and have many interesting properties.  However, determinants are “computationally expensive” as the size of your matrix (<span class="math notranslate nohighlight">\(n\)</span>) gets bigger.  This limitation makes them impractical for many real world problems.</p>
+<p>The determinant of a <span class="math notranslate nohighlight">\( 2 \times 2\)</span> matrix can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+det \left(
+\left[
+\begin{matrix}
+    a_{11} &amp; a_{12}  \\
+    a_{21} &amp; a_{22}
+\end{matrix}
+\right] 
+\right)
+= a_{11}a_{22} - a_{12}a_{21}
+\end{split}\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Calculate the determinant of the following matrix by hand:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    3 &amp; -2  \\
+    1 &amp; 2
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculating the determinant of a larger matrix is a “recursive” problem which involves combining the determinants of smaller and smaller sub-matrices until you have a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix which is then calculated using the above formula.  Here is some Pseudocode to calculate a determinant.  To simplify the example the code assumes there is a matrix function <code class="docutils literal notranslate"><span class="pre">deleterow</span></code> which will remove the <span class="math notranslate nohighlight">\(x\)</span>th row from a matrix  (always the first row in this example) and <code class="docutils literal notranslate"><span class="pre">deletecol</span></code> will remove the <span class="math notranslate nohighlight">\(x\)</span>th column from a matrix. When used together (as shown below) they will take an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix and turn it into a <span class="math notranslate nohighlight">\( (n-1) \times (n-1)\)</span> matrix.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> determinant<span class="o">(</span>A, n<span class="o">)</span>
+   <span class="nv">det</span> <span class="o">=</span> <span class="m">0</span>
+   <span class="k">if</span> <span class="o">(</span><span class="nv">n</span> <span class="o">==</span> <span class="m">1</span><span class="o">)</span>
+      <span class="nv">det</span> <span class="o">=</span> matrix<span class="o">[</span><span class="m">1</span>,1<span class="o">]</span>
+   <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nv">n</span> <span class="o">==</span> <span class="m">2</span><span class="o">)</span>
+      <span class="nv">det</span> <span class="o">=</span> matrix<span class="o">[</span><span class="m">1</span>,1<span class="o">]</span> * matrix<span class="o">[</span><span class="m">2</span>,2<span class="o">]</span> - matrix<span class="o">[</span><span class="m">1</span>,2<span class="o">]</span> * matrix<span class="o">[</span><span class="m">2</span>,1<span class="o">]</span>
+   <span class="k">else</span> 
+      <span class="k">for</span> x from <span class="m">1</span> to n
+          <span class="nv">submatrix</span> <span class="o">=</span> deleterow<span class="o">(</span>matrix, <span class="m">1</span><span class="o">)</span>
+          <span class="nv">submatrix</span> <span class="o">=</span> deletecol<span class="o">(</span>submatrix, x<span class="o">)</span>
+          <span class="nv">det</span> <span class="o">=</span> det + <span class="o">(</span>x+1<span class="o">)</span>**<span class="o">(</span>-1<span class="o">)</span> * matrix<span class="o">[</span><span class="m">1</span>,x<span class="o">]</span> * determinant<span class="o">(</span>submatrix, n-1<span class="o">)</span>
+      next x
+   endif
+   
+   <span class="k">return</span> det
+</pre></div>
+</div>
+<p>Notice that the combination of the determinants of the submatrixes is not a simple sum.  The combination is adding the submatrices corresponding to the odd columns (1,3,5, etc) and subtracting the submatrices corresponding to the even columns (2,4,6, etc.). This may become clearer if we look at a simple <span class="math notranslate nohighlight">\(3 \times 3\)</span> example (Let <span class="math notranslate nohighlight">\(|A|\)</span> be a simplified syntax for writing the determinant of <span class="math notranslate nohighlight">\(A\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \left[
+\begin{matrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+    a_{31} &amp; a_{32} &amp; a_{33} 
+\end{matrix}
+\right] \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+|A|=
+a_{11} \left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    \square  &amp; a_{22} &amp; a_{23} \\
+    \square  &amp; a_{32} &amp; a_{33} 
+\end{matrix}
+\right|
+-
+a_{12}\left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    a_{21} &amp; \square &amp; a_{23} \\
+    a_{31} &amp; \square &amp; a_{33} 
+\end{matrix}
+\right|
++
+a_{13} \left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    a_{21} &amp; a_{22} &amp; \square \\
+    a_{31} &amp; a_{32} &amp; \square
+\end{matrix}
+\right|
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+|A|
+=
+a_{11}\left|
+\begin{matrix}
+    a_{22} &amp; a_{23}  \\
+    a_{32} &amp; a_{33}
+\end{matrix}
+\right|
+-
+a_{12}\left|
+\begin{matrix}
+    a_{21} &amp; a_{23}  \\
+    a_{31} &amp; a_{33}
+\end{matrix}
+\right|
++
+a_{13}
+\left|
+\begin{matrix}
+    a_{21} &amp; a_{22}  \\
+    a_{31} &amp; a_{32}
+\end{matrix}
+\right|
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+|A| = 
+a_{11}(a_{22}a_{33} - a_{23}a_{32})
+-
+a_{12}(a_{21}a_{33} - a_{23}a_{31})
++
+a_{13}(a_{21}a_{32} - a_{22}a_{31})
+\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Calculate the determinant of the following matrix by hand:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 2 &amp; -3  \\
+    5 &amp; 0 &amp; 6  \\
+    7 &amp; 1 &amp; -4
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and use the <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> library to calculate the determinant of the following matrix and store the value in a variable called <code class="docutils literal notranslate"><span class="pre">det</span></code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    2 &amp; 0 &amp; 1 &amp; -5  \\
+    8 &amp; -1 &amp; 2 &amp; 1  \\
+    4 &amp; -3 &amp; -5 &amp; 0 \\
+    1 &amp; 4 &amp; 8 &amp; 2
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">det</span><span class="p">,</span><span class="s1">&#39;49afb719e0cd46f74578ebf335290f81&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">b2a2502e4bdf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">det</span><span class="p">,</span><span class="s1">&#39;49afb719e0cd46f74578ebf335290f81&#39;</span><span class="p">);</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;answercheck&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Properties_of_Determinants"></a></p>
+</div>
+<div class="section" id="properties-of-determinants">
+<h2>2. Properties of Determinants<a class="headerlink" href="#properties-of-determinants" title="Permalink to this headline">¶</a></h2>
+<p>The following are some helpful properties when working with determinants.  These properties are often used in proofs and can sometimes be utilized to make faster calculations.</p>
+<div class="section" id="row-operations">
+<h3>Row Operations<a class="headerlink" href="#row-operations" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix and <span class="math notranslate nohighlight">\(c\)</span> be a nonzero scalar. Let <span class="math notranslate nohighlight">\(|A|\)</span> be a simplified syntax for writing the determinant of <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<ol class="simple">
+<li><p>If a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by multiplying a row (column) by <span class="math notranslate nohighlight">\(c\)</span> then <span class="math notranslate nohighlight">\(|B| = c|A|\)</span>.</p></li>
+<li><p>If a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by interchanging two rows (columns) then <span class="math notranslate nohighlight">\(|B| = -|A|\)</span>.</p></li>
+<li><p>if a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by adding a multiple of one row (column) to another row (column), then <span class="math notranslate nohighlight">\(|B| = |A|\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="singular-matrices">
+<h3>Singular Matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition:</strong> A square matrix <span class="math notranslate nohighlight">\(A\)</span> is said to be <strong>singular</strong> if <span class="math notranslate nohighlight">\(|A| = 0\)</span>. <span class="math notranslate nohighlight">\(A\)</span> is <strong>nonsingular</strong> if <span class="math notranslate nohighlight">\(|A| \neq 0\)</span></p>
+<p>Now, Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix. <span class="math notranslate nohighlight">\(A\)</span> is singular if any of these is true:</p>
+<ol class="simple">
+<li><p>all the elements of a row (column) are zero.</p></li>
+<li><p>two rows (columns) are equal.</p></li>
+<li><p>two rows (columns) are proportional. i.e. one row (column) is the same as another row (column) multiplied by <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+<li><p>one row (column) is a linear combination of the others.</p></li>
+</ol>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> The following matrix is singular because of certain column or row properties. Give the reason:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 5 &amp; 5  \\
+    0 &amp; -2 &amp; -2  \\
+    3 &amp; 1 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> The following matrix is singular because of certain column or row properties. Give the reason:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 0 &amp; 4  \\
+    0 &amp; 1 &amp; 9  \\
+    0 &amp; 0 &amp; 0
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here.</p>
+</div>
+<div class="section" id="determinants-and-matrix-operations">
+<h3>Determinants and Matrix Operations<a class="headerlink" href="#determinants-and-matrix-operations" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(n\times n\)</span> matrices and <span class="math notranslate nohighlight">\(c\)</span> be a nonzero scalar.</p>
+<ol class="simple">
+<li><p>Determinant of a scalar multiple: <span class="math notranslate nohighlight">\(|cA| = c^n|A|\)</span></p></li>
+<li><p>Determinant of a product: <span class="math notranslate nohighlight">\(|AB| = |A||B|\)</span></p></li>
+<li><p>Determinant of a transpose” <span class="math notranslate nohighlight">\(|A^t| = |A|\)</span></p></li>
+<li><p>Determinant of an inverse: <span class="math notranslate nohighlight">\(|A^{-1}| = \frac{1}{|A|}\)</span> (Assuming <span class="math notranslate nohighlight">\(A^{-1}\)</span> exists)</p></li>
+</ol>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  If <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix with <span class="math notranslate nohighlight">\(|A| = 3\)</span>, use the properties of determinants to compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|2A|\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  If <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix with <span class="math notranslate nohighlight">\(|A| = 3\)</span>, use the properties of determinants to compute the following determinant:
+$<span class="math notranslate nohighlight">\(|A^2|\)</span>$</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices and <span class="math notranslate nohighlight">\(|A| = -3, |B|=2\)</span>, compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|AB|\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices and <span class="math notranslate nohighlight">\(|A| = -3, |B|=2\)</span>, compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|2AB^{-1}|\]</div>
+<p>Put your answer here</p>
+</div>
+<div class="section" id="triangular-matrices">
+<h3>Triangular matrices<a class="headerlink" href="#triangular-matrices" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition:</strong> A matrix is said to be <strong>upper triangular</strong> if all nonzero elements lie on or above the main diagonal and all elements below the main diagonal are zero. For example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A = 
+\left[
+\begin{matrix}
+    2 &amp; -1 &amp; 9 &amp; 4  \\
+    0 &amp; 3 &amp; 0 &amp; 6 \\
+    0 &amp; 0 &amp; -5 &amp; 3 \\
+    0 &amp; 0 &amp; 0 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p><strong>Definition:</strong> A matrix is said to be <strong>lower triangular</strong> if its transpose is upper triangular.</p>
+<p>The determinant of an <em>upper triangle matrix</em> <span class="math notranslate nohighlight">\(A\)</span> is the product of the diagonal elements of the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Also, since the Determinant is the same for a matrix and it’s transpose (i.e.  <span class="math notranslate nohighlight">\(|A^\top| = |A|\)</span>, see definition above) the determinant of a <em>lower triangle matrix</em> is also the product of the diagonal elements.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>   What is the determinant of matrix <span class="math notranslate nohighlight">\(A\)</span>?</p>
+<p>Put your answer here</p>
+</div>
+<div class="section" id="using-properties-of-determinants">
+<h3>Using Properties of determinants:<a class="headerlink" href="#using-properties-of-determinants" title="Permalink to this headline">¶</a></h3>
+<p>Here is a great video showing how you can use the properties of determinants:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aKX5_DucNq8&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION (A challenging one):</font></strong>   Using the pattern established in the video can you calculate the determinate of the following matrix?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; a &amp; a^2 &amp; a^3 \\
+    1 &amp; b &amp; b^2 &amp; b^3 \\
+    1 &amp; c &amp; c^2 &amp; c^3 \\
+    1 &amp; d &amp; d^2 &amp; d^3 
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p><strong>Note.</strong> You can also attempt to do this calculation in sympy.</p>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name="One_Interpretation_of_determinants"></a></p>
+</div>
+</div>
+<div class="section" id="one-interpretation-of-determinants">
+<h2>3. One interpretation of determinants<a class="headerlink" href="#one-interpretation-of-determinants" title="Permalink to this headline">¶</a></h2>
+<p>The following is an application of determinants. Watch this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;Ip3X9LOh2dk&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For fun, we will recreate some of the video’s visualizations in Python.
+It was a little tricky to get the aspect ratios correct but here is some code I managed to get it work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.art3d</span> <span class="kn">import</span> <span class="n">Poly3DCollection</span><span class="p">,</span> <span class="n">Line3DCollection</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">npimport</span> <span class="n">sympy</span> <span class="k">as</span> <span class="n">sym</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets define somme points that form a Unit Cube</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here is some code to build cube from https://stackoverflow.com/questions/44881885/python-draw-3d-cube</span>
+
+<span class="k">def</span> <span class="nf">plot3dcube</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">:</span>
+        <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="c1"># plot vertices</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">Z</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Z</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Z</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># list of sides&#39; polygons of figure</span>
+    <span class="n">verts</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span>
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">]],</span>
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">]]]</span>
+
+    <span class="c1">#alpha transparency was&#39;t working found fix here: </span>
+    <span class="c1"># https://stackoverflow.com/questions/23403293/3d-surface-not-transparent-inspite-of-setting-alpha</span>
+    <span class="c1"># plot sides</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_collection3d</span><span class="p">(</span><span class="n">Poly3DCollection</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> 
+     <span class="n">facecolors</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+    
+    <span class="c1">## Weird trick to get the axpect ratio to work.</span>
+    <span class="c1">## From https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to</span>
+    <span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">max_range</span> <span class="o">=</span> <span class="n">mx</span><span class="o">-</span><span class="n">mn</span>
+
+    <span class="c1"># Create cubic bounding box to simulate equal aspect ratio</span>
+    <span class="n">Xb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Yb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">Zb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="c1"># Comment or uncomment following both lines to test the fake bounding box:</span>
+    <span class="k">for</span> <span class="n">xb</span><span class="p">,</span> <span class="n">yb</span><span class="p">,</span> <span class="n">zb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Xb</span><span class="p">,</span> <span class="n">Yb</span><span class="p">,</span> <span class="n">Zb</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xb</span><span class="p">],</span> <span class="p">[</span><span class="n">yb</span><span class="p">],</span> <span class="p">[</span><span class="n">zb</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot3dcube</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color='red'>QUESTION:</font></strong> The following the <span class="math notranslate nohighlight">\(3\times 3\)</span> was shown in the video (around 6’50’’). Apply this matrix to the unit cube and use the <code class="docutils literal notranslate"><span class="pre">plot3dcube</span></code> to show the resulting transformed points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span>  <span class="mf">0.5</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.5</span> <span class="p">,</span><span class="mi">1</span> <span class="p">,</span><span class="mf">1.5</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span>  <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Put the answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color='red'>QUESTION:</font></strong> The determinant represents how the area changes when applying a <span class="math notranslate nohighlight">\(2 \times 2\)</span> transform.  What does the determinant represent for a <span class="math notranslate nohighlight">\(3 \times 3\)</span> transform?</p>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name="CramersRule"></a></p>
+</div>
+<div class="section" id="cramer-s-rule">
+<h2>4. Cramer’s Rule<a class="headerlink" href="#cramer-s-rule" title="Permalink to this headline">¶</a></h2>
+<p>✅ <strong><font color='red'>DO THIS:</font></strong> Watch the following video and come to class ready to discuss Cramer’s Rule. We will implement this method to solve systems of equations tomorrow in class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;BW6897HIOMA&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Eigenvectors_and_Eigenvalues"></a></p>
+<p>The other application of deteriminants (which we will use almost everyday the rest of the semester) is eigenvectors.</p>
+</div>
+<div class="section" id="eigenvectors-and-eigenvalues">
+<h2>5. Eigenvectors and Eigenvalues<a class="headerlink" href="#eigenvectors-and-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<p>Understanding Eigenvector and Eigenvalues can be very challenging. These are complex topics with many facets.  Different textbooks approach the problem from different directions.  All have value.  These facets include:</p>
+<ul class="simple">
+<li><p>Understanding the mathematical definition of Eigenvalues.</p></li>
+<li><p>Being able to calculate an Eigenvalue and Eigenvector.</p></li>
+<li><p>Understanding what Eigenvalues and Eigenvectors represent.</p></li>
+<li><p>Understanding how to use Eigenvalues and Eigenvectors to solve problems.</p></li>
+</ul>
+<p>In this course we consider it more important to understand what eigenvectors and eigenvalues represent and how to use them. However, often this understanding comes from first learning how to calculate them.</p>
+<blockquote>
+<div><p>Eigenvalues are a special set of scalars associated with a <strong>square matrix</strong> that are sometimes also known as characteristic roots, characteristic values (Hoffman and Kunze 1971), proper values, or latent roots (Marcus and Minc 1988, p. 144).</p>
+</div></blockquote>
+<blockquote>
+<div><p>The determination of the eigenvalues and eigenvectors of a matrix is extremely important in physics and engineering, where it is equivalent to matrix diagonalization and arises in such common applications as <a class="reference external" href="https://en.wikipedia.org/wiki/Von_Neumann_stability_analysis">stability analysis</a>, the <a class="reference external" href="http://www.physics.princeton.edu/~mcdonald/examples/ph101_1996/ph101lab5_96.pdf">physics of rotating bodies</a>, and <a class="reference external" href="http://lpsa.swarthmore.edu/MtrxVibe/MatrixAll.html">small oscillations of vibrating systems</a>, to name only a few.</p>
+</div></blockquote>
+<blockquote>
+<div><p>The decomposition of a square matrix <span class="math notranslate nohighlight">\(A\)</span> into eigenvalues and eigenvectors is known in this work as eigen decomposition, and the fact that this decomposition is always possible as long as the matrix consisting of the eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> is square. This is known as the eigen decomposition theorem.</p>
+</div></blockquote>
+<p>From: <a class="reference external" href="http://mathworld.wolfram.com/Eigenvalue.html">http://mathworld.wolfram.com/Eigenvalue.html</a></p>
+<p>The following video provides an intuition for eigenvalues and eigenvectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;ue3yoeZvt8E&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix.  An eigenvector of <span class="math notranslate nohighlight">\(A\)</span> ass is a non-zero vector <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(R^n\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[Ax=\lambda x\]</div>
+<p>for some scalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span>. (The values of <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(x\)</span> can be complex numbers in general, but we will only focus on real values in this course). The scalar <span class="math notranslate nohighlight">\(\lambda\)</span> above is called the <strong>eigenvalue</strong> associated to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>In order to compute these eigenvalues/eigenvectors we begin by rewritting the equation as <span class="math notranslate nohighlight">\(Ax=\lambda x\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[(A-\lambda I_n)x = 0\]</div>
+<p>Naturally, there is the trivial solution is <span class="math notranslate nohighlight">\(x=0\)</span>, but recall we defined eigenvectors to be nonzero.</p>
+<p>Now, nonzero (i.e. non-trivial) solutions to the system of equations <span class="math notranslate nohighlight">\((A-\lambda I_n)x = 0\)</span> can only exist if the matrix <span class="math notranslate nohighlight">\((A-\lambda I_n)\)</span> is singular, i.e. the determinant of <span class="math notranslate nohighlight">\(|A - \lambda I_n| = 0\)</span>. (This comes from the Invertible Matrix Theorem, but we will talk about it more later.)</p>
+<p>Therefore, solving the equation <span class="math notranslate nohighlight">\(|A - \lambda I_n| = 0\)</span> for <span class="math notranslate nohighlight">\(\lambda\)</span> leads to all the eigenvalues of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><strong>Note:</strong> the above logic is key.  Make sure you understand. If not, ask questions.</p>
+<p>The following video gives a geometric description of eigenvalues and eigenvectors. In terms of affine transformations, the eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> are the vectors in which the matrix <span class="math notranslate nohighlight">\(A\)</span> will always act as a scaling matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;PFDu9oVAE-g&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h3>Examples:<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Here are a few more examples of how eigenvalues and eigenvectors are used (You are not required to understand all, but they give examples of things we could use as a homework topic later in the semester if there is interest.):</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxuYXNsdW5kZXJpY3xneDpkMTI4OTI1NTc4YjRlOGE">Using singular value decomposition for image compression</a>.
+This is a note explaining how you can compress an image by throwing away the small eigenvalues of <span class="math notranslate nohighlight">\(A^TA\)</span>.
+It takes an 88 megapixel image of an Allosaurus and shows how the image looks after compressing by selecting the largest singular values.</p>
+</div></blockquote>
+<blockquote>
+<div><p>[Deriving Special Relativity]((<a class="reference external" href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxuYXNsdW5kZXJpY3xneDo2ZTAyNzA4NTZmOGZmNmU4">https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxuYXNsdW5kZXJpY3xneDo2ZTAyNzA4NTZmOGZmNmU4</a>) is more natural in the language of linear algebra.
+In fact, Einstein’s second postulate really states that “Light is an eigenvector of the Lorentz transform.”
+This document goes over the full derivation in detail.</p>
+</div></blockquote>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_clustering">Spectral Clustering</a>.
+Whether it’s in plants and biology, medical imaging, buisness and marketing, understanding the connections between fields on Facebook, or even criminology, clustering is an extremely important part of modern data analysis.
+It allows people to find important subsystems or patterns inside noisy data sets.
+One such method is spectral clustering, which uses the eigenvalues of the graph of a network.
+Even the eigenvector of the second smallest eigenvalue of the Laplacian matrix allows us to find the two largest clusters in a network.</p>
+</div></blockquote>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality Reduction/PCA</a>.
+The principal components correspond to the largest eigenvalues of <span class="math notranslate nohighlight">\(A^\top A\)</span>, and this yields the least squared projection onto a smaller dimensional hyperplane, and the eigenvectors become the axes of the hyperplane.
+Dimensionality reduction is extremely useful in machine learning and data analysis as it allows one to understand where most of the variation in the data comes from.</p>
+</div></blockquote>
+<blockquote>
+<div><p><a class="reference external" href="http://cs229.stanford.edu/proj2006/KleemanDenuitHenderson-MatrixFactorizationForCollaborativePrediction.pdf">Low rank factorization for collaborative prediction</a>.
+This is what Netflix does (or once did) to predict what rating you’ll have for a movie you have not yet watched.
+It uses the singular value decomposition and throws away the smallest eigenvalues of <span class="math notranslate nohighlight">\(A^\top A\)</span>.</p>
+</div></blockquote>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/PageRank">The Google Page Rank algorithm</a>.
+The largest eigenvector of the graph of the internet is how the pages are ranked.</p>
+</div></blockquote>
+<p>From: <a class="reference external" href="https://math.stackexchange.com/questions/1520832/real-life-examples-for-eigenvalues-eigenvectors">https://math.stackexchange.com/questions/1520832/real-life-examples-for-eigenvalues-eigenvectors</a></p>
+<hr class="docutils" />
+<p><a name="Solving_Eigenproblems"></a></p>
+</div>
+</div>
+<div class="section" id="solving-eigenproblems-a-2x2-example">
+<h2>6. Solving Eigenproblems - A 2x2 Example<a class="headerlink" href="#solving-eigenproblems-a-2x2-example" title="Permalink to this headline">¶</a></h2>
+<p>We will do a basic example of computing eigenvalues here, and get more involved in class tomorrow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;0UbkMlTu1vo&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consider calculating eigenvalues for any <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix.
+We want to solve:</p>
+<div class="math notranslate nohighlight">
+\[|A - \lambda I_2 | = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left|
+\left[
+\begin{matrix}
+    a_{11} &amp; a_{12} \\
+    a_{21} &amp; a_{22}
+\end{matrix}
+\right] 
+- \lambda \left[
+\begin{matrix}
+    1 &amp; 0 \\
+    0 &amp; 1
+\end{matrix}
+\right] 
+\right|
+=
+\left|
+\left[
+\begin{matrix}
+    a_{11}-\lambda &amp; a_{12} \\
+    a_{21} &amp; a_{22}-\lambda
+\end{matrix}
+\right]
+\right|
+=0
+\end{split}\]</div>
+<p>We know this determinant:</p>
+<div class="math notranslate nohighlight">
+\[(a_{11}-\lambda)(a_{22}-\lambda) - a_{12} a_{21}  = 0 \]</div>
+<p>If we expand the above, we get:</p>
+<div class="math notranslate nohighlight">
+\[a_{11}a_{22}+\lambda^2-a_{11}\lambda-a_{22}\lambda - a_{12} a_{21} = 0\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lambda^2-(a_{11}+a_{22})\lambda+a_{11}a_{22} - a_{12} a_{21} = 0\]</div>
+<p>This is a simple quadratic equation.
+The roots pf <span class="math notranslate nohighlight">\(A\lambda^2+B\lambda+C = 0\)</span> can be solved using the quadratic formula:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{-B \pm \sqrt{B^2 - 4AC}}{2A}\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Using the above equation.  What are the eigenvalues for the following <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix. Try calculating this by hand and then store the lower value in a variable named<code class="docutils literal notranslate"><span class="pre">e1</span></code> and the larger value in <code class="docutils literal notranslate"><span class="pre">e2</span></code> to check your answer:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A =
+\left[
+\begin{matrix}
+    -4 &amp; -6  \\
+    3 &amp; 5
+ \end{matrix}
+\right] 
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span><span class="s1">&#39;c54490d3480079138c8c027a87a366e3&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e2</span><span class="p">,</span><span class="s1">&#39;d1bd83a33f1a841ab7fda32449746cc4&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS</font></strong> Find a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function that will calculate eigenvalues and verify the answers from above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What are the corresponding eigenvectors to the matrix <span class="math notranslate nohighlight">\(A\)</span>? This time you can try calculating by hand or just used the function you found in the previous answer.  Store the eigenvector associated with the <code class="docutils literal notranslate"><span class="pre">e1</span></code> value in a vector named <code class="docutils literal notranslate"><span class="pre">v1</span></code> and the eigenvector associated with the eigenvalue <code class="docutils literal notranslate"><span class="pre">e2</span></code> in a vector named <code class="docutils literal notranslate"><span class="pre">v2</span></code> to check your answer.</p>
+<p>Put your answer to the above question here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="s1">&#39;35758bc2fa8ff4f04cfbcd019844f93d&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span><span class="s1">&#39;90b0437e86d2cf70050d1d6081d942f4&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="T3"></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>7. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong> If you cannont load the form below please try logging in to <a class="reference external" href="http://spartan365.msu.edu/">spartan365.msu.edu</a> and try running it again, or simply use the direct link provided below.</p>
+<p><a class="reference external" href="https://forms.office.com/r/n0PEF9xt59">Direct Link to Microsoft Form</a></p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> What does the determinant represent for a <span class="math notranslate nohighlight">\(3 \times 3\)</span> transform?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> Both <strong>sympy</strong> and <strong>numpy</strong> can calculate many of the same things. What is the fundamental difference between these two libraries?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Put</span> <span class="n">your</span> <span class="n">answer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">above</span> <span class="n">question</span> <span class="n">here</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe width=&quot;640px&quot; height= &quot;480px&quot; src= &quot;https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofSS1ePbivlBPgYEBiz_zsf1UOTk3QU5VVEo1SVpKWlpaWlU4WTlDUlQwWi4u&amp;embed=true&quot; frameborder= &quot;0&quot; marginwidth= &quot;0&quot; marginheight= &quot;0&quot; style= &quot;border: none; max-width:100%; max-height:100vh&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen&gt; &lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="congratulations-we-re-done">
+<h3>Congratulations, we’re done!<a class="headerlink" href="#congratulations-we-re-done" title="Permalink to this headline">¶</a></h3>
+<p>###EndPreClass###`</p>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, and Dr. Matthew Mills, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="104-Affine_Transformations_Robotics_in-class-assignment.html" title="previous page">104 In-Class Assignment: Transformations &amp; Robotics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
