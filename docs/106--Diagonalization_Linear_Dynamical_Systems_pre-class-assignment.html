@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="105 In-Class Assignment: Determinants &amp; Eigenvectors" href="105-Determinants_Eigenvectors_in-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104--Affine_Transformations_Robotics_pre-class-assignment.html">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-Affine_Transformations_Robotics_in-class-assignment.html">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105--Determinants_Eigenvectors_pre-class-assignment.html">
+   105 Pre-Class Assignment: Determinants and Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-Determinants_Eigenvectors_in-class-assignment.html">
+   105 In-Class Assignment: Determinants &amp; Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-diagonalization">
+   Readings for Diagonalization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-linear-dynamical-systems">
+   Readings for Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors-review">
+   1. Eigenvalues and eigenvectors review
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps-for-finding-the-eigenvalues-and-eigenvectors">
+     Steps for finding the eigenvalues and eigenvectors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-eigenvalues">
+       Find eigenvalues
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-eigenvectors">
+       Find eigenvectors
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalizable-matrix">
+   2. Diagonalizable Matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagonalization-of-symmetric-matrices">
+     Diagonalization of Symmetric Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-dynamical-systems">
+   3. Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markov-models">
+   4. Markov Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinary-differential-equations">
+   5. Ordinary Differential Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dot-x-a-x">
+     $
+     <span class="math notranslate nohighlight">
+      \(\dot{x} = A x\)
+     </span>
+     $
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   6. Assignment wrap up
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-we-re-done">
+     Congratulations, we’re done!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-diagonalization-linear-dynamical-systems">
+<h1>106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems<a class="headerlink" href="#pre-class-assignment-diagonalization-linear-dynamical-systems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-diagonalization">
+<h2>Readings for Diagonalization<a class="headerlink" href="#readings-for-diagonalization" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 5 II1-2 pg 388-396</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf"><strong><em>Beezer Section SD pg 403-415</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="readings-for-linear-dynamical-systems">
+<h2>Readings for Linear Dynamical Systems<a class="headerlink" href="#readings-for-linear-dynamical-systems" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Chapter 9 pg 163-173</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Eigenvalues_and_eigenvectors_review">Eigenvalues and eigenvectors review</a></p></li>
+<li><p><a class="reference external" href="#Diagonalizable_Matrix">Diagonalizable Matrix</a></p></li>
+<li><p><a class="reference external" href="#Linear-Dynamical-Systems">Linear Dynamical Systems</a></p></li>
+<li><p><a class="reference external" href="#Markov-Models">Markov Models</a></p></li>
+<li><p><a class="reference external" href="#Ordinary-Differential-Equations">Ordinary Differential Equations</a></p></li>
+<li><p><a class="reference external" href="#Assignment-wrap-up">Assignment wrap up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Eigenvalues_and_eigenvectors_review"></a></p>
+</div>
+<div class="section" id="eigenvalues-and-eigenvectors-review">
+<h2>1. Eigenvalues and eigenvectors review<a class="headerlink" href="#eigenvalues-and-eigenvectors-review" title="Permalink to this headline">¶</a></h2>
+<p><strong>Definition</strong>: A non-zero vector <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(R^n\)</span> is called an <em>eigenvector</em> of a <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> if <span class="math notranslate nohighlight">\(Ax\)</span> is a scalar multiple of <span class="math notranslate nohighlight">\(x\)</span>. If <span class="math notranslate nohighlight">\(Ax = \lambda x\)</span>, then <span class="math notranslate nohighlight">\(\lambda\)</span> is called the <em>eigenvalue</em> of <span class="math notranslate nohighlight">\(A\)</span> corresponding to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="section" id="steps-for-finding-the-eigenvalues-and-eigenvectors">
+<h3>Steps for finding the eigenvalues and eigenvectors<a class="headerlink" href="#steps-for-finding-the-eigenvalues-and-eigenvectors" title="Permalink to this headline">¶</a></h3>
+<p>We want to find <span class="math notranslate nohighlight">\(\lambda\)</span> and non-zero vector <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(Ax=\lambda x\)</span> for a <span class="math notranslate nohighlight">\(n\times n\)</span> matrix.</p>
+<ol class="simple">
+<li><p>We introduce an identity matrix <span class="math notranslate nohighlight">\(I\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span>. Then the equation becomes
+$<span class="math notranslate nohighlight">\(Ax = \lambda I x\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(Ax-\lambda I x = 0\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\((A-\lambda I)x = 0\)</span>$</p></li>
+<li><p>This suggests that we want to find <span class="math notranslate nohighlight">\(\lambda\)</span> such that <span class="math notranslate nohighlight">\((A-\lambda I)x=0\)</span> has a non-trivial solution.
+It is equivalent to that the matrix <span class="math notranslate nohighlight">\(A-\lambda I\)</span> is singular, i.e., has a determinant of <span class="math notranslate nohighlight">\(0\)</span>.
+$<span class="math notranslate nohighlight">\(|A-\lambda I|=0\)</span>$</p></li>
+<li><p>The determinant is polynomial in <span class="math notranslate nohighlight">\(\lambda\)</span> (called the characteristic polynomial of <span class="math notranslate nohighlight">\(A\)</span>) with degree <span class="math notranslate nohighlight">\(n\)</span>. We solve this equation (called the characteristic equation) for all possible <span class="math notranslate nohighlight">\(\lambda\)</span> (eigenvalues).</p></li>
+<li><p>After finding the eigenvalues, we substitute them back into
+$<span class="math notranslate nohighlight">\((A-\lambda I)x=0\)</span><span class="math notranslate nohighlight">\(
+and find the eigenvectors \)</span>x$.</p></li>
+</ol>
+<p>Let’s calculate eigenvalues for the following matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A=\begin{bmatrix} 0 &amp; 0 &amp; -2 \\ 1 &amp; 2 &amp; 1 \\ 1 &amp; 0 &amp; 3 \end{bmatrix}\end{split}\]</div>
+<div class="section" id="find-eigenvalues">
+<h4>Find eigenvalues<a class="headerlink" href="#find-eigenvalues" title="Permalink to this headline">¶</a></h4>
+<p>Looking at the above recipe, let’s solve the problem symbollically using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. First lets create a matrix <span class="math notranslate nohighlight">\(B\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[B = A-\lambda I\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Most sympy requires defeing the variables as &quot;symbols&quot;</span>
+<span class="c1">#Once we do this we can use the variables in place of numbers</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">lam</span><span class="o">*</span><span class="n">I</span>
+
+<span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_6_0.png" src="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_6_0.png" />
+</div>
+</div>
+<p>Now, per step 2, the determinant of <span class="math notranslate nohighlight">\(B\)</span> must be zero. Note that <code class="docutils literal notranslate"><span class="pre">sympy</span></code> calculates the determinate symbollically as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_8_0.png" src="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_8_0.png" />
+</div>
+</div>
+<p>✅ <strong><font color=red>Do This:</font></strong>  Using the <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> function on the determinate of <span class="math notranslate nohighlight">\(B\)</span> to solve for <code class="docutils literal notranslate"><span class="pre">lam</span></code> (<span class="math notranslate nohighlight">\(\lambda\)</span>). Verify that the solution to the last question produces the same eigenvalues as above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code to solve for det(B) = 0 here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>Do This:</font></strong>  First, let’s use the built in funciton <code class="docutils literal notranslate"><span class="pre">eigenvals</span></code> function in <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to calculate the eigenvalues. Find out the meaning of the output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Explain your output here.</p>
+</div>
+<div class="section" id="find-eigenvectors">
+<h4>Find eigenvectors<a class="headerlink" href="#find-eigenvectors" title="Permalink to this headline">¶</a></h4>
+<p>Now we know the eigenvalues, we can substitue them back into the equation to find the eigenvectors.<br />
+We solve this symbollically using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. First let’s make a vector of our eigenvalues (from above):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eig</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now (per step 4 above) we need to solve the equation <span class="math notranslate nohighlight">\((A-\lambda I)x=0\)</span>. One way to do this in <code class="docutils literal notranslate"><span class="pre">sympy</span></code> is as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">([</span><span class="s1">&#39;x_1&#39;</span><span class="p">,</span><span class="s1">&#39;x_2&#39;</span><span class="p">,</span><span class="s1">&#39;x_3&#39;</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">x1</span><span class="p">],[</span><span class="n">x2</span><span class="p">],[</span><span class="n">x3</span><span class="p">]])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_16_0.png" src="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">lam</span> <span class="ow">in</span> <span class="n">eig</span><span class="p">:</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">A</span> <span class="o">-</span> <span class="n">lam</span><span class="o">*</span><span class="n">I</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{x_1: -2*x_3, x_2: x_3}
+{x_1: -x_3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Explain your output here. (Hint, you can also try the <code class="docutils literal notranslate"><span class="pre">rref</span></code> to find the solutions)</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>Do This:</font></strong>  Next, let’s use the <code class="docutils literal notranslate"><span class="pre">eigenvects</span></code>  function in <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to find three linear independent eigenvectors for the matrix <span class="math notranslate nohighlight">\(A\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Compare this answer to the eigenvectors we calculated above. Does this answer make sense?  What does the syntax tell us?</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Find the eigenvalues and eigenvectors of the following matrix:
+$<span class="math notranslate nohighlight">\( A2=\begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#do work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What are the eigenvalues for the matrix <span class="math notranslate nohighlight">\(A2\)</span>?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What are the eigenvectors for the matrix <span class="math notranslate nohighlight">\(A2\)</span>?</p>
+<p>Put your answer to the above question here</p>
+<hr class="docutils" />
+<p><a name="Diagonalizable_Matrix"></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="diagonalizable-matrix">
+<h2>2. Diagonalizable Matrix<a class="headerlink" href="#diagonalizable-matrix" title="Permalink to this headline">¶</a></h2>
+<p>In class we will be using matrix diagonalization to solve some problems.</p>
+<p>Matrix <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable if there exists a diagonal matrix <span class="math notranslate nohighlight">\(D\)</span> that is similar similar to <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ D = C^{-1}AC\]</div>
+<p>If matrix <span class="math notranslate nohighlight">\(A\)</span> has linearly independent eigenvectors (<span class="math notranslate nohighlight">\(v_1, \ldots v_n\)</span>) then <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable with the following solution:</p>
+<div class="math notranslate nohighlight">
+\[C = \left[ v_1^T, \ldots, v_n^T \right]\]</div>
+<p>In other words, each column of <span class="math notranslate nohighlight">\(C\)</span> is a linearly independent eigenvector of <span class="math notranslate nohighlight">\(A\)</span>. The diagonal matrix <span class="math notranslate nohighlight">\(D\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} D = 
+\left[
+\begin{matrix}
+    \lambda_1  &amp; 0  &amp; 0 \\
+    0   &amp; \ddots &amp; 0  \\
+    0   &amp; 0 &amp; \lambda_n 
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>In other-other words, <span class="math notranslate nohighlight">\(D\)</span> consists of the corresponding eigenvalues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, Diagonalize (i.e. calculate  C and D) the following matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_33_0.png" src="_images/106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment_33_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;56821475223b52e0b6e751da444a1441&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">a2676c2ec55a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;56821475223b52e0b6e751da444a1441&#39;</span><span class="p">);</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;answercheck&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Verify that <span class="math notranslate nohighlight">\(A\)</span> is in fact Diagonalizable by calculating <span class="math notranslate nohighlight">\(D2 = C^{-1}AC\)</span> and comparing it to your original <span class="math notranslate nohighlight">\(D\)</span> using <code class="docutils literal notranslate"><span class="pre">np.allclose</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your verificaiton code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">D2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="diagonalization-of-symmetric-matrices">
+<h3>Diagonalization of Symmetric Matrices<a class="headerlink" href="#diagonalization-of-symmetric-matrices" title="Permalink to this headline">¶</a></h3>
+<p>One special case is Symmetric Matrices.  It can be shown that symmetric Matrices are Diagonalizable and the resulting eigenvectors are not only linearly independent but also orthogonal.    Since this is true, the equation changes to:</p>
+<div class="math notranslate nohighlight">
+\[ D = C^{T}AC\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Why do we care if <span class="math notranslate nohighlight">\(C\)</span> is orthogonal?  What advantages does the above equation give us?</p>
+<p>Put your answer to the above question here.</p>
+<hr class="docutils" />
+<p><a name=Linear-Dynamical-Systems></a></p>
+</div>
+</div>
+<div class="section" id="linear-dynamical-systems">
+<h2>3. Linear Dynamical Systems<a class="headerlink" href="#linear-dynamical-systems" title="Permalink to this headline">¶</a></h2>
+<p>A linear dynamical system is a simple model of how a system changes with time.  These systems can be represented by the following “dynamics” or “update equation”:</p>
+<div class="math notranslate nohighlight">
+\[x_{(t+1)} = A_tx_t\]</div>
+<p>Where <span class="math notranslate nohighlight">\(t\)</span> is an integer representing th progress of time and <span class="math notranslate nohighlight">\(A_t\)</span> are an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix called the dynamics matrices. Often the above matrix does not change with <span class="math notranslate nohighlight">\(t\)</span>. In this case the system is called “time-invariant”.</p>
+<p>We have seen a few “time-invarient” examples in class.</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Review <strong><em>Chapter 9 in the Boyd and Vandenberghe</em></strong> text and become familiar with the contents and the basic terminology.</p>
+<hr class="docutils" />
+<p><a name=Markov-Models></a></p>
+</div>
+<div class="section" id="markov-models">
+<h2>4. Markov Models<a class="headerlink" href="#markov-models" title="Permalink to this headline">¶</a></h2>
+<p>We breifly discussed Markov models in the previous class. These are just one example of Linear Dynamical Systems.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>The dynamics of infection and the spread of an epidemic can be modeled as a linear dynamical system.</p>
+<p>We count the fraction of the population in the following four groups:</p>
+<ul class="simple">
+<li><p>Susceptible: the individuals can be infected next day</p></li>
+<li><p>Infected: the infected individuals</p></li>
+<li><p>Recovered (and immune): recovered individuals from the disease and will not be infected again</p></li>
+<li><p>Decreased: the individuals died from the disease</p></li>
+</ul>
+<p>We denote the fractions of these four groups in <span class="math notranslate nohighlight">\(x(t)\)</span>. For example <span class="math notranslate nohighlight">\(x(t)=(0.8,0.1,0.05,0.05)\)</span> means that at day <span class="math notranslate nohighlight">\(t\)</span>, 80% of the population are susceptible, 10% are infected, 5% are recovered and immuned, and 5% died.</p>
+<p>We choose a simple model here. After each day,</p>
+<ul class="simple">
+<li><p>5% of the susceptible individuals will get infected</p></li>
+<li><p>3% of infected inviduals will die</p></li>
+<li><p>10% of infected inviduals will recover and immuned to the disease</p></li>
+<li><p>4% of infected inviduals will recover but not immuned to the disease</p></li>
+<li><p>83% of the infected inviduals will remain</p></li>
+</ul>
+<p>✅  <strong><font color=red>Do this:</font></strong> Write the dynamics matrix for the above markov linear dynamical system. Come to class ready to discuss the matrix. (hint the columns of the matrix should add to 1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your matrix here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Review how we solved for the long term steady state of the markov system.  See if you can find these probabilities for your dyamics matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your matrix here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Ordinary-Differential-Equations></a></p>
+</div>
+</div>
+<div class="section" id="ordinary-differential-equations">
+<h2>5. Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Permalink to this headline">¶</a></h2>
+<p>Ordinary Differential Equations (ODEs) are yet another for of linear dynamical systems and are a scientific model used in a wide range of problems of the basic form:</p>
+<div class="section" id="dot-x-a-x">
+<h3>$<span class="math notranslate nohighlight">\(\dot{x} = A x\)</span>$<a class="headerlink" href="#dot-x-a-x" title="Permalink to this headline">¶</a></h3>
+<p>These are equations such that the is the instantaneous rate of change in <span class="math notranslate nohighlight">\(x\)</span> (i.e. <span class="math notranslate nohighlight">\(\dot{x}\)</span> is the derivative of <span class="math notranslate nohighlight">\(x\)</span>) is dependent on <span class="math notranslate nohighlight">\(x\)</span>.  Many systems can be modeled with these types of equations.</p>
+<p>Here is a quick video that introduces the concepts of Differential Equations. The following is a good review of general ODEs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;8QeCQn7uxnE&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now consider an ODE as a system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x_t} = A x_t\]</div>
+<p>Based on the current <span class="math notranslate nohighlight">\(x\)</span> vector at time <span class="math notranslate nohighlight">\(t\)</span> and the matrix <span class="math notranslate nohighlight">\(A\)</span>, we can calculate the derivative at <span class="math notranslate nohighlight">\(\dot{x}\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.  Once we know the derivative, we can increment the time to by some small amount <span class="math notranslate nohighlight">\(dt\)</span> and calculate a new value of <span class="math notranslate nohighlight">\(x\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[x_{t+1} = x_t + \dot{x_t}dt\]</div>
+<p>Then we can do the exact sequence of calculations again for <span class="math notranslate nohighlight">\(t+2\)</span>. The following function has the transition matrix (<span class="math notranslate nohighlight">\(A\)</span>), the starting state vector (<span class="math notranslate nohighlight">\(x_0\)</span>) and a number of time steps (<span class="math notranslate nohighlight">\(N\)</span>) and uses the above equations to calculate each state and return all of the <span class="math notranslate nohighlight">\(x\)</span> statues:</p>
+<p>The following code generates a trajectory of points starting from <code class="docutils literal notranslate"><span class="pre">x_0</span></code>, applying the matrix <span class="math notranslate nohighlight">\(A\)</span> to get <span class="math notranslate nohighlight">\(x_1\)</span> and then applying <span class="math notranslate nohighlight">\(A\)</span> again to see how the system progresses from the start state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">traj</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">x_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">n</span><span class="p">)))</span>   <span class="c1"># Store all points on the trajectory</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  
+        <span class="n">x_dot</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span>         <span class="c1"># First we transform x into the derrivative</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x_dot</span><span class="o">*</span><span class="n">dt</span>    <span class="c1"># Then we estimate x based on the previous value and a small increment of time.</span>
+        <span class="n">x_all</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> 
+    <span class="k">return</span> <span class="n">x_all</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example the following code uses the matrix <span class="math notranslate nohighlight">\(A= \begin{bmatrix}1 &amp; 1 \\ 1 &amp; -2\end{bmatrix}\)</span> and the starting point (0,0) over 50 timesteps to get a graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">x_all</span> <span class="o">=</span> <span class="n">traj</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x_all</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]),</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x_all</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]),</span><span class="nb">list</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]))</span> <span class="c1">#Plot the start point as a refernce</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Let
+$<span class="math notranslate nohighlight">\(A= \begin{bmatrix}2 &amp; 3 \\ 4 &amp; -2\end{bmatrix}\)</span>$</p>
+<p>Write a loop over the points <span class="math notranslate nohighlight">\((1.5,1)\)</span>, <span class="math notranslate nohighlight">\((-1.5,-1)\)</span>, <span class="math notranslate nohighlight">\((-1,2)\)</span> and plot the results of the <code class="docutils literal notranslate"><span class="pre">traj</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Let
+$<span class="math notranslate nohighlight">\(A= \begin{bmatrix}6 &amp; -1 \\ 1 &amp; 4\end{bmatrix}\)</span>$</p>
+<p>Write a loop over the points <span class="math notranslate nohighlight">\((1.5,1)\)</span>, <span class="math notranslate nohighlight">\((-1.5,-1)\)</span>, <span class="math notranslate nohighlight">\((-1,2)\)</span>, <span class="math notranslate nohighlight">\((1,-2)\)</span> and <span class="math notranslate nohighlight">\((2,-2)\)</span> and plot the results of the <code class="docutils literal notranslate"><span class="pre">traj</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Let
+$<span class="math notranslate nohighlight">\(A= \begin{bmatrix}5 &amp; 2 \\ -4 &amp; 1\end{bmatrix}\)</span>$</p>
+<p>Write a loop over the points <span class="math notranslate nohighlight">\((1.5,1)\)</span>, <span class="math notranslate nohighlight">\((-1.5,-1)\)</span>, <span class="math notranslate nohighlight">\((-1,2)\)</span>, <span class="math notranslate nohighlight">\((1,-2)\)</span> and <span class="math notranslate nohighlight">\((2,-2)\)</span> and plot the results of the <code class="docutils literal notranslate"><span class="pre">traj</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Assignment-wrap-up></a></p>
+</div>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>6. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong> If you cannont load the form below please try logging in to <a class="reference external" href="http://spartan365.msu.edu/">spartan365.msu.edu</a> and try running it again, or simply use the direct link provided below.</p>
+<p><a class="reference external" href="https://forms.office.com/r/n0PEF9xt59">Direct Link to Microsoft Form</a></p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> Were you able to get the ODE code working in the above example.  If not, where did you get stuck?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> Why do we care if <span class="math notranslate nohighlight">\(C\)</span> is orthogonal?  What advantages does the above equation give us?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe width=&quot;640px&quot; height= &quot;480px&quot; src= &quot;https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofSS1ePbivlBPgYEBiz_zsf1UOTk3QU5VVEo1SVpKWlpaWlU4WTlDUlQwWi4u&amp;embed=true&quot; frameborder= &quot;0&quot; marginwidth= &quot;0&quot; marginheight= &quot;0&quot; style= &quot;border: none; max-width:100%; max-height:100vh&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen&gt; &lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="congratulations-we-re-done">
+<h3>Congratulations, we’re done!<a class="headerlink" href="#congratulations-we-re-done" title="Permalink to this headline">¶</a></h3>
+<p>###EndPreClass###`</p>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="105-Determinants_Eigenvectors_in-class-assignment.html" title="previous page">105 In-Class Assignment: Determinants &amp; Eigenvectors</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
