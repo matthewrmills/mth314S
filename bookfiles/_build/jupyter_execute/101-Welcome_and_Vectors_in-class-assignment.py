@@ -606,5 +606,6 @@ YouTubeVideo("fNk_zzaMoSs",width=640,height=360, cc_load_policy=True)
 # 105--Determinants_Eigenvectors_pre-class-assignment.ipynb
 # 105-Determinants_Eigenvectors_in-class-assignment.ipynb
 # 106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.ipynb
+# 106-Diagonalization_Linear_System_in-class-assignment.ipynb
 # ```
 # 

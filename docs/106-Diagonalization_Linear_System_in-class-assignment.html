@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>106 In-Class Assignment: Diagonalization &amp; Linear Dynamical Systems &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems" href="106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104--Affine_Transformations_Robotics_pre-class-assignment.html">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-Affine_Transformations_Robotics_in-class-assignment.html">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105--Determinants_Eigenvectors_pre-class-assignment.html">
+   105 Pre-Class Assignment: Determinants and Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-Determinants_Eigenvectors_in-class-assignment.html">
+   105 In-Class Assignment: Determinants &amp; Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.html">
+   106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   106 In-Class Assignment: Diagonalization &amp; Linear Dynamical Systems
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/106-Diagonalization_Linear_System_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F106-Diagonalization_Linear_System_in-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/106-Diagonalization_Linear_System_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agenda-for-today-s-class">
+   Agenda for today’s class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalization">
+   1. Diagonalization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Diagonalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-example">
+     A simple example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-second-example">
+     A second example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-third-example">
+     The third example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimensions-of-eigenspaces-and-diagonalization">
+     Dimensions of eigenspaces and diagonalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-fourth-example">
+     The fourth example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-power-of-a-matrix">
+   2. The Power of a Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epidemic-dynamics-discrete-case">
+   3. Epidemic Dynamics - Discrete Case
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epidemic-dynamics-continuous-model">
+   4. Epidemic Dynamics - Continuous Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-dynamics">
+   5. Population Dynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphs-to-random-walk-markov-models">
+   6. Graphs to Random Walk Markov Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-random-walk">
+     Graph Random Walk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-walk-on-barbell-graph">
+     Random Walk on Barbell Graph
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compare-to-complete-graph">
+       Compare to Complete Graph
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="in-class-assignment-diagonalization-linear-dynamical-systems">
+<h1>106 In-Class Assignment: Diagonalization &amp; Linear Dynamical Systems<a class="headerlink" href="#in-class-assignment-diagonalization-linear-dynamical-systems" title="Permalink to this headline">¶</a></h1>
+<img alt="Classig equation for diagonalizing a matrix. Will be discussed in class" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62ab0ef52ecb1e1452efe6acf096923035c75f62" width="50%">
+<p>Image from: <a class="reference external" href="https://en.wikipedia.org/wiki/Diagonalizable_matrix">https://en.wikipedia.org/wiki/Diagonalizable_matrix</a></p>
+<p>Today in class we will discuss two applications of eigenvalues and eigenvectors. The first example is called <strong>diagonalization of a matrix</strong> it is a way to decompose a matrix into the product of an invertible matrix, its inverse, and a diagonal matrix. We will see that the eigenvectors and eigenvalues play an important role in constructing these pieces.</p>
+<p>The second example is where we can use the steadystate eigenvector to solve Markov models, and the diagonalization process to solve systems of linear differential equations.</p>
+<p>The last section talks about how to turn any graph into a random walk markov model.</p>
+<div class="section" id="agenda-for-today-s-class">
+<h2>Agenda for today’s class<a class="headerlink" href="#agenda-for-today-s-class" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Diagonalization">Diagonalization</a></p></li>
+<li><p><a class="reference external" href="#The_Power_of_a_Matrix">The Power of a Matrix</a></p></li>
+<li><p><a class="reference external" href="#Epi_discrete">Epidemic Dynamics - Discrete Case</a></p></li>
+<li><p><a class="reference external" href="#Epi_continuous">Epidemic Dynamics - Continuous Model</a></p></li>
+<li><p><a class="reference external" href="#Population">Population Dynamics</a></p></li>
+<li><p><a class="reference external" href="#random_walk">Random Walks from Graphs</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Diagonalization"></a></p>
+</div>
+<div class="section" id="diagonalization">
+<h2>1. Diagonalization<a class="headerlink" href="#diagonalization" title="Permalink to this headline">¶</a></h2>
+<p><strong><em>Reminder</em></strong>: The eigenvalues of triangular (upper and lower) and diagonal matrices are easy:</p>
+<ul class="simple">
+<li><p>The eigenvalues for triangular matrices are the diagonal elements.</p></li>
+<li><p>The eigenvalues for the diagonal matrices are the diagonal elements.</p></li>
+</ul>
+<div class="section" id="id1">
+<h3>Diagonalization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition</strong>: A square matrix <span class="math notranslate nohighlight">\(A\)</span> is said to be <em>diagonalizable</em> if there exist a matrix <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(D=C^{-1}AC\)</span> is a diagonal matrix.</p>
+<p><strong>Definition</strong>: <span class="math notranslate nohighlight">\(B\)</span> is a <em>similar matrix</em> of <span class="math notranslate nohighlight">\(A\)</span> if we can find <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(B=C^{-1}AC\)</span>.</p>
+<p>Given an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>, can we find another <span class="math notranslate nohighlight">\(n \times n\)</span> invertable matrix <span class="math notranslate nohighlight">\(C\)</span> such that when <span class="math notranslate nohighlight">\(D=C^{-1}AC\)</span> is diagonal, i.e., <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable?</p>
+<ul class="simple">
+<li><p>Because <span class="math notranslate nohighlight">\(C\)</span> is inveritble, we have
+$<span class="math notranslate nohighlight">\(C^{-1}AC=D \\ CC^{-1}AC = CD\\ AC = CD \)</span>$</p></li>
+<li><p>Generate <span class="math notranslate nohighlight">\(C\)</span> as the columns of <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors <span class="math notranslate nohighlight">\((x_1...x_n)\)</span> We can compute <span class="math notranslate nohighlight">\(AC=CD\)</span> as follows:
+$<span class="math notranslate nohighlight">\( A\begin{bmatrix} \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ { x }_{ 1 } &amp; { x }_{ 2 } &amp; \dots  &amp; { x }_{ n } \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \end{bmatrix}=AC=CD=\begin{bmatrix} \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ { x }_{ 1 } &amp; { x }_{ 2 } &amp; \dots  &amp; { x }_{ n } \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \end{bmatrix}\begin{bmatrix} { \lambda  }_{ 1 } &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; { \lambda  }_{ 2 } &amp; 0 &amp; 0 \\ \vdots  &amp; \vdots  &amp; { \dots  } &amp; \vdots  \\ 0 &amp; 0 &amp; 0 &amp; { \lambda  }_{ n } \end{bmatrix}\)</span>$</p></li>
+<li><p>Then we check the corresponding columns of the both sides. We have
+$<span class="math notranslate nohighlight">\(Ax_1 = \lambda_1x_1\\\vdots\\Ax_n=\lambda x_n\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> has <span class="math notranslate nohighlight">\(n\)</span> linear independent eigenvectors.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is said to be <em>similar</em> to the diagonal matrix <span class="math notranslate nohighlight">\(D\)</span>, and the transformation of <span class="math notranslate nohighlight">\(A\)</span> into <span class="math notranslate nohighlight">\(D\)</span> is called a <em>similarity transformation</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-simple-example">
+<h3>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following:
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}7&amp; -10\\3&amp; -4\end{bmatrix},\quad C = \begin{bmatrix}2&amp; 5\\1&amp; 3\end{bmatrix}\)</span>$</p>
+<p>✅  <strong><font color=red>Do this:</font></strong> Verify that <span class="math notranslate nohighlight">\(C^{-1}AC\)</span> is a diagonal matrix. Define <span class="math notranslate nohighlight">\(D = C^{-1}AC.\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">detailedwarnings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s1">&#39;8313fe0f529090d6a8cdb36248cfdd6c&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">c1cb7c28db44</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">detailedwarnings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s1">&#39;8313fe0f529090d6a8cdb36248cfdd6c&#39;</span><span class="p">);</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;answercheck&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Find the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>. Set variables <code class="docutils literal notranslate"><span class="pre">e1</span></code> and <code class="docutils literal notranslate"><span class="pre">vec1</span></code> to be the largest eigenvalue and it’s associated eigenvector and <code class="docutils literal notranslate"><span class="pre">e2,</span> <span class="pre">vec2</span></code> to represent the  smallest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="s2">&quot;d1bd83a33f1a841ab7fda32449746cc4&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e2</span><span class="p">,</span> <span class="s2">&quot;e4c2e8edac362acab7123654b9e73432&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="s2">&quot;09d9df5806bc8ef975074779da1f1023&quot;</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span> <span class="s2">&quot;d28f0a721eedb3d5a4c714744883932e&quot;</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Question:</font></strong>
+What relationship do you notice between the values of <code class="docutils literal notranslate"><span class="pre">e1</span></code>, <code class="docutils literal notranslate"><span class="pre">e2</span></code>, and the matrix <span class="math notranslate nohighlight">\(D\)</span> above?</p>
+<p>Your answer here.</p>
+</div>
+<div class="section" id="a-second-example">
+<h3>A second example<a class="headerlink" href="#a-second-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}-4&amp; -6\\3&amp; 5\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal. (Hint, use the function <code class="docutils literal notranslate"><span class="pre">diagonalize</span></code> in <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check the output type</span>
+<span class="k">assert</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">==</span><span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="s1">&#39;ba963b7fef354b4a7ddd880ca4bac071&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-third-example">
+<h3>The third example<a class="headerlink" href="#the-third-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}5&amp; -3\\3&amp; -1\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Can we find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal?  (Hint: find eigenvalues and eigenvectors using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dimensions-of-eigenspaces-and-diagonalization">
+<h3>Dimensions of eigenspaces and diagonalization<a class="headerlink" href="#dimensions-of-eigenspaces-and-diagonalization" title="Permalink to this headline">¶</a></h3>
+<p>We will talk about vector spaces next week. This section will be more relevent then. In the meantime, we will say that a matrix is diagonalizable if the number of eigenvectors it has is equal to the number of columns.</p>
+<p><strong>Definition</strong>: The set of all eigenvectors of a <span class="math notranslate nohighlight">\(n\times n\)</span> matrix corresponding to a eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, together with the zero vector, is a subspace of <span class="math notranslate nohighlight">\(R^n\)</span>. This subspace spaces is called <em>eigenspace</em>.</p>
+<ul class="simple">
+<li><p>For the third example, we have that the characteristic equation <span class="math notranslate nohighlight">\((\lambda-2)^2=0\)</span>.</p></li>
+<li><p>Eigenvalue <span class="math notranslate nohighlight">\(\lambda=2\)</span> has multiplicity 2, but the eigenspace has dimension 1, since we can not find two lineare independent eigenvector for <span class="math notranslate nohighlight">\(\lambda =2\)</span>.</p></li>
+</ul>
+<blockquote>
+<div><p>The dimension of an eigenspace of a matrix is less than or equal to the multiplicity of the corresponding eigenvalue as a root of the characteristic equation.</p>
+</div></blockquote>
+<blockquote>
+<div><p>A matrix is diagonalizable if and only if the dimension of every eigenspace is equal to the multiplicity of the corresponding eigenvalue as a root of the characteristic equation.</p>
+</div></blockquote>
+</div>
+<div class="section" id="the-fourth-example">
+<h3>The fourth example<a class="headerlink" href="#the-fourth-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}2&amp; -1\\1&amp; 2\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Can we find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The take aways that you should get from these examples are the following:</p>
+<ol class="simple">
+<li><p>The <span class="math notranslate nohighlight">\(A\)</span> matrix and the <span class="math notranslate nohighlight">\(D\)</span> matrix have the same eigenvalues. Specifically the entries of the <span class="math notranslate nohighlight">\(D\)</span> matrix are the eigenvalues of <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(C\)</span> matrix is the matrix whose columns are the eigenvalues (in the same order as the entries of <span class="math notranslate nohighlight">\(D\)</span>.)</p></li>
+<li><p>Not all matrices are diagonalizable. If there aren’t enough linearly independent eigenvalues, the matrix won’t be diagonalizable.</p></li>
+<li><p>Sometimes eigenvalues and eigenvectors can take complex values.</p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="The_Power_of_a_Matrix"></a></p>
+</div>
+</div>
+<div class="section" id="the-power-of-a-matrix">
+<h2>2. The Power of a Matrix<a class="headerlink" href="#the-power-of-a-matrix" title="Permalink to this headline">¶</a></h2>
+<p>For a diagonal matrix it is very efficicent to compute a power of the matrix. Using diagonalization we can speed up matrix powers for non-diagonal matrices.</p>
+<ul class="simple">
+<li><p>For a diagonalizable matrix <span class="math notranslate nohighlight">\(A\)</span>, we have <span class="math notranslate nohighlight">\(C^{-1}AC=D\)</span>. Then we have
+$<span class="math notranslate nohighlight">\(A = C D C^{-1}\)</span>$</p></li>
+<li><p>We have
+$<span class="math notranslate nohighlight">\(A^2 = C D C^{-1} C D C^{-1} = C D^2 C^{-1}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(A^n = C D C^{-1} \dots C D C^{-1} = C D^n C^{-1}\)</span>$</p></li>
+<li><p>Because the columns of <span class="math notranslate nohighlight">\(C\)</span> are eigenvectors, so we can say that the eigenvectors for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(A^n\)</span> are the same if <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> with the corresponding eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> is also an eigenvector of <span class="math notranslate nohighlight">\(A^n\)</span> with the corresponding eigenvalue <span class="math notranslate nohighlight">\(\lambda^n\)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><a name="Epi_discrete"></a></p>
+</div>
+<div class="section" id="epidemic-dynamics-discrete-case">
+<h2>3. Epidemic Dynamics - Discrete Case<a class="headerlink" href="#epidemic-dynamics-discrete-case" title="Permalink to this headline">¶</a></h2>
+<p>The dynamics of infection and the spread of an epidemic can be modeled as a linear dynamical system.</p>
+<p>We count the fraction of the population in the following four groups:</p>
+<ul class="simple">
+<li><p>Susceptible: the individuals can be infected next day</p></li>
+<li><p>Infected: the infected individuals</p></li>
+<li><p>Recovered (and immune): recovered individuals from the disease and will not be infected again</p></li>
+<li><p>Decreased: the individuals died from the disease</p></li>
+</ul>
+<p>We denote the fractions of these four groups in <span class="math notranslate nohighlight">\(x(t)\)</span>. For example <span class="math notranslate nohighlight">\(x(t)=(0.8,0.1,0.05,0.05)\)</span> means that at day <span class="math notranslate nohighlight">\(t\)</span>, 80% of the population are susceptible, 10% are infected, 5% are recovered and immuned, and 5% died.</p>
+<p>We choose a simple model here. After each day,</p>
+<ul class="simple">
+<li><p>5% of the susceptible individuals will get infected</p></li>
+<li><p>3% of infected inviduals will die</p></li>
+<li><p>10% of infected inviduals will recover and immuned to the disease</p></li>
+<li><p>4% of infected inviduals will recover but not immuned to the disease</p></li>
+<li><p>83% of the infected inviduals will remain</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.83</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.03</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> If we start with <span class="math notranslate nohighlight">\(x(0) = (1, 0, 0, 0)\)</span> for day 0. Use the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to find the distribution of the four groups after 50 days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="n">x0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Finish the program below to apply the above transformation matrix for 200 iterations and plot the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span> 
+<span class="n">x</span>  <span class="o">=</span> <span class="n">x0</span>
+<span class="n">x_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1">###YOUR CODE BELOW HERE - should be 2 lines.</span>
+    
+    
+    <span class="c1">###YOUR CODE ABOVE HERE</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Epi_continuous"></a></p>
+</div>
+<div class="section" id="epidemic-dynamics-continuous-model">
+<h2>4. Epidemic Dynamics - Continuous Model<a class="headerlink" href="#epidemic-dynamics-continuous-model" title="Permalink to this headline">¶</a></h2>
+<p>Instead of using the discrete markov model, we can also use a continuous model with ordinary differential equations.</p>
+<p>For example, we have that</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}_1 = {dx_1(t)\over dt} = -0.05x_1(t)+ 0.04 x_2(t)\]</div>
+<p>It means that the changes in the susceptible group depends on susceptible and infected individuals. It increase because of the recovered people from infected ones and it decreases because of the infection.</p>
+<p>Similarly, we have the equations for all three groups.
+$<span class="math notranslate nohighlight">\(\dot{x}_2 = {dx_2(t)\over dt} = 0.05x_1(t)-0.17 x_2(t) \\ 
+\dot{x}_3 = {dx_3(t)\over dt}= 0.1 x_2(t) \\
+\dot{x}_4 = {dx_4(t)\over dt} = 0.03 x_2(t)\)</span>$</p>
+<p>✅  <strong><font color=red>Do this:</font></strong> We can write it as system of ODEs as
+$<span class="math notranslate nohighlight">\(\dot{x}(t) = Bx(t)\)</span><span class="math notranslate nohighlight">\(
+Write down the matrix \)</span>B$ in <code class="docutils literal notranslate"><span class="pre">numpy.matrix</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">detailedwarnings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="s1">&#39;a4a21d2187eef96603e5104df2cc6e61&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Question</font></strong>  What relationship do you see between the <span class="math notranslate nohighlight">\(A\)</span> matrix of the discrete case and the <span class="math notranslate nohighlight">\(B\)</span> matrix of the continuous case?</p>
+<p>Your answer here</p>
+<hr class="docutils" />
+<p>The continuous model with differential equations requires diagonalization to solve.</p>
+<p>First note that if we have a regular differential equation like <span class="math notranslate nohighlight">\(\dot x = a x\)</span>, then a solution will be <span class="math notranslate nohighlight">\(x(t) = e^{at}\)</span>, in fact for ant constant <span class="math notranslate nohighlight">\(c\)</span>, the function <span class="math notranslate nohighlight">\(x(t) = ce^{at}\)</span> is a solution.</p>
+<p>In our case we have</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}_1 = {dx_1(t)\over dt} = -0.05x_1(t)+ 0.04 x_2(t)\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{x}_2 = {dx_2(t)\over dt} = 0.05x_1(t)-0.17 x_2(t) \\ 
+\dot{x}_3 = {dx_3(t)\over dt}= 0.1 x_2(t) \\
+\dot{x}_4 = {dx_4(t)\over dt} = 0.03 x_2(t)\end{split}\]</div>
+<p>Which gives us the matrix equation $<span class="math notranslate nohighlight">\(\begin{pmatrix} \dot{x}_1\\ \dot{x}_2 \\ \dot{x}_3\\ \dot{x}_4\end{pmatrix}= \begin{pmatrix} -0.05&amp; 0.04&amp; 0&amp; 0\\0.05&amp; -0.17&amp; 0&amp; 0\\0&amp;0.1&amp; 0&amp; 0\\0&amp;0.03&amp;0&amp;0\end{pmatrix}\begin{pmatrix}{x_1}\\{x_2} \\ {x_3}\\{x_4}\end{pmatrix}\)</span>$</p>
+<p>Now if we diagonalize <span class="math notranslate nohighlight">\(B\)</span>, we have <span class="math notranslate nohighlight">\(D = C^{-1}BC\)</span>, so if we define <span class="math notranslate nohighlight">\(Cy = x\)</span>, and so <span class="math notranslate nohighlight">\(C\dot y = \dot x\)</span> and we have that</p>
+<div class="math notranslate nohighlight">
+\[\dot x = Bx \Rightarrow C\dot y = BCy \Rightarrow  \dot y = C^{-1}BCy = Dy\]</div>
+<p>So we can solve <span class="math notranslate nohighlight">\(\dot y = D y\)</span> easier than before since D is diagonal with entries <span class="math notranslate nohighlight">\(d_1,d_2,d_3,d_4\)</span> we get the system of equations <span class="math notranslate nohighlight">\(\dot{y}_i = d_i y_i\)</span> for <span class="math notranslate nohighlight">\(i = 1,2,3,4.\)</span> As we saw these have an easy soltion of using the exponentials. Then once we find the vector <span class="math notranslate nohighlight">\(y = (y_1,y_2,y_3,y_4)^T\)</span> we can use the equation <span class="math notranslate nohighlight">\(Cy = x\)</span> to solve for the vector <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Specially we get a solution of,
+$<span class="math notranslate nohighlight">\(x_i = c_{i,1} e^{d_1t} + \dots + c_{i,n} e^{d_nt}\)</span>$</p>
+<p>✅  <strong><font color=red>Do This: </font></strong> <strong>Use <code class="docutils literal notranslate"><span class="pre">numpy</span></code></strong> to find matrices <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> such that <span class="math notranslate nohighlight">\(D = C^{-1}BC\)</span>. Save them as <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">D</span></code>, respetively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">detailedwarnings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">checkanswer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">C</span><span class="p">),</span><span class="s1">&#39;f827cf462f62848df37c5e1e94a4da74&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following code implements a numerical way to solve the continuous model and plots the first 200 days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">x_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">x0</span> <span class="c1">## THE C matrix here should be the from the diagonalization of $B$.</span>
+<span class="n">DD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">D</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">DD</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">y0</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">y</span>
+    <span class="n">x_all</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>    
+
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Susceptible&quot;</span><span class="p">,</span><span class="s2">&quot;Infected&quot;</span><span class="p">,</span><span class="s2">&quot;Immune&quot;</span><span class="p">,</span><span class="s2">&quot;Deceased&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do This: </font></strong> If you have any questions about the code above talk to your instructor.</p>
+<hr class="docutils" />
+<p><a name="Population"></a></p>
+</div>
+<div class="section" id="population-dynamics">
+<h2>5. Population Dynamics<a class="headerlink" href="#population-dynamics" title="Permalink to this headline">¶</a></h2>
+<p>Not all dynamical systems need to be solved using steadystate. Some of them just model different things and the matrix calculations gives a compact way to express the quantities.</p>
+<p>In this section, we consider the distribution of a population at different ages.</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(x(t)\)</span> be a 100-vector with <span class="math notranslate nohighlight">\(x_i(t)\)</span> denoting the number of people with age <span class="math notranslate nohighlight">\(i-1\)</span>.</p></li>
+<li><p>The birth rate is given in the vector <span class="math notranslate nohighlight">\(b\)</span>, where <span class="math notranslate nohighlight">\(b_i\)</span> is the average number of births per person with age <span class="math notranslate nohighlight">\(i-1\)</span>. <span class="math notranslate nohighlight">\(b_i=0\)</span> for <span class="math notranslate nohighlight">\(i&lt;13\)</span> and <span class="math notranslate nohighlight">\(i&gt;50\)</span>.</p></li>
+<li><p>The death rate is given by the vector <span class="math notranslate nohighlight">\(d\)</span>, where <span class="math notranslate nohighlight">\(d_i\)</span> is the portion of those aged <span class="math notranslate nohighlight">\(i-1\)</span> who dies this year.</p></li>
+</ul>
+<p>Then we can model the population with the dynamic systems.
+We consider the 0-year old first. It includes all newborn from all ages, so we have
+$<span class="math notranslate nohighlight">\(x_1(t+1) = b^\top x(t)\)</span><span class="math notranslate nohighlight">\(
+Then we consider all other ages for \)</span>i&gt;1<span class="math notranslate nohighlight">\(. 
+\)</span><span class="math notranslate nohighlight">\(x_i(t+1) = (1-d_i)x_{i-1}(t)\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+       <span class="mf">3.94415</span><span class="p">,</span>       <span class="mf">3.97807</span><span class="p">,</span>       <span class="mf">4.09693</span><span class="p">,</span>       <span class="mf">4.11904</span><span class="p">,</span>       <span class="mf">4.06317</span><span class="p">,</span>       <span class="mf">4.05686</span><span class="p">,</span>       <span class="mf">4.06638</span><span class="p">,</span>       <span class="mf">4.03058</span><span class="p">,</span>
+       <span class="mf">4.04649</span><span class="p">,</span>       <span class="mf">4.14835</span><span class="p">,</span>       <span class="mf">4.17254</span><span class="p">,</span>       <span class="mf">4.11442</span><span class="p">,</span>       <span class="mf">4.10624</span><span class="p">,</span>       <span class="mf">4.11801</span><span class="p">,</span>       <span class="mf">4.16598</span><span class="p">,</span>       <span class="mf">4.24282</span><span class="p">,</span>
+       <span class="mf">4.31614</span><span class="p">,</span>       <span class="mf">4.39529</span><span class="p">,</span>       <span class="mf">4.50085</span><span class="p">,</span>       <span class="mf">4.58523</span><span class="p">,</span>       <span class="mf">4.51913</span><span class="p">,</span>       <span class="mf">4.35429</span><span class="p">,</span>       <span class="mf">4.26464</span><span class="p">,</span>       <span class="mf">4.19857</span><span class="p">,</span>
+       <span class="mf">4.24936</span><span class="p">,</span>       <span class="mf">4.26235</span><span class="p">,</span>       <span class="mf">4.15231</span><span class="p">,</span>       <span class="mf">4.24887</span><span class="p">,</span>       <span class="mf">4.21525</span><span class="p">,</span>       <span class="mf">4.22308</span><span class="p">,</span>       <span class="mf">4.28567</span><span class="p">,</span>       <span class="mf">3.97022</span><span class="p">,</span>
+       <span class="mf">3.98685</span><span class="p">,</span>       <span class="mf">3.88015</span><span class="p">,</span>       <span class="mf">3.83922</span><span class="p">,</span>       <span class="mf">3.95643</span><span class="p">,</span>       <span class="mf">3.80209</span><span class="p">,</span>       <span class="mf">3.93445</span><span class="p">,</span>       <span class="mf">4.12188</span><span class="p">,</span>       <span class="mf">4.36480</span><span class="p">,</span>
+       <span class="mf">4.38327</span><span class="p">,</span>       <span class="mf">4.11498</span><span class="p">,</span>       <span class="mf">4.07610</span><span class="p">,</span>       <span class="mf">4.10511</span><span class="p">,</span>       <span class="mf">4.21150</span><span class="p">,</span>       <span class="mf">4.50887</span><span class="p">,</span>       <span class="mf">4.51976</span><span class="p">,</span>       <span class="mf">4.53526</span><span class="p">,</span>
+       <span class="mf">4.53880</span><span class="p">,</span>       <span class="mf">4.60590</span><span class="p">,</span>       <span class="mf">4.66029</span><span class="p">,</span>       <span class="mf">4.46463</span><span class="p">,</span>       <span class="mf">4.50085</span><span class="p">,</span>       <span class="mf">4.38035</span><span class="p">,</span>       <span class="mf">4.29200</span><span class="p">,</span>       <span class="mf">4.25471</span><span class="p">,</span>
+       <span class="mf">4.03751</span><span class="p">,</span>       <span class="mf">3.93639</span><span class="p">,</span>       <span class="mf">3.79493</span><span class="p">,</span>       <span class="mf">3.64127</span><span class="p">,</span>       <span class="mf">3.62113</span><span class="p">,</span>       <span class="mf">3.49260</span><span class="p">,</span>       <span class="mf">3.56318</span><span class="p">,</span>       <span class="mf">3.48388</span><span class="p">,</span>
+       <span class="mf">2.65713</span><span class="p">,</span>       <span class="mf">2.68076</span><span class="p">,</span>       <span class="mf">2.63914</span><span class="p">,</span>       <span class="mf">2.64936</span><span class="p">,</span>       <span class="mf">2.32367</span><span class="p">,</span>       <span class="mf">2.14232</span><span class="p">,</span>       <span class="mf">2.04312</span><span class="p">,</span>       <span class="mf">1.94932</span><span class="p">,</span>
+       <span class="mf">1.86427</span><span class="p">,</span>       <span class="mf">1.73696</span><span class="p">,</span>       <span class="mf">1.68449</span><span class="p">,</span>       <span class="mf">1.62008</span><span class="p">,</span>       <span class="mf">1.47107</span><span class="p">,</span>       <span class="mf">1.45533</span><span class="p">,</span>       <span class="mf">1.40012</span><span class="p">,</span>       <span class="mf">1.37119</span><span class="p">,</span>
+       <span class="mf">1.30851</span><span class="p">,</span>       <span class="mf">1.21287</span><span class="p">,</span>       <span class="mf">1.16142</span><span class="p">,</span>       <span class="mf">1.07481</span><span class="p">,</span>       <span class="mf">0.98572</span><span class="p">,</span>       <span class="mf">0.91472</span><span class="p">,</span>       <span class="mf">0.81421</span><span class="p">,</span>       <span class="mf">0.71291</span><span class="p">,</span>
+       <span class="mf">0.64062</span><span class="p">,</span>       <span class="mf">0.53800</span><span class="p">,</span>       <span class="mf">0.43556</span><span class="p">,</span>       <span class="mf">0.34499</span><span class="p">,</span>       <span class="mf">0.28139</span><span class="p">,</span>       <span class="mf">0.21698</span><span class="p">,</span>       <span class="mf">0.16944</span><span class="p">,</span>       <span class="mf">0.12972</span><span class="p">,</span>
+       <span class="mf">0.09522</span><span class="p">,</span>       <span class="mf">0.06814</span><span class="p">,</span>       <span class="mf">0.04590</span><span class="p">,</span>       <span class="mf">0.03227</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+       <span class="mf">0.00623</span><span class="p">,</span>       <span class="mf">0.00044</span><span class="p">,</span>       <span class="mf">0.00027</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00016</span><span class="p">,</span>       <span class="mf">0.00012</span><span class="p">,</span>       <span class="mf">0.00011</span><span class="p">,</span>       <span class="mf">0.00011</span><span class="p">,</span>
+       <span class="mf">0.00012</span><span class="p">,</span>       <span class="mf">0.00011</span><span class="p">,</span>       <span class="mf">0.00010</span><span class="p">,</span>       <span class="mf">0.00013</span><span class="p">,</span>       <span class="mf">0.00013</span><span class="p">,</span>       <span class="mf">0.00015</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00025</span><span class="p">,</span>
+       <span class="mf">0.00037</span><span class="p">,</span>       <span class="mf">0.00047</span><span class="p">,</span>       <span class="mf">0.00064</span><span class="p">,</span>       <span class="mf">0.00071</span><span class="p">,</span>       <span class="mf">0.00076</span><span class="p">,</span>       <span class="mf">0.00087</span><span class="p">,</span>       <span class="mf">0.00087</span><span class="p">,</span>       <span class="mf">0.00088</span><span class="p">,</span>
+       <span class="mf">0.00094</span><span class="p">,</span>       <span class="mf">0.00092</span><span class="p">,</span>       <span class="mf">0.00095</span><span class="p">,</span>       <span class="mf">0.00093</span><span class="p">,</span>       <span class="mf">0.00099</span><span class="p">,</span>       <span class="mf">0.00101</span><span class="p">,</span>       <span class="mf">0.00103</span><span class="p">,</span>       <span class="mf">0.00109</span><span class="p">,</span>
+       <span class="mf">0.00110</span><span class="p">,</span>       <span class="mf">0.00114</span><span class="p">,</span>       <span class="mf">0.00115</span><span class="p">,</span>       <span class="mf">0.00120</span><span class="p">,</span>       <span class="mf">0.00131</span><span class="p">,</span>       <span class="mf">0.00137</span><span class="p">,</span>       <span class="mf">0.00146</span><span class="p">,</span>       <span class="mf">0.00156</span><span class="p">,</span>
+       <span class="mf">0.00162</span><span class="p">,</span>       <span class="mf">0.00185</span><span class="p">,</span>       <span class="mf">0.00201</span><span class="p">,</span>       <span class="mf">0.00216</span><span class="p">,</span>       <span class="mf">0.00243</span><span class="p">,</span>       <span class="mf">0.00258</span><span class="p">,</span>       <span class="mf">0.00298</span><span class="p">,</span>       <span class="mf">0.00325</span><span class="p">,</span>
+       <span class="mf">0.00351</span><span class="p">,</span>       <span class="mf">0.00387</span><span class="p">,</span>       <span class="mf">0.00413</span><span class="p">,</span>       <span class="mf">0.00454</span><span class="p">,</span>       <span class="mf">0.00494</span><span class="p">,</span>       <span class="mf">0.00533</span><span class="p">,</span>       <span class="mf">0.00571</span><span class="p">,</span>       <span class="mf">0.00602</span><span class="p">,</span>
+       <span class="mf">0.00670</span><span class="p">,</span>       <span class="mf">0.00710</span><span class="p">,</span>       <span class="mf">0.00769</span><span class="p">,</span>       <span class="mf">0.00828</span><span class="p">,</span>       <span class="mf">0.00860</span><span class="p">,</span>       <span class="mf">0.00932</span><span class="p">,</span>       <span class="mf">0.00998</span><span class="p">,</span>       <span class="mf">0.01101</span><span class="p">,</span>
+       <span class="mf">0.01250</span><span class="p">,</span>       <span class="mf">0.01282</span><span class="p">,</span>       <span class="mf">0.01404</span><span class="p">,</span>       <span class="mf">0.01515</span><span class="p">,</span>       <span class="mf">0.01687</span><span class="p">,</span>       <span class="mf">0.01830</span><span class="p">,</span>       <span class="mf">0.01967</span><span class="p">,</span>       <span class="mf">0.02133</span><span class="p">,</span>
+       <span class="mf">0.02347</span><span class="p">,</span>       <span class="mf">0.02562</span><span class="p">,</span>       <span class="mf">0.02800</span><span class="p">,</span>       <span class="mf">0.03083</span><span class="p">,</span>       <span class="mf">0.03441</span><span class="p">,</span>       <span class="mf">0.03711</span><span class="p">,</span>       <span class="mf">0.04126</span><span class="p">,</span>       <span class="mf">0.04448</span><span class="p">,</span>
+       <span class="mf">0.04964</span><span class="p">,</span>       <span class="mf">0.05539</span><span class="p">,</span>       <span class="mf">0.06149</span><span class="p">,</span>       <span class="mf">0.06803</span><span class="p">,</span>       <span class="mf">0.07673</span><span class="p">,</span>       <span class="mf">0.08561</span><span class="p">,</span>       <span class="mf">0.09540</span><span class="p">,</span>       <span class="mf">0.10636</span><span class="p">,</span>
+       <span class="mf">0.11802</span><span class="p">,</span>       <span class="mf">0.13385</span><span class="p">,</span>       <span class="mf">0.15250</span><span class="p">,</span>       <span class="mf">0.16491</span><span class="p">,</span>       <span class="mf">0.18738</span><span class="p">,</span>       <span class="mf">0.20757</span><span class="p">,</span>       <span class="mf">0.22688</span><span class="p">,</span>       <span class="mf">0.25196</span><span class="p">,</span>
+       <span class="mf">0.27422</span><span class="p">,</span>       <span class="mf">0.29239</span><span class="p">,</span>       <span class="mf">0.32560</span><span class="p">,</span>       <span class="mf">0.34157</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.00020</span><span class="p">,</span>       <span class="mf">0.01710</span><span class="p">,</span>
+       <span class="mf">0.01710</span><span class="p">,</span>       <span class="mf">0.01710</span><span class="p">,</span>       <span class="mf">0.01710</span><span class="p">,</span>       <span class="mf">0.01710</span><span class="p">,</span>       <span class="mf">0.04500</span><span class="p">,</span>       <span class="mf">0.04500</span><span class="p">,</span>       <span class="mf">0.04500</span><span class="p">,</span>       <span class="mf">0.04500</span><span class="p">,</span>
+       <span class="mf">0.04500</span><span class="p">,</span>       <span class="mf">0.05415</span><span class="p">,</span>       <span class="mf">0.05415</span><span class="p">,</span>       <span class="mf">0.05415</span><span class="p">,</span>       <span class="mf">0.05415</span><span class="p">,</span>       <span class="mf">0.05415</span><span class="p">,</span>       <span class="mf">0.04825</span><span class="p">,</span>       <span class="mf">0.04825</span><span class="p">,</span>
+       <span class="mf">0.04825</span><span class="p">,</span>       <span class="mf">0.04825</span><span class="p">,</span>       <span class="mf">0.04825</span><span class="p">,</span>       <span class="mf">0.02250</span><span class="p">,</span>       <span class="mf">0.02250</span><span class="p">,</span>       <span class="mf">0.02250</span><span class="p">,</span>       <span class="mf">0.02250</span><span class="p">,</span>       <span class="mf">0.02250</span><span class="p">,</span>
+       <span class="mf">0.00510</span><span class="p">,</span>       <span class="mf">0.00510</span><span class="p">,</span>       <span class="mf">0.00510</span><span class="p">,</span>       <span class="mf">0.00510</span><span class="p">,</span>       <span class="mf">0.00510</span><span class="p">,</span>       <span class="mf">0.00035</span><span class="p">,</span>       <span class="mf">0.00035</span><span class="p">,</span>       <span class="mf">0.00035</span><span class="p">,</span>
+       <span class="mf">0.00035</span><span class="p">,</span>       <span class="mf">0.00035</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>
+       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">,</span>       <span class="mf">0.00000</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;population in 2010&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;birth rate in 2010&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;death rate in 2010&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Find the <span class="math notranslate nohighlight">\(100\times 100\)</span> matrix <code class="docutils literal notranslate"><span class="pre">A2</span></code> such that
+$<span class="math notranslate nohighlight">\(x(t+1)=Ax(t)\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">detailedwarnings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;e777eb79afb4f64da7e47f20f00fb6ec&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we plot the distribution for our in the year 2020 in blue and our 2010 population in orange.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">population</span><span class="p">,[</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020 Population&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">population</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2010 Population&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Describe any similarities in the two graphs.</p>
+<p>Your answer here</p>
+<hr class="docutils" />
+<p><a name='random_walk'></a></p>
+</div>
+<div class="section" id="graphs-to-random-walk-markov-models">
+<h2>6. Graphs to Random Walk Markov Models<a class="headerlink" href="#graphs-to-random-walk-markov-models" title="Permalink to this headline">¶</a></h2>
+<p>This section discusses how to use diagonalization to transform any graph into a random walk Markov chain.</p>
+<p>The code for the section below is not overly diffiucult, but it does cover some material we haven’t fully discussed. Namely the concept of a <a class="reference external" href="#https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">graph in discrete mathematics</a>. You do not need to finish this section on your own. We can discuss it as a big group when you reach this point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here are some libraries you may need to use</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="graph-random-walk">
+<h3>Graph Random Walk<a class="headerlink" href="#graph-random-walk" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Define the following matrices:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> is the identity matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is the adjacency matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> is diagonal matrix of degrees (number of edges connected to each node)</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[W=\frac{1}{2}(I + AD^{-1})\]</div>
+<ul class="simple">
+<li><p>The <strong>lazy random walk matrix</strong>, <span class="math notranslate nohighlight">\(W\)</span>, takes a distribution vector of <em>stuff</em>, <span class="math notranslate nohighlight">\(p_{t}\)</span>, and diffuses it to its neighbors:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t+1}=Wp_{t}\]</div>
+<ul class="simple">
+<li><p>For some initial distribution of <em>stuff</em>, <span class="math notranslate nohighlight">\(p_{0}\)</span>, we can compute how much of it would be at each node at time, <span class="math notranslate nohighlight">\(t\)</span>, by powering <span class="math notranslate nohighlight">\(W\)</span> as follows:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t}=W^{t}p_{0}\]</div>
+<ul class="simple">
+<li><p>Plugging in the above expression yields:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t}=\left( \frac{1}{2}(I+AD^{-1}) \right)^t p_{0}\]</div>
+<p><strong><font color=red>DO THIS</font></strong>: Using matrix algebra, show that <span class="math notranslate nohighlight">\(\frac{1}{2}(I + AD^{-1})\)</span> is <strong>similar</strong> to  <span class="math notranslate nohighlight">\(I-\frac{1}{2}N\)</span>, where <span class="math notranslate nohighlight">\(N=D^{-\frac{1}{2}}(D-A)D^{-\frac{1}{2}}\)</span> is the normalized graph Laplacian.</p>
+<p><strong>Your answer goes here</strong> (follow along after attempting)</p>
+</div>
+<div class="section" id="random-walk-on-barbell-graph">
+<h3>Random Walk on Barbell Graph<a class="headerlink" href="#random-walk-on-barbell-graph" title="Permalink to this headline">¶</a></h3>
+<p>To generate the barbell graph, run the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># number of nodes</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span> <span class="c1"># initialize graph</span>
+
+<span class="c1">## initialize empty edge lists</span>
+<span class="n">edge_list_complete_1</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">edge_list_complete_2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">edge_list_path</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">## generate node lists</span>
+<span class="n">node_list_complete_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">node_list_complete_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">n</span><span class="p">)</span>
+<span class="n">node_list_path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1">## generate edge sets for barbell graph</span>
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_complete_1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)):</span>
+        <span class="n">edge_list_complete_1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+        
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_complete_2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">edge_list_complete_2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_path</span><span class="p">:</span>
+    <span class="n">edge_list_path</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># G.remove_edges_from([(3,0),(5,7),(0,7),(3,5)])</span>
+
+<span class="c1">## add edges</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_complete_1</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_complete_2</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_path</span><span class="p">)</span>
+
+
+<span class="c1">## draw graph</span>
+<span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="c1"># positions for all nodes</span>
+
+<span class="c1">### nodes</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_complete_1</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_path</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_complete_2</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+
+<span class="c1">### edges</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_complete_1</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_path</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_complete_2</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Generate the lazy random walk matrix, <span class="math notranslate nohighlight">\(W= \frac{1}{2} (I+AD^{-1})\)</span>, for the above graph. Consider the <code class="docutils literal notranslate"><span class="pre">np.eye</span></code> function to contruct the identity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Make a vector of the sums.</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">d</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="s2">&quot;7af4a5b11892da6e1a605c8239b62093&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Compute the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(W\)</span>. Make a diagonal matrix <span class="math notranslate nohighlight">\(J\)</span> with the eigenvalues on the diagonal. Name the matrix of eigenvectors <span class="math notranslate nohighlight">\(V\)</span> (each column is an eigenvector).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we make sure we constructed <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(A\)</span> correctly by double checking that <span class="math notranslate nohighlight">\(W = VJV^{-1}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">V</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Let your <span class="math notranslate nohighlight">\(p_{0}=[1,0,0,\ldots,0]\)</span>. Compute <span class="math notranslate nohighlight">\(p_{t}\)</span> for <span class="math notranslate nohighlight">\(t=1,2,\ldots,100\)</span>, and plot <span class="math notranslate nohighlight">\(||v_{1}-p_{t}||_{1}\)</span> versus <span class="math notranslate nohighlight">\(t\)</span>, where <span class="math notranslate nohighlight">\(v_{1}\)</span> is the eigenvector associated with the largest eigenvalue <span class="math notranslate nohighlight">\(\lambda_{1}=1\)</span> and whose sum equals 1. (<strong>Note</strong>: <span class="math notranslate nohighlight">\(||\cdot||_{1}\)</span> may be computed using <code class="docutils literal notranslate"><span class="pre">np.linalg.norm(v_1-p_t,</span> <span class="pre">1)</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-to-complete-graph">
+<h4>Compare to Complete Graph<a class="headerlink" href="#compare-to-complete-graph" title="Permalink to this headline">¶</a></h4>
+<p>If you complete the above, do the same for a complete graph on the same number of nodes.</p>
+<p>✅  <strong><font color=red>Question</font>:</strong> What do you notice about the graph that is different from that above?</p>
+<p>Put your answer to the above question here.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.html" title="previous page">106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
