@@ -240,27 +240,25 @@ B
 
 # Put your answer to the above question here
 
+# ---
+# <a name=Assignment-wrap-up></a>
+# ## 6. Assignment wrap up
+# 
+# 
+# Please fill out the form that appears when you run the code below.  **You must completely fill this out in order to receive credit for the assignment!** If you cannont load the form below please try logging in to [spartan365.msu.edu](http://spartan365.msu.edu/) and try running it again, or simply use the direct link provided below. 
+# 
+# [Direct Link to Microsoft Form](https://forms.office.com/r/n0PEF9xt59)
+# 
+# 
+# 
+
+# In[ ]:
+
+
+
+
+
 # In[7]:
-
-
----
-<a name=Assignment-wrap-up></a>
-## 6. Assignment wrap up
-
-
-Please fill out the form that appears when you run the code below.  **You must completely fill this out in order to receive credit for the assignment!** If you cannont load the form below please try logging in to [spartan365.msu.edu](http://spartan365.msu.edu/) and try running it again, or simply use the direct link provided below. 
-
-[Direct Link to Microsoft Form](https://forms.office.com/r/n0PEF9xt59)
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 from IPython.display import HTML

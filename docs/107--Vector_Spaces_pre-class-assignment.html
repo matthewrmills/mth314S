@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>107 Pre-Class Assignment: Vector Spaces &#8212; Matrix Algebra with Computational Applications</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +21,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,13 +36,16 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,8 +53,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="107 In-Class Assignment: Vector Spaces &amp; Fundamental Spaces of a Matrix" href="107-Vector_spaces_in-class-assignment.html" />
@@ -150,6 +150,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="107-Vector_spaces_in-class-assignment.html">
    107 In-Class Assignment: Vector Spaces &amp; Fundamental Spaces of a Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="108--Basis_Orthog_IP_pre-class-assignment.html">
+   Readings for Change of Basis
   </a>
  </li>
 </ul>
@@ -311,6 +316,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#orthogonal-complement">
    5. Orthogonal Complement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   6. Assignment wrap up
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -568,28 +578,13 @@ D=
 <p>Put your answer to the above question here</p>
 <p>✅ <strong><font color=red>QUESTION:</font></strong> What are the vectors in both <span class="math notranslate nohighlight">\(W\)</span> and <span class="math notranslate nohighlight">\(W_\bot\)</span>?</p>
 <p>Put your answer to the above question here</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="o">&lt;</span><span class="n">a</span> <span class="n">name</span><span class="o">=</span><span class="n">Assignment</span><span class="o">-</span><span class="n">wrap</span><span class="o">-</span><span class="n">up</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-<span class="c1">## 6. Assignment wrap up</span>
-
-
-<span class="n">Please</span> <span class="n">fill</span> <span class="n">out</span> <span class="n">the</span> <span class="n">form</span> <span class="n">that</span> <span class="n">appears</span> <span class="n">when</span> <span class="n">you</span> <span class="n">run</span> <span class="n">the</span> <span class="n">code</span> <span class="n">below</span><span class="o">.</span>  <span class="o">**</span><span class="n">You</span> <span class="n">must</span> <span class="n">completely</span> <span class="n">fill</span> <span class="n">this</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">receive</span> <span class="n">credit</span> <span class="k">for</span> <span class="n">the</span> <span class="n">assignment</span><span class="o">!</span>** If you cannont load the form below please try logging <span class="k">in</span> to <span class="o">[</span>spartan365.msu.edu<span class="o">](</span>http://spartan365.msu.edu/<span class="o">)</span> and try running it again, or simply use the direct link provided below. 
-
-<span class="p">[</span><span class="n">Direct</span> <span class="n">Link</span> <span class="n">to</span> <span class="n">Microsoft</span> <span class="n">Form</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">forms</span><span class="o">.</span><span class="n">office</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">n0PEF9xt59</span><span class="p">)</span>
-</pre></div>
+<hr class="docutils" />
+<p><a name=Assignment-wrap-up></a></p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-7-528456146c2a&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="o">---</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="assignment-wrap-up">
+<h2>6. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong> If you cannont load the form below please try logging in to <a class="reference external" href="http://spartan365.msu.edu/">spartan365.msu.edu</a> and try running it again, or simply use the direct link provided below.</p>
+<p><a class="reference external" href="https://forms.office.com/r/n0PEF9xt59">Direct Link to Microsoft Form</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -601,6 +596,10 @@ D=
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofSS1ePbivlBPgYEBiz_zsf1UOTk3QU5VVEo1SVpKWlpaWlU4WTlDUlQwWi4u&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</div></div>
 </div>
 <hr class="docutils" />
 <div class="section" id="congratulations-we-re-done">
