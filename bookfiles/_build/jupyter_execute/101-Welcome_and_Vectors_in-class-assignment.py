@@ -610,5 +610,8 @@ YouTubeVideo("fNk_zzaMoSs",width=640,height=360, cc_load_policy=True)
 # 107--Vector_Spaces_pre-class-assignment.ipynb
 # 107-Vector_spaces_in-class-assignment.ipynb
 # 108--Basis_Orthog_IP_pre-class-assignment.ipynb
+# 108-Basis_Orthogonal_InnerProduct_in-class-assignment.ipynb
+# 109--LSF_Review_pre-class-assignment.ipynb
+# 109-LSF_in-class-assignment.ipynb
 # ```
 # 

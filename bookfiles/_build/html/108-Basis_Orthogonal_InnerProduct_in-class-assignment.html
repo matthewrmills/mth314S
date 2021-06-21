@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>108 In-Class Assignment: Change of Basis, Projections, Inner Products &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="109 Pre-Class Assignment: Least Squares Fit (Regression) and Review" href="109--LSF_Review_pre-class-assignment.html" />
+    <link rel="prev" title="108 Pre-Class Assignment: Change of Basis, Orthogonal, Inner Product" href="108--Basis_Orthog_IP_pre-class-assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-Welcome_and_Vectors_in-class-assignment.html">
+   101 - In-class Assignment: Welcome and Introduction to Vectors
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="102--Matrix_Mechanics_pre-class-assignment.html">
+   102-Pre-class Assignment: Python Linear Algebra Packages and Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-Matrix_Mechanics_in-class-assignment.html">
+   102 - Matrices and Matrix Multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103--Linear_Equations_pre-class-assignment.html">
+   103 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-Linear_Equations_in-class-assignment.html">
+   103 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104--Affine_Transformations_Robotics_pre-class-assignment.html">
+   104 Pre-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-Affine_Transformations_Robotics_in-class-assignment.html">
+   104 In-Class Assignment: Transformations &amp; Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105--Determinants_Eigenvectors_pre-class-assignment.html">
+   105 Pre-Class Assignment: Determinants and Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-Determinants_Eigenvectors_in-class-assignment.html">
+   105 In-Class Assignment: Determinants &amp; Eigenvectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106--Diagonalization_Linear_Dynamical_Systems_pre-class-assignment.html">
+   106 Pre-Class Assignment: Diagonalization &amp; Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106-Diagonalization_Linear_System_in-class-assignment.html">
+   106 In-Class Assignment: Diagonalization &amp; Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="107--Vector_Spaces_pre-class-assignment.html">
+   107 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="107-Vector_spaces_in-class-assignment.html">
+   107 In-Class Assignment: Vector Spaces &amp; Fundamental Spaces of a Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="108--Basis_Orthog_IP_pre-class-assignment.html">
+   108 Pre-Class Assignment: Change of Basis,  Orthogonal, Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   108 In-Class Assignment: Change of Basis, Projections, Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="109--LSF_Review_pre-class-assignment.html">
+   109 Pre-Class Assignment: Least Squares Fit (Regression) and Review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="109-LSF_in-class-assignment.html">
+   109 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/108-Basis_Orthogonal_InnerProduct_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/matthewrmills/mth314s"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/matthewrmills/mth314s/issues/new?title=Issue%20on%20page%20%2F108-Basis_Orthogonal_InnerProduct_in-class-assignment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/matthewrmills/mth314s/main?urlpath=lab/tree/docs/_sources/108-Basis_Orthogonal_InnerProduct_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   108 In-Class Assignment: Change of Basis, Projections, Inner Products
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agenda-for-today-s-class">
+     Agenda for today’s class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-basis">
+   1.Change of Basis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-projections-with-code">
+   2. Understanding Projections With Code
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#projection-function">
+     Projection function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visualizing-projections">
+       Visualizing projections
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gram-schmidt-orthoganalization-process">
+   3. Gram-Schmidt Orthoganalization Process
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subspace-projections">
+     4. Subspace Projections
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-orthogonal-decomposition-theorem">
+     5. The Orthogonal Decomposition Theorem
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inner-products-and-matrices">
+     6. Inner Products and Matrices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-approximation">
+     7. Function Approximation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#polynomial-approximations">
+       Polynomial Approximations
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="in-class-assignment-change-of-basis-projections-inner-products">
+<h1>108 In-Class Assignment: Change of Basis, Projections, Inner Products<a class="headerlink" href="#in-class-assignment-change-of-basis-projections-inner-products" title="Permalink to this headline">¶</a></h1>
+<img alt="Graph showing how one vector can be projected onto another vector by forming a right triangle" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Projection_and_rejection.png" width="50%">
+<p>Image from: <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_projection">https://en.wikipedia.org/wiki/Vector_projection</a></p>
+<div class="section" id="agenda-for-today-s-class">
+<h2>Agenda for today’s class<a class="headerlink" href="#agenda-for-today-s-class" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#CoB">Change of Basis</a></p></li>
+<li><p><a class="reference external" href="#Understanding_Projections_with_Code">Understanding Projections with Code</a></p></li>
+<li><p><a class="reference external" href="#Gram-Schmidt_Orthoganalization_Process">Gram-Schmidt Orthoganalization Process</a></p></li>
+<li><p><a class="reference external" href="#subspace">Subspace Projections</a></p></li>
+<li><p><a class="reference external" href="#orthog_decomp">The Orthogonal Decomposition Theorem</a></p></li>
+<li><p><a class="reference external" href="#innerP">Inner Products and Matrices</a></p></li>
+<li><p><a class="reference external" href="#Function_Approximation">Function Approximation</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="CoB"></a></p>
+</div>
+</div>
+<div class="section" id="change-of-basis">
+<h1>1.Change of Basis<a class="headerlink" href="#change-of-basis" title="Permalink to this headline">¶</a></h1>
+<p>Here is a quick test to see if you understand how to change coordinate systems for vector spaces. We won’t spend a lot of time this semester on this concept, but it is a good question for a quiz/exam.</p>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> Given the basis <span class="math notranslate nohighlight">\(S\)</span> for <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>,
+$<span class="math notranslate nohighlight">\(S = \{(2,-1,-1), (0,1,3), (1,1,1)\},\)</span>$</p>
+<p>Find the coordinate vector of <span class="math notranslate nohighlight">\(u=(1,-4,-5)\)</span> relative to the given basis <span class="math notranslate nohighlight">\(S\)</span>. Store this coordinate in a variable <code class="docutils literal notranslate"><span class="pre">ub</span></code> for checking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##work here</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">ub</span><span class="p">,</span><span class="s2">&quot;91cc7b39126e04b42501804cc9ef7d83&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="n">bdfe570e316</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">ub</span><span class="p">,</span><span class="s2">&quot;91cc7b39126e04b42501804cc9ef7d83&quot;</span><span class="p">);</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;answercheck&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>QUESTION:</font></strong> Given two bases <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(S'\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>,
+$<span class="math notranslate nohighlight">\(S = \{(2,-1,-1), (0,1,3), (1,1,1)\},\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(S' = \{(1,4,7), (2,5,8), (3,6,10)\},\)</span><span class="math notranslate nohighlight">\(
+Find the transition matrix \)</span>T<span class="math notranslate nohighlight">\( that will take points in the \)</span>S<span class="math notranslate nohighlight">\( coordinate representation and put them into \)</span>S’$ coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##work here</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="s2">&quot;d467bed81305d1623528055cd63e8194&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Understanding_Projections_with_Code"></a></p>
+</div>
+<div class="section" id="understanding-projections-with-code">
+<h1>2. Understanding Projections With Code<a class="headerlink" href="#understanding-projections-with-code" title="Permalink to this headline">¶</a></h1>
+<p>In this in-class assignment, we are going to avoid some of the more advanced libraries ((i.e. no <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">scipy</span></code> or <code class="docutils literal notranslate"><span class="pre">sympy</span></code>) to try to get a better understanding about what is going on in the math.
+The following code implements some common linear algebra functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Standard Python Libraries only</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the dot product between vectors u and v&#39;&#39;&#39;</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">temp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the matrix multiplication between m1 and m2 represented as list-of-list.&#39;&#39;&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="n">d</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR - inner dimentions not equal&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">m2</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">):</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v1</span><span class="p">)):</span>
+        <span class="n">v3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">v3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sub_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">):</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v1</span><span class="p">)):</span>
+        <span class="n">v3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">v3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the norm of vector u&#39;&#39;&#39;</span>
+    <span class="n">nm</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+        <span class="n">nm</span> <span class="o">+=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the transpose of matrix A represented as list of lists&#39;&#39;&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">AT</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>    
+        <span class="n">temp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">AT</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">AT</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="projection-function">
+<h2>Projection function<a class="headerlink" href="#projection-function" title="Permalink to this headline">¶</a></h2>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Write a function that projects vector <span class="math notranslate nohighlight">\(v\)</span> onto vector <span class="math notranslate nohighlight">\(u\)</span>.
+Do not use the numpy library.
+Instead use the functions provided above:</p>
+<div class="math notranslate nohighlight">
+\[\mbox{proj}_u v = \frac{v \cdot u}{u \cdot u} u\]</div>
+<p>Make sure this function will work for any size of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">proj</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">):</span>
+    <span class="c1">## Put your code here</span>
+    <span class="k">return</span> <span class="n">pv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s test your function. Below are two example vectors. Make sure you get the correct answers.
+You may want to test this code with more than one set of vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">proj</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">proj</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="s1">&#39;53216508af49c616fa0f4e9676ce3b9d&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-projections">
+<h3>Visualizing projections<a class="headerlink" href="#visualizing-projections" title="Permalink to this headline">¶</a></h3>
+<p>✅ **<font color=red>DO THIS:</font>**See if you can design and implement a small function that takes two vectors (<span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>) as inputs and generates a figure similar to the one above.</p>
+<p>I.e. a black line from the origin to “<span class="math notranslate nohighlight">\(b\)</span>”, a black line from origin to “<span class="math notranslate nohighlight">\(a\)</span>”; a green line showing the “<span class="math notranslate nohighlight">\(a\)</span>” component in the “<span class="math notranslate nohighlight">\(b\)</span>” direction and a red line showing the “<span class="math notranslate nohighlight">\(a\)</span>” component orthogonal to the green line.
+Also see section titled “Projection of One Vector onto Another Vector” in Section 4.6 on page 258 of the book.</p>
+<p>When complete, show your solution to the instructor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">show_projection</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> 
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> 
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    
+<span class="c1">#Finish your code here</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    
+<span class="n">x</span> <span class="o">=</span> <span class="n">show_projection</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Gram-Schmidt_Orthoganalization_Process"></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="gram-schmidt-orthoganalization-process">
+<h1>3. Gram-Schmidt Orthoganalization Process<a class="headerlink" href="#gram-schmidt-orthoganalization-process" title="Permalink to this headline">¶</a></h1>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Implement the Gram-Schmidt orthoganalization process from the <a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Hefron</a> textbook (page 282).
+This function takes a <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix <span class="math notranslate nohighlight">\(A\)</span> with linearly independent columns as input and return a <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix <span class="math notranslate nohighlight">\(G\)</span> with orthogonal column vectors.
+The basic algorithm works as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AT</span> <span class="pre">=</span> <span class="pre">transpose(A)</span></code> (this process works with the columns of the matrix so it is easier to work with the transpose. Think about a list of list, it is easy to get a row (a list)).</p></li>
+<li><p>Make a new empty list of the same size as <code class="docutils literal notranslate"><span class="pre">AT</span></code> and call it <code class="docutils literal notranslate"><span class="pre">GT</span></code> (G transpose)</p></li>
+<li><p>Loop index <code class="docutils literal notranslate"><span class="pre">i</span></code> over all of the rows in AT (i.e. columns of A)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GT[i]</span> <span class="pre">=</span> <span class="pre">AT[i]</span></code></p></li>
+<li><p>Loop index <code class="docutils literal notranslate"><span class="pre">j</span></code> from 0 to <code class="docutils literal notranslate"><span class="pre">i</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GT[i]</span> <span class="pre">-=</span> <span class="pre">proj(GT[i],</span> <span class="pre">GT[j])</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">=</span> <span class="pre">transpose(GT)</span></code></p></li>
+</ul>
+<p>Use the following function definition as a template:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GramSchmidt</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we are going to test your function using the vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">A4</span><span class="p">))</span>
+<span class="n">G4</span> <span class="o">=</span> <span class="n">GramSchmidt</span><span class="p">(</span><span class="n">A4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">G4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">G4</span><span class="p">,</span><span class="s1">&#39;a472a81eef411c0df03ae9a072dfa040&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A2</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">A2</span><span class="p">))</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">GramSchmidt</span><span class="p">(</span><span class="n">A2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">G2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span><span class="s1">&#39;23b9860b72dbe5b84d7c598c08af9688&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name ='subspace'></a></p>
+<div class="section" id="subspace-projections">
+<h2>4. Subspace Projections<a class="headerlink" href="#subspace-projections" title="Permalink to this headline">¶</a></h2>
+<p>The following is the matimatical defination of projection onto a subspace.</p>
+<p><strong>Definition</strong>: Let <span class="math notranslate nohighlight">\(W\)</span> be a subspace of <span class="math notranslate nohighlight">\(R^n\)</span> of dimension <span class="math notranslate nohighlight">\(m\)</span>. Let <span class="math notranslate nohighlight">\(\{w_1,\cdots,w_m\}\)</span> be an orthogonal basis for <span class="math notranslate nohighlight">\(W\)</span>. Then the projection of vector <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(R^n\)</span> onto <span class="math notranslate nohighlight">\(W\)</span> is denoted as <span class="math notranslate nohighlight">\(\mbox{proj}_Wv\)</span> and is defined as the sum of the projections onto the basis vectors for <span class="math notranslate nohighlight">\(W\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mbox{proj}_Wv = \mbox{proj}_{w_1} v + \dots + \mbox{proj}_{w_n} v\\
+= \frac{(v\cdot w_1)}{(w_1\cdot w_1)}w_1+\frac{(v\cdot w_2)}{(w_2\cdot w_2)}w_2+\cdots+\frac{(v\cdot w_m)}{(w_m\cdot w_m)}w_m\end{split}\]</div>
+<p>Another way to say the above definition is that the project of <span class="math notranslate nohighlight">\(v\)</span> onto the <span class="math notranslate nohighlight">\(W\)</span> is just the sumation of <span class="math notranslate nohighlight">\(v\)</span> projected onto each vector in a basis of <span class="math notranslate nohighlight">\(W\)</span></p>
+<p><strong>Remarks</strong>:</p>
+<blockquote>
+<div><p>Recall in the lecture on <em>Projections</em>, we discussed the projection onto a vector, which is the case for <span class="math notranslate nohighlight">\(m=1\)</span>. We used the projection for <span class="math notranslate nohighlight">\(m&gt;1\)</span> in the Gram-Schmidt algorithm.</p>
+</div></blockquote>
+<blockquote>
+<div><p>The projection does not depend on which orthogonal basis you choose.</p>
+</div></blockquote>
+<blockquote>
+<div><p>If <span class="math notranslate nohighlight">\(v\)</span> is in <span class="math notranslate nohighlight">\(W\)</span>, we have <span class="math notranslate nohighlight">\(\mbox{proj}_Wv=v\)</span>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Let <span class="math notranslate nohighlight">\(v=(3, 2, 6)\)</span> and <span class="math notranslate nohighlight">\(W\)</span> is the subspace consisting all vectors with the form <span class="math notranslate nohighlight">\((a, b, b)\)</span>. Find the projection of <span class="math notranslate nohighlight">\(v\)</span> onto <span class="math notranslate nohighlight">\(W\)</span>. That is find <span class="math notranslate nohighlight">\(w = \mbox{proj}_W v\)</span>.</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;13404b60fa3f349ae3982b2587048040&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a name = 'orthog_decomp'></a></p>
+</div>
+<div class="section" id="the-orthogonal-decomposition-theorem">
+<h2>5. The Orthogonal Decomposition Theorem<a class="headerlink" href="#the-orthogonal-decomposition-theorem" title="Permalink to this headline">¶</a></h2>
+<p><strong>Theorem</strong>: Let <span class="math notranslate nohighlight">\(W\)</span> be a subspace of <span class="math notranslate nohighlight">\(R^n\)</span>. Every vector <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(R^n\)</span> can be written uniquely in the form
+$<span class="math notranslate nohighlight">\(v= w+w_{\bot},\)</span><span class="math notranslate nohighlight">\(
+where \)</span>w<span class="math notranslate nohighlight">\( is in \)</span>W<span class="math notranslate nohighlight">\( and \)</span>w_\bot<span class="math notranslate nohighlight">\( is orthogonal to \)</span>W<span class="math notranslate nohighlight">\( (i.e., \)</span>w_\bot<span class="math notranslate nohighlight">\( is in \)</span>W_\bot<span class="math notranslate nohighlight">\(). 
+In addition, \)</span>w=\mbox{proj}<em>Wv<span class="math notranslate nohighlight">\(, and \)</span>w</em>\bot = v-\mbox{proj}_Wv$.</p>
+<p><strong>Definition</strong>: Let <span class="math notranslate nohighlight">\(x\)</span> be a point in <span class="math notranslate nohighlight">\(R^n\)</span>, <span class="math notranslate nohighlight">\(W\)</span> be a subspace of <span class="math notranslate nohighlight">\(R^n\)</span>. The distance from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(W\)</span> is defined to be the minimum of the distances from <span class="math notranslate nohighlight">\(x\)</span> to any point <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(W\)</span>.
+$<span class="math notranslate nohighlight">\(d(x,W)=\min \{\|x-y\|: \mbox{ for all }y \mbox{ in } W\}.\)</span><span class="math notranslate nohighlight">\(
+The optimal \)</span>y<span class="math notranslate nohighlight">\( can be achieved at \)</span>\mbox{proj}_Wx<span class="math notranslate nohighlight">\(, and \)</span>d(x,W)=|x-\mbox{proj}<em>Wx| = | x</em>\bot |$.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Let <span class="math notranslate nohighlight">\(v=(3, 2, 6)\)</span> and <span class="math notranslate nohighlight">\(W\)</span> is the subspace consisting all vectors with the form <span class="math notranslate nohighlight">\((a, b, b)\)</span>. Find the distance from <span class="math notranslate nohighlight">\(v\)</span> to <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<p><strong>Hint.</strong> Your answer from the previous question will be very helpful to this problem.</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##work here</span>
+
+<span class="c1"># dist = </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="s1">&#39;f8f24a9cedb159fc084bc4e6e347dc07&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name='innerP'></a></p>
+</div>
+<div class="section" id="inner-products-and-matrices">
+<h2>6. Inner Products and Matrices<a class="headerlink" href="#inner-products-and-matrices" title="Permalink to this headline">¶</a></h2>
+<p>The following is a review from the pre-class assignment.</p>
+<p>An inner product on a real vector space <span class="math notranslate nohighlight">\(V\)</span> is a function that associates a number, denoted as <span class="math notranslate nohighlight">\(\langle u,v \rangle\)</span>, with each pair of vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> of <span class="math notranslate nohighlight">\(V\)</span>. This function satisfies the following conditions for vectors <span class="math notranslate nohighlight">\(u, v, w\)</span> and scalar <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\langle u,v \rangle = \langle v,u \rangle \text{ Symmetry axiom}\]</div>
+<div class="math notranslate nohighlight">
+\[\langle u+v,w \rangle = \langle u,w \rangle + \langle v,w \rangle \text{ Additive axiom}\]</div>
+<div class="math notranslate nohighlight">
+\[\langle cu,v \rangle = c\langle v,u \rangle \text{ Homogeneity axiom}\]</div>
+<div class="math notranslate nohighlight">
+\[\langle u,u \rangle \ge 0 \text{ and } \langle u,u \rangle = 0 \text{ if and only if } u = 0 \text{ Positive definite axiom}\]</div>
+<p>The dot product of <span class="math notranslate nohighlight">\(R^n\)</span> is an inner product. However, we can define many other inner products.</p>
+<p>Notice that the dot product of two column vectors <span class="math notranslate nohighlight">\(u= \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(v= \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\)</span> can also be written as a matrix multiplication</p>
+<div class="math notranslate nohighlight">
+\[u \cdot v = u_1v_1 + u_2v_2 = u^\top * v\]</div>
+<p>Now imagine that there is an identity matrix in the middle of the matrix product and we have
+<span class="math notranslate nohighlight">\(u \cdot v = u^\top Iv\)</span>. This exmplifies a fundamental relationship between inner products and matrices.</p>
+<p>Now notice for an arbitary matrix <span class="math notranslate nohighlight">\(A = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}\)</span> we have</p>
+<p>$<span class="math notranslate nohighlight">\( u^\top A v = a_{11} u_1v_1 + a_{12}u_1v_2 + a_{21}u_2v_1 + a_{22}u_2v_2\)</span><span class="math notranslate nohighlight">\( which looks an awful lot like a formula for an inner product. Definining the function \)</span>f(u,v) = u^\top A v$ guarentees that it satisfies the additive and homogeneity axiom for inner products. We need a matrix way to represent the other two axioms for inner products.</p>
+<p><strong>Definition.</strong> A square matrix is said to be positive definite if all of its eigenvalues are positive.</p>
+<p><strong>Definition</strong> A matrix <span class="math notranslate nohighlight">\(A\)</span> is said to be symmetric if <span class="math notranslate nohighlight">\(a_{ij} = a_{ji}\)</span> for all entries of the matrix.</p>
+<p><strong>Definition.</strong> An <span class="math notranslate nohighlight">\(n \times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> defines an inner product on <span class="math notranslate nohighlight">\(R^n\)</span> by the formula $<span class="math notranslate nohighlight">\( \langle u,v \rangle = u^\top A v\)</span><span class="math notranslate nohighlight">\( if and only if the matrix \)</span>A$ is positive definite and symmetric.</p>
+<p>✅ <strong><font color=red>Do This:</font></strong> Show that the matrix $<span class="math notranslate nohighlight">\( A = \begin{bmatrix} 3 &amp; -1 \\ -1 &amp; 2 \end{bmatrix}\)</span>$ is positive definite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##your work here</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;3,-1;-1,2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Does the matrix <span class="math notranslate nohighlight">\(A\)</span> given above represent an inner product on <span class="math notranslate nohighlight">\(R^2\)</span>?</p>
+<p>Your answer here.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Find the matrix representing the inner product</p>
+<div class="math notranslate nohighlight">
+\[\langle u,v \rangle = 6u_1v_1 -2 u_1v_2 -2 u_2 v_1 +4 u_2 v_2 \]</div>
+<p>and use it to compute the norm of the vector <span class="math notranslate nohighlight">\( v = [1,-2].\)</span></p>
+<p><strong>Hint.</strong> Double check the pre-class assignment for the formula for norm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span><span class="s1">&#39;afcf64b47c2dc5ae8e86701f0cbd5eb9&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Function_Approximation"></a></p>
+</div>
+<div class="section" id="function-approximation">
+<h2>7. Function Approximation<a class="headerlink" href="#function-approximation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Definition:</strong> Let <span class="math notranslate nohighlight">\(C[a,b]\)</span> be a vector space of all possible continuous functions over the interval <span class="math notranslate nohighlight">\([a,b]\)</span> with inner product:
+$<span class="math notranslate nohighlight">\(\langle f,g \rangle = \int_a^b f(x)g(x) dx.\)</span>$</p>
+<p>Now let <span class="math notranslate nohighlight">\(f\)</span> be an element of <span class="math notranslate nohighlight">\(C[a,b]\)</span>, and <span class="math notranslate nohighlight">\(W\)</span> be a subspace of <span class="math notranslate nohighlight">\(C[a,b]\)</span>. The function <span class="math notranslate nohighlight">\(g \in W\)</span> such that the distance</p>
+<div class="math notranslate nohighlight">
+\[d(f,g) = \sqrt{\langle f-g, f-g \rangle} = \int_a^b \left[ f(x) - g(x) \right]^2 dx\]</div>
+<p>is a minimum is called the <strong>least-squares approximation</strong> to <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>As stated in the “The Orthogonal Decomposition Theorem” section of this notebook The least-squares approximation to <span class="math notranslate nohighlight">\(f\)</span> in the subspace <span class="math notranslate nohighlight">\(W\)</span> can be calculated as the projection of <span class="math notranslate nohighlight">\(f\)</span> onto <span class="math notranslate nohighlight">\(W\)</span>, <span class="math notranslate nohighlight">\(g = proj_Wf\)</span>. Like in the “Subspace Projections” section if we rewrite the formula using an arbitary inner product in lieu of the dot product we have the following:</p>
+<p>If <span class="math notranslate nohighlight">\(\{g_1, \ldots, g_n\}\)</span> is an orthogonal basis for <span class="math notranslate nohighlight">\(W\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[prog_Wf = \frac{\langle f,g_1 \rangle}{\langle g_1,g_1 \rangle} g_1 + \dots + \frac{\langle f,g_n \rangle}{\langle g_n,g_n
+ \rangle} g_n\]</div>
+<div class="section" id="polynomial-approximations">
+<h3>Polynomial Approximations<a class="headerlink" href="#polynomial-approximations" title="Permalink to this headline">¶</a></h3>
+<p>An orthogonal bases for all polynomials of degree less than or equal to <span class="math notranslate nohighlight">\(n\)</span> can be computed using Gram-schmidt orthogonalization process.  First we start with the following standard basis vectors in <span class="math notranslate nohighlight">\(W\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \{ 1, x, \ldots, x^n \}\]</div>
+<p>The Gram-Schmidt process can be used to make these vectors orthogonal. The resulting polynomials on <span class="math notranslate nohighlight">\([-1,1]\)</span> are called  <strong>Legendre polynomials</strong>.  The first six Legendre polynomial basis elements are:</p>
+<div class="math notranslate nohighlight">
+\[1\]</div>
+<div class="math notranslate nohighlight">
+\[x\]</div>
+<div class="math notranslate nohighlight">
+\[x^2 -\frac{1}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[x^3 - \frac{3}{5}x\]</div>
+<div class="math notranslate nohighlight">
+\[x^4 - \frac{6}{7}x^2 + \frac{3}{35}\]</div>
+<div class="math notranslate nohighlight">
+\[x^5 - \frac{10}{9}x^3 + \frac{5}{12}x\]</div>
+<p>✅<strong><font color=red>QUESTION:</strong></font> What is the least-squares linear approximations of <span class="math notranslate nohighlight">\(f(x) = e^x\)</span> over the interval <span class="math notranslate nohighlight">\([-1, 1]\)</span>. In other words, what is the projection of <span class="math notranslate nohighlight">\(f\)</span> onto <span class="math notranslate nohighlight">\(W\)</span>, where <span class="math notranslate nohighlight">\(W\)</span> is a first order polynomal with basis vectors <span class="math notranslate nohighlight">\(\{1, x\} (i.e. n=1)\)</span>.</p>
+<p><strong>Hint.</strong> You can give the answer in integrals without computing the integrals. Note the Legendre polynomials are not normalized.</p>
+<p>Put your answer to the above question here.</p>
+<p>Here is a plot of the equation <span class="math notranslate nohighlight">\(f(x) = e^x\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#px = np.linspace(-1,1,100)</span>
+<span class="c1">#py = np.exp(px)</span>
+<span class="c1">#plt.plot(px,py, color=&#39;red&#39;);</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to compute the integral. The following code compute the definite integral of
+$<span class="math notranslate nohighlight">\(\int_{-1}^1 e^x dx.\)</span>$
+In fact, <code class="docutils literal notranslate"><span class="pre">sympy</span></code> can also compute the indefinite integral by removing the interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s1">&#39;exp(x)&#39;</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1">#sym.integrate(&#39;exp(x)&#39;,(x))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to compute the first order polynomial that approximates the function <span class="math notranslate nohighlight">\(e^x\)</span>.
+The following calculates the above approximation written in <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s1">&#39;exp(x)*1&#39;</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s1">&#39;1*1&#39;</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span>
+<span class="n">g_1</span> <span class="o">=</span> <span class="n">g_0</span> <span class="o">+</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s1">&#39;exp(x)*x&#39;</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s1">&#39;x*x&#39;</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">x</span>
+<span class="n">g_1</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the original function <span class="math notranslate nohighlight">\(f(x)=e^x\)</span> and its approximation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g_1</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#For fun, I turned this into a function:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lsf_poly</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">gb</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="n">x</span><span class="p">],</span> <span class="n">a</span> <span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">gb</span><span class="p">:</span>
+<span class="c1">#        print(sym.integrate(g*f,(x,a,b)))</span>
+        <span class="n">proj</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">+</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span><span class="o">/</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">g</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span><span class="o">*</span><span class="n">g</span>
+    <span class="k">return</span> <span class="n">proj</span>
+
+<span class="n">lsf_poly</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION:</font></strong> What would a second order approximation look like for this function? How about a fifth order approximation?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">g_2</span> <span class="o">=</span> 
+<span class="n">g_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g_2</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="108--Basis_Orthog_IP_pre-class-assignment.html" title="previous page">108 Pre-Class Assignment: Change of Basis,  Orthogonal, Inner Product</a>
+    <a class='right-next' id="next-link" href="109--LSF_Review_pre-class-assignment.html" title="next page">109 Pre-Class Assignment: Least Squares Fit (Regression) and Review</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry, adapted by Matthew Mills for the summer course<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
